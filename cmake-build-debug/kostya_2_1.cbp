@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="kostya_2_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kostya_2_1">
+				<Option output="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/kostya_2_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 kostya_2_1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kostya_2_1/fast">
+				<Option output="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/kostya_2_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 kostya_2_1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_add.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_aff.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_and.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_fork.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_ld.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_ldi.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_lld.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_lldi.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_or.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_st.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_sti.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_sub.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_xor.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/fun_cor/fun_zjmp.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_add_at_end.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_addlast.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_atoi.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_bzero.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_ch_to_hex.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_dell_arr_str.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_hex_to_int.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_is_valid_hex.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_is_valid_nbr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_isalnum.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_isalpha.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_isascii.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_isdigit.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_isprint.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_itoa.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_itoa_base.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_len_arr_str.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstadd.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstdel.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstdel_top.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstdelone.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstiter.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstmap.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_lstnew.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memalloc.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memccpy.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memchr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memcmp.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memcpy.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memdel.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memmove.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_memset.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_printf.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_printf.h">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putchar.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putchar_fd.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putendl.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putendl_fd.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putnbr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putnbr_fd.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putstr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_putstr_fd.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strcat.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strchr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strclr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strcmp.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strcpy.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strdel.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strdup.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strequ.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_striter.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_striteri.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strjoin.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strlcat.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strlen.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strmap.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strmapi.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strncat.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strnchr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strncmp.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strncpy.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strnequ.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strnew.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strnew_cpy.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strnstr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strrchr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strsplit.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strstr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strsub.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_strtrim.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_swapbits.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_tolower.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/ft_toupper.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/get_next_line.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/get_next_line.h">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/libft.h">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_funcs.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_get_sign_arg.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_itoabase.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_lst_ctr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_lst_res.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_fl_aux1.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_fl_aux2.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_fl_nbr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_fl_str.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_nbr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_p.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_parse_str.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/libft/pf_uchr.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/main.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/main.h">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/make_cycle.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/op.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/op.h">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/read_bots.c">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/visual.h">
+			<Option target="kostya_2_1"/>
+		</Unit>
+		<Unit filename="/Users/kmykhail/Desktop/kostya_2_1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
