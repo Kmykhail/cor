@@ -110,8 +110,6 @@ int			visual(t_main *main)
 		{
 			if (!make_cycle(main))
 				break ;
-			while (1)
-				printf("STEP: %d\n", STEP);
 			(window.one_step) ? window.one_step = 0 : 0;
 		}
 		(main->finish) ? print_winner(main, &window) : 0;

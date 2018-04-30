@@ -7,14 +7,19 @@ int     make_cycle(t_main *main)
 {
     //while (1)
     //{
-        (ITR) ? (init_vizual(main, ITR, 0)) : 0;
-    	if (main->map[main->pc] >= 16)
+    // dprintf(FD, "4423432\n\n\n\n");
+
+        // main->cur_cycle++;
+        //main->lst_proc->index++;
+
+        //main->cur_cycle++;
+        dprintf(FD, "\nmain->lst_proc->nbr_pl:%d\n", main->lst_proc->nbr_pl);
+    	//dprintf(FD, "QQQ:%d", main->lst_changes->cycle_init);
+        if (main->map[main->pc] >= 16)
     		ft_print_error(5);
     	if (main->map[main->pc] != 1 &&  main->map[main->pc] != 8 && main->map[main->pc] != 12 && main->map[main->pc] != 15 && main->map[main->pc] != 16)
     	{
-            printf("UNOOOO\n");
-
-           	check_map(main, main->map[main->pc]);
+           	check_map(main, main->map[main->pc + 1]);
 
 	        ft_implement_command(main);
 
@@ -22,20 +27,23 @@ int     make_cycle(t_main *main)
 
 	        main->pc++;
             ITR++;
-            printf("MAIN->PC:%d\n", main->pc);
 		}
 		else
 		{
-            printf("REDOOOOOOOOO\n");
 			ft_implement_command(main);
             STEP = main->label[main->pc][3];
             main->pc += STEP;
-            ITR++;
 		}
+        // ITR = 0;
+        dprintf(FD, "ITR = %d\n", ITR);
         if (ITR == 2)
+        {
+             dprintf(FD, "RETURN 0\n");
             return (0);
+        }
+        dprintf(FD, "RETURN 1\n");
     //}
-        //printf("STEP!!!!:%d\n", STEP);
-        exit(1);
+        // exit(1);
+    (ITR) ? (init_vizual(main, 0, 0)) : 0;
     return (1);
 }

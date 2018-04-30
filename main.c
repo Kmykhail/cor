@@ -122,6 +122,16 @@ void	init_struct(t_main *main, int argc)
 	main->finish = 0;
 	ft_table_label(main);
 	ft_memset(main->map, 0, MEM_SIZE);
+	ft_memset(main->arg, 0, 3);
+	i = 0;
+	while (i < 16)
+	{
+		main->rg[i][0] = (!i) ? -1 : 0;
+		main->rg[i][1] = (!i) ? -1 : 0;
+		main->rg[i][2] = (!i) ? -1 : 0;
+		main->rg[i][3] = (!i) ? -1 : 0;
+		i++;
+	}
 	/*swhile (c < MEM_SIZE)
 		main->map[c++] = 0;*/
 }
@@ -138,6 +148,7 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	init_struct(&main, argc);
+	main.ddddd = open("/Users/kmykhail/Desktop/kostya_2_1/fun_cor/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
 	/*while (main.lst_changes)
@@ -146,9 +157,6 @@ int		main(int argc, char **argv)
 		printf("end:%d name:%x\n", main.lst_changes->finish, main.lst_changes->process->nbr_pl);
 		main.lst_changes = main.lst_changes->next;
 	}*/
-	//printf("---%x---\n", main.map[main.lst_changes->finish - 1]);
-	//printf("start: %d finish :%d name:%x\n",main.lst_changes->start, main.lst_changes->finish, main.lst_changes->process->nbr_pl);
-	//exit(1);
 	/*while (main.lst_changes)
 	{
 		printf("main->start_change:%d\n", main.lst_changes->start);
@@ -156,8 +164,7 @@ int		main(int argc, char **argv)
 		main.lst_changes = main.lst_changes->next;
 	}
 	exit(1);*/
-	//exit(1);
-	/*printf("%d %x\n", main.nbr_proc, main.nbr_proc);
+	/*printf("start:%d finish:%d cycle_init:%d\n", main.lst_changes->start, main.lst_changes->finish, main.lst_changes->cycle_init);
 	exit(1);*/
 	while (++i < argc)
 		(!ft_strcmp(argv[i], "-n")) ? visual(&main) : 0;

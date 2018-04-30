@@ -23,6 +23,8 @@
 # define TOTAL_SIZE PROG_NAME_LENGTH + COMMENT_LENGTH
 # define STEP main->steper
 # define ITR main->var_crap->itr
+# define FD main->ddddd
+# define FD2 main.ddddd
 
 typedef struct			s_process
 {
@@ -81,6 +83,7 @@ typedef struct			s_main
 	t_player			*last_live_player;
 	t_crap				*var_crap;
 	int 				finish;//конец игры, finish = 1
+	int 				ddddd;
 
 }						t_main;
 
