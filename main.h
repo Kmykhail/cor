@@ -28,6 +28,8 @@
 
 typedef struct			s_process
 {
+	uint8_t 			rg[16][4];	
+	int 				pc;//счеткик
 	int					index;//индех элемнта на (в) карте игрока
 	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
 	unsigned int		live;//инкремент
@@ -63,13 +65,11 @@ typedef	struct			s_crap
 
 typedef struct			s_main
 {
-	int 				pc;//счеткик
-	int 				label[16][4];// таблица
 	int 				steper;//в нем храниться 
+	int 				label[16][4];// таблица
 	int					code_codage[3];// ????? 
 	uint8_t 			arg[3];
     int 				ready_arg[3][2];//
-	uint8_t 			rg[16][4];			
 	int 				coor_of_p[4];
 	char				*filename[5];
 	unsigned char		map[MEM_SIZE];//
@@ -93,9 +93,8 @@ void					ft_table_label(t_main *main);//kmykhail
 void					valid_bots(t_main *main, int ac, char **av);//kmykhail
 void					check_map(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
-
-
-
+void					lst_newchanges(t_main *main, t_process *proc, int i, int fin);
+t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 
 */
@@ -104,34 +103,32 @@ void					init_vizual(t_main *main, int start, int end);//kmykhail
 
 
 int				is_has_arg(unsigned char arg);
-void			choose_function_1(t_main *main);
-void			choose_function_2(t_main *main);
-void			ft_implement_command(t_main *main);
-void			ready_arg(t_main *main);
-int     		ft_step_pc(t_main *main, int num);
+void    		ft_implement_command(t_main *main, t_process *proc);
+void		    ready_arg(t_main *main, t_process *proc);
+int     		ft_step_pc(t_main *main, int num, t_process *proc);
 
 /*
  void	fun_live()
  */
-void			fun_ld(t_main *main);
-void			fun_st(t_main *main);
-void			fun_add(t_main *main);
-void			fun_sub(t_main *main);
-void			fun_and(t_main *main);
-void			fun_or(t_main *main);
-void			fun_xor(t_main *main);
-void			fun_zjmp(t_main *main);
-void			fun_ldi(t_main *main);
-void			fun_sti(t_main *main);
+void			fun_ld(t_main *main, t_process *proc);
+void			fun_st(t_main *main, t_process *proc);
+void			fun_add(t_main *main, t_process *proc);
+void			fun_sub(t_main *main, t_process *proc);
+void			fun_and(t_main *main, t_process *proc);
+void			fun_or(t_main *main, t_process *proc);
+void			fun_xor(t_main *main, t_process *proc);
+void			fun_zjmp(t_main *main, t_process *proc);
+void			fun_ldi(t_main *main, t_process *proc);
+void			fun_sti(t_main *main, t_process *proc);
 /*
  void	fun_fork()
  */
-void			fun_lld(t_main *main);
-void			fun_lldi(t_main *main);
+void			fun_lld(t_main *main, t_process *proc);
+void			fun_lldi(t_main *main, t_process *proc);
 /*
  void	fun_lfork()
  */
-void			fun_aff(t_main *main);
+void			fun_aff(t_main *main, t_process *proc);
 
 
 

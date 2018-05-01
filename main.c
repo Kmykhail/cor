@@ -95,7 +95,6 @@ void	init_struct(t_main *main, int argc)
 	int i;
 
 	i = 0;
-	main->pc = 0;
 	STEP = 0;
 	main->cnt_pl = 0;
 	main->cur_cycle = 0;
@@ -123,15 +122,6 @@ void	init_struct(t_main *main, int argc)
 	ft_table_label(main);
 	ft_memset(main->map, 0, MEM_SIZE);
 	ft_memset(main->arg, 0, 3);
-	i = 0;
-	while (i < 16)
-	{
-		main->rg[i][0] = (!i) ? -1 : 0;
-		main->rg[i][1] = (!i) ? -1 : 0;
-		main->rg[i][2] = (!i) ? -1 : 0;
-		main->rg[i][3] = (!i) ? -1 : 0;
-		i++;
-	}
 	/*swhile (c < MEM_SIZE)
 		main->map[c++] = 0;*/
 }
@@ -154,17 +144,11 @@ int		main(int argc, char **argv)
 	/*while (main.lst_changes)
 	{
 		printf("start:%d ", main.lst_changes->start);
-		printf("end:%d name:%x\n", main.lst_changes->finish, main.lst_changes->process->nbr_pl);
-		main.lst_changes = main.lst_changes->next;
-	}*/
-	/*while (main.lst_changes)
-	{
-		printf("main->start_change:%d\n", main.lst_changes->start);
-		printf("\n==CALL proc==: %x\n", main.lst_changes->process->nbr_pl);
+		printf(" end:%d name:%x\n", main.lst_changes->finish, main.lst_changes->process->nbr_pl);
+		printf("proc->index: %d\n", main.lst_changes->process->index);
+		printf("\n");
 		main.lst_changes = main.lst_changes->next;
 	}
-	exit(1);*/
-	/*printf("start:%d finish:%d cycle_init:%d\n", main.lst_changes->start, main.lst_changes->finish, main.lst_changes->cycle_init);
 	exit(1);*/
 	while (++i < argc)
 		(!ft_strcmp(argv[i], "-n")) ? visual(&main) : 0;
