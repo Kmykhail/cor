@@ -19,7 +19,7 @@
 ** или выполнить второй без первого
 */
 
-static void		fun_lldi_wright_to_reg(t_main *main, int res)
+static void		fun_lldi_wright_to_reg(t_main *main, int res, t_process *proc)
 {
 	int     i;
     int     num_reg;
@@ -34,13 +34,13 @@ static void		fun_lldi_wright_to_reg(t_main *main, int res)
    	num_reg = main->ready_arg[2][1];
     while (i--)
     {
-        main->rg[num_reg][i] = res;
+        proc->rg[num_reg][i] = res;
         res = res >> 8;
     }
 
 }
 
-void	fun_lldi(t_main *main)
+void	fun_lldi(t_main *main, t_process *proc)
 {
 	int		step;
 	int		r;
@@ -48,8 +48,8 @@ void	fun_lldi(t_main *main)
 
 
 	step = 0;
-	ready_arg(main);
-	step = (main->ready_arg[0][0] + main->ready_arg[1][0]) + main->pc;
+	ready_arg(main, proc);
+	step = (main->ready_arg[0][0] + main->ready_arg[1][0]) + proc->pc;
 	num = 0;
 	r = 0;
 	while (r < 4)
@@ -58,5 +58,5 @@ void	fun_lldi(t_main *main)
 		num = num | main->map[step + r];
 		r++;
 	}
-	fun_lldi_wright_to_reg(main, num);
+	fun_lldi_wright_to_reg(main, num, proc);
 }

@@ -12,7 +12,7 @@
 
 #include "../main.h"
 
-void	fun_fork(t_main *main, int iter)
+void	fun_fork(t_main *main, t_process *proc)
 {
 
 }

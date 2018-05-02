@@ -12,53 +12,53 @@
 
 #include "../main.h"
 
-void	choose_function_1(t_main *main)
+static void	choose_function_1(t_main *main, t_process *proc)
 {
-	// if (main->map[main->pc] == 1)
-	// 	fun_live(main);
-	if (main->map[main->pc] == 2)
-		fun_ld(main);
-	if (main->map[main->pc] == 3)
-		fun_st(main);
-	if (main->map[main->pc] == 4)
-		fun_add(main);
-	if (main->map[main->pc] == 5)
-		fun_sub(main);
-	if (main->map[main->pc] == 6)
-		fun_and(main);
-	if (main->map[main->pc] == 7)
-		fun_or(main);
-	if (main->map[main->pc] == 8)
-		fun_xor(main);
+	// if (main->map[proc->pc] == 1)
+	// 	fun_live(main, proc);
+	if (main->map[proc->pc] == 2)
+		fun_ld(main, proc);
+	if (main->map[proc->pc] == 3)
+		fun_st(main, proc);
+	if (main->map[proc->pc] == 4)
+		fun_add(main, proc);
+	if (main->map[proc->pc] == 5)
+		fun_sub(main, proc);
+	if (main->map[proc->pc] == 6)
+		fun_and(main, proc);
+	if (main->map[proc->pc] == 7)
+		fun_or(main, proc);
+	if (main->map[proc->pc] == 8)
+		fun_xor(main, proc);
 }
 
-void	choose_function_2(t_main *main)
+static void	choose_function_2(t_main *main, t_process *proc)
 {
-	if (main->map[main->pc] == 9)
-		fun_zjmp(main);
-	if (main->map[main->pc] == 10)
-		fun_ldi(main);
-	if (main->map[main->pc] == 11)
-		fun_sti(main);
-	// else if (main->map[main->pc] == 12)
-	// 	fun_fork(main);
-	if (main->map[main->pc] == 13)
-		fun_lld(main);
-	if (main->map[main->pc] == 14)
-		fun_lldi(main);
-	// else if (main->map[main->pc] == 15)
-	// 	fun_lfork(main);
-	else if (main->map[main->pc] == 16)
-		fun_aff(main);
+	if (main->map[proc->pc] == 9)
+		fun_zjmp(main, proc);
+	if (main->map[proc->pc] == 10)
+		fun_ldi(main, proc);
+	if (main->map[proc->pc] == 11)
+		fun_sti(main, proc);
+	// else if (main->map[proc->pc] == 12)
+	// 	fun_fork(main, proc);
+	if (main->map[proc->pc] == 13)
+		fun_lld(main, proc);
+	if (main->map[proc->pc] == 14)
+		fun_lldi(main, proc);
+	// else if (main->map[proc->pc] == 15)
+	// 	fun_lfork(main, proc);
+	else if (main->map[proc->pc] == 16)
+		fun_aff(main, proc);
 }
 
 
-void    ft_implement_command(t_main *main)
+void    ft_implement_command(t_main *main, t_process *proc)
 {
-    if (main->map[main->pc] >= 1 && main->map[main->pc] < 9)
-        choose_function_1(main);
-    else if (main->map[main->pc] >=9 && main->map[main->pc] <= 16)
-        choose_function_2(main);
+    if (main->map[proc->pc] >= 1 && main->map[proc->pc] < 9)
+        choose_function_1(main, proc);
+    else if (main->map[proc->pc] >=9 && main->map[proc->pc] <= 16)
+        choose_function_2(main, proc);
 }
 
 

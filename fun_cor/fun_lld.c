@@ -16,7 +16,7 @@
 ** для T_IND не определен способ записи
 */
 
-static	void	fun_lld_second_dir(t_main *main)
+static	void	fun_lld_second_dir(t_main *main, t_process *proc)
 {
 	int		i;
 	int		res;
@@ -32,7 +32,7 @@ static	void	fun_lld_second_dir(t_main *main)
 	num_reg = main->ready_arg[1][1];
 	while (i--)
 	{
-		main->rg[num_reg][i] = res;
+		proc->rg[num_reg][i] = res;
 		res = res >> 8;
 	}
 }
@@ -41,7 +41,7 @@ static	void	fun_lld_second_dir(t_main *main)
 ** не понятно в какую ячейку надо делать запись ? T_IND !!!!!!!!!!!!!!!!!!!!!!
 */
 
-static	void	fun_lld_second_ind(t_main *main)
+static	void	fun_lld_second_ind(t_main *main, t_process *proc)
 {
 	int		carry;
 	int		step;
@@ -57,7 +57,7 @@ static	void	fun_lld_second_ind(t_main *main)
 	while (r < 2)
 	{
 		res = res << 8;
-		res = res | main->map[main->pc + step++];
+		res = res | main->map[proc->pc + step++];
 		r++;
 	}
 	if (res)
@@ -67,18 +67,18 @@ static	void	fun_lld_second_ind(t_main *main)
 	r = 0;
 	while (r < 4)
 	{
-		main->rg[num_reg][r] = main->rg[num_reg][r] << 8;
-		main->rg[num_reg][r] = main->rg[num_reg][r] | res;
+		proc->rg[num_reg][r] = proc->rg[num_reg][r] << 8;
+		proc->rg[num_reg][r] = proc->rg[num_reg][r] | res;
 		r++;
 	}
 }
 
-void	fun_lld(t_main *main)
+void	fun_lld(t_main *main, t_process *proc)
 {
-	ready_arg(main);
+	ready_arg(main, proc);
 	if (main->arg[0] == 2)
-		fun_lld_second_dir(main);
+		fun_lld_second_dir(main, proc);
 	if (main->arg[0] == 3)
-		fun_lld_second_ind(main);
+		fun_lld_second_ind(main, proc);
 }
 

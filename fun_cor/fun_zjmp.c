@@ -16,7 +16,7 @@
 ** CARRY 
 */
 
-void	fun_zjmp(t_main *main)
+void	fun_zjmp(t_main *main, t_process *proc)
 {
 	int		carry;
 	int		num;
@@ -25,9 +25,9 @@ void	fun_zjmp(t_main *main)
 	num = 0;
 	if (carry == 1)
 	{
-		ready_arg(main);
+		ready_arg(main, proc);
 		num = main->ready_arg[0][0] % IDX_MOD;
-		main->pc = main->pc + num;
+		proc->pc = proc->pc + num;
 	}
 
 }

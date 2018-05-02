@@ -12,7 +12,7 @@
 
 #include "../main.h"
 
-static	void	fun_st_second_reg(t_main *main)
+static	void	fun_st_second_reg(t_main *main, t_process *proc)
 {
 	int		r;
 	int		res;
@@ -23,7 +23,7 @@ static	void	fun_st_second_reg(t_main *main)
 	num_reg = main->ready_arg[1][1];
 	while (r--)
 	{
-		main->rg[num_reg][r] = res;
+		proc->rg[num_reg][r] = res;
 		res = res >> 8;
 	}
 }
@@ -32,16 +32,16 @@ static	void	fun_st_second_reg(t_main *main)
 ** не понятно в какую ячейку надо делать запись ? T_REG или T_DIR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
-static	void	fun_st_second_ind(t_main *main)
+static	void	fun_st_second_ind(t_main *main, t_process *proc)
 {
-	main->pc = main->pc; // ????? что тут может быть ячейкой?регистр или дир ?? или все 4 ячейки;
+	proc->pc = proc->pc; // ????? что тут может быть ячейкой?регистр или дир ?? или все 4 ячейки;
 }
 
-void	fun_st(t_main *main)
+void	fun_st(t_main *main, t_process *proc)
 {
-	ready_arg(main);
+	ready_arg(main, proc);
 	if (main->arg[1] == 1)
-		fun_st_second_reg(main);
+		fun_st_second_reg(main, proc);
 	if (main->arg[1] == 3)
-		fun_st_second_ind(main);
+		fun_st_second_ind(main, proc);
 }

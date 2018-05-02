@@ -21,7 +21,7 @@
 //    	num_reg = main->ready_arg[2][1];
 //     while (i--)
 //     {
-//         main->rg[num_reg][i] = res;
+//         proc->rg[num_reg][i] = res;
 //         res = res >> 8;
 //     }
 // }
@@ -31,7 +31,7 @@
 // 	int 	i;
 // 	int 	curr;
 
-// 	curr = main->pc;
+// 	curr = proc->pc;
 // 	i = 4;
 // 	while (i--)
 // 	{
@@ -44,11 +44,11 @@
 // {
 // 	int		step;
 
-// 	step = main->pc + main->ready_arg[1][0] + main->ready_arg[2][0];
-//     CODE_OF_BOT[main->pc + step] = main->ready_arg[0][0];
+// 	step = proc->pc + main->ready_arg[1][0] + main->ready_arg[2][0];
+//     CODE_OF_BOT[proc->pc + step] = main->ready_arg[0][0];
 // }
 
-void    fun_or(t_main *main)
+void    fun_or(t_main *main, t_process *proc)
 {
     int     k;
     int     res;
@@ -57,7 +57,7 @@ void    fun_or(t_main *main)
     int     num_reg;
     
     test_show_me_label_arg(main);
-    ready_arg(main);
+    ready_arg(main, proc);
     res = main->ready_arg[0][0] | main->ready_arg[1][0];
     if (res)
         carry = 0;
@@ -67,7 +67,7 @@ void    fun_or(t_main *main)
     num_reg = main->ready_arg[2][1];
     while (i--)
     {
-        main->rg[num_reg][i] = res;
+        proc->rg[num_reg][i] = res;
         res = res >> 8;
     }
     test_show_me_label_arg(main);

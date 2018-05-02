@@ -14,9 +14,9 @@
 #include "../main.h"
 
 /*
-** main->map[main->pc + 1 + k]; прибавление 1 должно быть в виде переменной которая покажет есть ли кожэдж у данной функции
+** main->map[proc->pc + 1 + k]; прибавление 1 должно быть в виде переменной которая покажет есть ли кожэдж у данной функции
 */
-void     ready_arg(t_main *main)
+void     ready_arg(t_main *main, t_process *proc)
 {
     int     i;
     int     k;
@@ -40,13 +40,13 @@ void     ready_arg(t_main *main)
     {
         if (main->arg[i] == 1) 		 // (если аргумент регист в котором надо взять значение внутри)
         {
-            num = main->map[main->pc];
+            num = main->map[proc->pc];
             r = 0;
-            main->ready_arg[i][1] = main->map[main->pc + 1 + k];  // записать номер T_REG 
+            main->ready_arg[i][1] = main->map[proc->pc + 1 + k];  // записать номер T_REG 
             while (r < 4)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                test_2 = main->rg[num - 1][r];
+                test_2 = proc->rg[num - 1][r];
                 main->ready_arg[i][0] = main->ready_arg[i][0] | test_2;
                 r++;
             }
@@ -55,12 +55,12 @@ void     ready_arg(t_main *main)
         }
         else if (main->arg[i] == 2)
         {
-            num = main->map[main->pc];   // беру текущею позицию на карте;
+            num = main->map[proc->pc];   // беру текущею позицию на карте;
             num = main->label[num][3];     // эту позицию вставляю в поиск строки в лейбл и беру размер T_DIR // num = РАЗМЕР T_DIR
             while (num--)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[main->pc + 1 + k];  // 0b 68 00 00 00 01
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + k];  // 0b 68 00 00 00 01
                 k++;
             }
             // dprintf(FD, "main->ready->arg[%i][0] = %d\n", i, main->ready_arg[i][0]);
@@ -68,50 +68,50 @@ void     ready_arg(t_main *main)
         /*
         ** для функции ldi надо считать T_IND "4 байта считаные с позиции ((T_IND % IDX_MOD) плюс текущая позиция PC)."
         */
-        else if (main->arg[i] == 3 && (main->map[main->pc] == 2 || main->map[main->pc] == 3 || main->map[main->pc] == 10 || main->map[main->pc] == 11 || main->map[main->pc] == 14))
+        else if (main->arg[i] == 3 && (main->map[proc->pc] == 2 || main->map[proc->pc] == 3 || main->map[proc->pc] == 10 || main->map[proc->pc] == 11 || main->map[proc->pc] == 14))
         {
             num = 0;
-            num = num | main->map[main->pc + 1 + k++];
+            num = num | main->map[proc->pc + 1 + k++];
             num = num << 8;
-            num = num | main->map[main->pc + 1 + k++];
+            num = num | main->map[proc->pc + 1 + k++];
             num = num % IDX_MOD;
             r = 0;
             while (r < 4)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[main->pc + 1 + num++]; 
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + num++]; 
                 r++;
             }
         }
         /*
         ** отдельное условие для ld КАК ОН ТУТ ПЕРЕЗАПИШЕТСЯ
         */
-        else if (main->arg[i] == 3 && (main->map[main->pc] == 2))
+        else if (main->arg[i] == 3 && (main->map[proc->pc] == 2))
         {
             num = 0;
-            num = num | main->map[main->pc + 1 + k++];
+            num = num | main->map[proc->pc + 1 + k++];
             num = num << 8;
-            num = num | main->map[main->pc + 1 + k++];
+            num = num | main->map[proc->pc + 1 + k++];
             num = num % IDX_MOD; // ключевой момоент IND для этой функции
             r = 0;
             while (r < 4)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[main->pc + 1 + num++]; 
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + num++]; 
                 r++;
             }
         }
         else if (main->arg[i] == 3)
         {
         	num = 0;
-        	num = num | main->map[main->pc + 1 + k++];
+        	num = num | main->map[proc->pc + 1 + k++];
         	num = num << 8;
-        	num = num | main->map[main->pc + 1 + k++];
+        	num = num | main->map[proc->pc + 1 + k++];
         	r = 0;
         	while (r < 4)
         	{
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[main->pc + 1 + num++]; 
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + num++]; 
                 r++;
         	}
         }
@@ -119,11 +119,13 @@ void     ready_arg(t_main *main)
     }
 }
 
-int     ft_step_pc(t_main *main, int num)
+int     ft_step_pc(t_main *main, int num, t_process *proc)
 {
 	int     step;
 	
-	step = 0;
+	step = 1;
+    if (proc->pc == 0)
+        step = 2;
 	if (main->arg[0])
 	{
 		if (main->arg[0] == 1)
@@ -149,10 +151,12 @@ int     ft_step_pc(t_main *main, int num)
 		if (main->arg[2] == 2)
 			step += main->label[num][3];
 	}
+
+    //dprintf(FD, "ft_step_pc %d\n ", step);
 	main->arg[0] = 0;
 	main->arg[1] = 0;
 	main->arg[2] = 0;
-    printf(">>>>>>>step<<<<<<:%d\n", step);
+    //printf(">>>>>>>step<<<<<<:%d\n", step);
 	return (step);
 }
 
@@ -166,6 +170,7 @@ void    check_map(t_main *main, uint8_t num)
 	{
 		if ((i == 1 || i == 2))
 		{
+            // printf("main->arg[0] %d", main->arg[0]);
 			main->arg[0] = main->arg[0] << 1;
 			main->arg[0] += (num >= 128) ? 1 : 0;
 		}
@@ -185,4 +190,38 @@ void    check_map(t_main *main, uint8_t num)
 		i++;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
