@@ -93,8 +93,9 @@ void					ft_table_label(t_main *main);//kmykhail
 void					valid_bots(t_main *main, int ac, char **av);//kmykhail
 void					check_map(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
-void					lst_newchanges(t_main *main, t_process *proc, int i, int fin);
-t_process				*lst_newproc(t_main *main, int pl_indx);
+void					lst_newchanges(t_main *main, t_process *proc, int i, int fin);//kmykhail
+t_process				*lst_newproc(t_main *main, int pl_indx);//kmykhail
+void					init_players(t_main *main, int indx);//kmykhail
 /*
 ** FUNCTION 
 */

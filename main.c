@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   common_header.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kshyshki <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kmykhail <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 12:05:14 by kshyshki          #+#    #+#             */
 /*   Updated: 2018/04/18 12:05:16 by kshyshki         ###   ########.fr       */
@@ -90,6 +90,18 @@ static void	init_main(t_main *main)
 }
 */
 
+void	init_players(t_main *main, int indx)
+{
+	main->players[indx] = (t_player*)malloc(sizeof(t_player));
+	main->players[indx]->bot_name = 0;
+	main->players[indx]->comm = 0;
+	main->players[indx]->nbr_pl = (!indx) ? -1 : (indx - ((indx * 2) + 1));
+	main->players[indx]->ll_cycle = 0;
+	main->players[indx]->live_cur_per = 0;
+	main->players[indx]->live_last_per = 0;
+	main->players[indx]->cnt_bot = 0;
+}
+
 void	init_struct(t_main *main, int argc)
 {
 	int i;
@@ -103,15 +115,8 @@ void	init_struct(t_main *main, int argc)
 	main->finish = 0;
 	while (i < MAX_PLAYERS)
 	{
-		main->players[i] = (t_player*)malloc(sizeof(t_player));
-		main->players[i]->bot_name = 0;
-		main->players[i]->comm = 0;
-		main->players[i]->nbr_pl = 0;
-		main->players[i]->ll_cycle = 0;
-		main->players[i]->live_cur_per = 0;
-		main->players[i]->live_last_per = 0;
-		main->players[i]->cnt_bot = 0;
-		main->filename[i++] = NULL;
+		main->filename[i] = NULL;
+		main->players[i++] = NULL;
 	}
     main->filename[i] = NULL;
 	main->lst_proc = NULL;
@@ -122,8 +127,6 @@ void	init_struct(t_main *main, int argc)
 	ft_table_label(main);
 	ft_memset(main->map, 0, MEM_SIZE);
 	ft_memset(main->arg, 0, 3);
-	/*swhile (c < MEM_SIZE)
-		main->map[c++] = 0;*/
 }
 
 int		main(int argc, char **argv)

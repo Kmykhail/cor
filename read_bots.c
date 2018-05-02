@@ -131,8 +131,7 @@ void	valid_bots(t_main *main, int ac, char **av)
 	find_idex_to_start(main);
 	while (main->filename[i])
 	{
-		//printf("filename %s\n", main->filename[i]);
-		main->players[i]->nbr_pl = (!i) ? -1 : (i - ((i * 2) + 1));
+		init_players(main, i);
 		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
 			ft_print_error(1);
 		read_bots(main, main->players[i], i,  fd);
