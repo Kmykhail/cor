@@ -60,6 +60,7 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	t_process	*head;
 
 	head = *proc;
+	main->cur_cycle++;
     dprintf(FD, "//////////////////////////////////////////\n");
 	while (head)
 	{
@@ -85,7 +86,6 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 			return (0);
 		head = head->next;
 	}
-	main->cur_cycle++;
 	return (1);
 }
 
