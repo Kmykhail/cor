@@ -61,24 +61,23 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 
 	head = *proc;
 	main->cur_cycle++;
-    dprintf(FD, "//////////////////////////////////////////\n");
 	while (head)
 	{
-		dprintf(FD, "WHAT_COMMAND:%d\n", main->map[head->index]);
+		//dprintf(FD, "WHAT_COMMAND:%d\n", main->map[head->index]);
 		if (main->map[head->index] >= 16)
 			ft_print_error(1);
-		dprintf(FD, "CHE_TO TAM\n");
+		//dprintf(FD, "CHE_TO TAM\n");
 		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
 		&& main->map[head->index] != 15 && main->map[head->index] != 16)
 		{
-			dprintf(FD, "COMMAND_A:%d\n", main->map[head->index]);
+			//dprintf(FD, "COMMAND_A:%d\n", main->map[head->index]);
 			check_codage(main, main->map[head->index + 1]);
 			ft_implement_command(main, head);
 		}
 		else if (main->map[head->index] == 1 || main->map[head->index] == 12 \
 		|| main->map[head->index] == 15 || main->map[head->index] == 16)
 		{
-			dprintf(FD, "COMMAND_B:%d\n", main->map[head->index]);
+			//dprintf(FD, "COMMAND_B:%d\n", main->map[head->index]);
 			ft_implement_command(main, head);
             break ;
 		}

@@ -96,7 +96,8 @@ void					valid_bots(t_main *main, int ac, char **av);//kmykhail
 void					check_codage(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
 void					lst_newchanges(t_main *main, t_process *proc, int i, int fin, int ch);
-t_process				*lst_newproc(t_main *main, int pl_indx);
+void					free_process(t_process **proc);
+t_process				*lst_newproc(t_main *main, int pl_indx);//kmykhail
 /*
 ** FUNCTION 
 */

@@ -140,16 +140,13 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	init_struct(&main, argc);
-	main.ddddd = open("/Users/ozharko/Desktop/cor-master/fun_cor/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
-	/*while (main.lst_changes)
+	/*while (main.lst_proc)
 	{
-		printf("start:%d ", main.lst_changes->start);
-		printf(" end:%d name:%x\n", main.lst_changes->finish, main.lst_changes->process->nbr_pl);
-		printf("proc->index: %d\n", main.lst_changes->process->index);
-		printf("\n");
-		main.lst_changes = main.lst_changes->next;
+		printf(">>>>name:%x rg[0][0]:%x\n", main.lst_proc->nbr_pl, main.lst_proc->rg[0][3]);
+		main.lst_proc = main.lst_proc->next;
 	}
 	exit(1);*/
 	while (++i < argc)

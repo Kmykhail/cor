@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kmykhail/Desktop/kostya_2_1
+CMAKE_SOURCE_DIR = /Users/kmykhail/corewar_kmykhail
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/kmykhail/corewar_kmykhail/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/CMakeFiles /Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kmykhail/corewar_kmykhail/cmake-build-debug/CMakeFiles /Users/kmykhail/corewar_kmykhail/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kmykhail/Desktop/kostya_2_1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kmykhail/corewar_kmykhail/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named kostya_2_1
+# Target rules for targets named corewar_kmykhail
 
 # Build rule for target.
-kostya_2_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kostya_2_1
-.PHONY : kostya_2_1
+corewar_kmykhail: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 corewar_kmykhail
+.PHONY : corewar_kmykhail
 
 # fast build rule for target.
-kostya_2_1/fast:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/build
-.PHONY : kostya_2_1/fast
+corewar_kmykhail/fast:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/build
+.PHONY : corewar_kmykhail/fast
 
 fun_cor/fun_add.o: fun_cor/fun_add.c.o
 
@@ -129,7 +129,7 @@ fun_cor/fun_add.o: fun_cor/fun_add.c.o
 
 # target to build an object file
 fun_cor/fun_add.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_add.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_add.c.o
 .PHONY : fun_cor/fun_add.c.o
 
 fun_cor/fun_add.i: fun_cor/fun_add.c.i
@@ -138,7 +138,7 @@ fun_cor/fun_add.i: fun_cor/fun_add.c.i
 
 # target to preprocess a source file
 fun_cor/fun_add.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_add.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_add.c.i
 .PHONY : fun_cor/fun_add.c.i
 
 fun_cor/fun_add.s: fun_cor/fun_add.c.s
@@ -147,7 +147,7 @@ fun_cor/fun_add.s: fun_cor/fun_add.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_add.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_add.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_add.c.s
 .PHONY : fun_cor/fun_add.c.s
 
 fun_cor/fun_aff.o: fun_cor/fun_aff.c.o
@@ -156,7 +156,7 @@ fun_cor/fun_aff.o: fun_cor/fun_aff.c.o
 
 # target to build an object file
 fun_cor/fun_aff.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_aff.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_aff.c.o
 .PHONY : fun_cor/fun_aff.c.o
 
 fun_cor/fun_aff.i: fun_cor/fun_aff.c.i
@@ -165,7 +165,7 @@ fun_cor/fun_aff.i: fun_cor/fun_aff.c.i
 
 # target to preprocess a source file
 fun_cor/fun_aff.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_aff.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_aff.c.i
 .PHONY : fun_cor/fun_aff.c.i
 
 fun_cor/fun_aff.s: fun_cor/fun_aff.c.s
@@ -174,7 +174,7 @@ fun_cor/fun_aff.s: fun_cor/fun_aff.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_aff.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_aff.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_aff.c.s
 .PHONY : fun_cor/fun_aff.c.s
 
 fun_cor/fun_and.o: fun_cor/fun_and.c.o
@@ -183,7 +183,7 @@ fun_cor/fun_and.o: fun_cor/fun_and.c.o
 
 # target to build an object file
 fun_cor/fun_and.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_and.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_and.c.o
 .PHONY : fun_cor/fun_and.c.o
 
 fun_cor/fun_and.i: fun_cor/fun_and.c.i
@@ -192,7 +192,7 @@ fun_cor/fun_and.i: fun_cor/fun_and.c.i
 
 # target to preprocess a source file
 fun_cor/fun_and.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_and.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_and.c.i
 .PHONY : fun_cor/fun_and.c.i
 
 fun_cor/fun_and.s: fun_cor/fun_and.c.s
@@ -201,7 +201,7 @@ fun_cor/fun_and.s: fun_cor/fun_and.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_and.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_and.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_and.c.s
 .PHONY : fun_cor/fun_and.c.s
 
 fun_cor/fun_fork.o: fun_cor/fun_fork.c.o
@@ -210,7 +210,7 @@ fun_cor/fun_fork.o: fun_cor/fun_fork.c.o
 
 # target to build an object file
 fun_cor/fun_fork.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_fork.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_fork.c.o
 .PHONY : fun_cor/fun_fork.c.o
 
 fun_cor/fun_fork.i: fun_cor/fun_fork.c.i
@@ -219,7 +219,7 @@ fun_cor/fun_fork.i: fun_cor/fun_fork.c.i
 
 # target to preprocess a source file
 fun_cor/fun_fork.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_fork.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_fork.c.i
 .PHONY : fun_cor/fun_fork.c.i
 
 fun_cor/fun_fork.s: fun_cor/fun_fork.c.s
@@ -228,7 +228,7 @@ fun_cor/fun_fork.s: fun_cor/fun_fork.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_fork.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_fork.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_fork.c.s
 .PHONY : fun_cor/fun_fork.c.s
 
 fun_cor/fun_ld.o: fun_cor/fun_ld.c.o
@@ -237,7 +237,7 @@ fun_cor/fun_ld.o: fun_cor/fun_ld.c.o
 
 # target to build an object file
 fun_cor/fun_ld.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_ld.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_ld.c.o
 .PHONY : fun_cor/fun_ld.c.o
 
 fun_cor/fun_ld.i: fun_cor/fun_ld.c.i
@@ -246,7 +246,7 @@ fun_cor/fun_ld.i: fun_cor/fun_ld.c.i
 
 # target to preprocess a source file
 fun_cor/fun_ld.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_ld.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_ld.c.i
 .PHONY : fun_cor/fun_ld.c.i
 
 fun_cor/fun_ld.s: fun_cor/fun_ld.c.s
@@ -255,7 +255,7 @@ fun_cor/fun_ld.s: fun_cor/fun_ld.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_ld.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_ld.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_ld.c.s
 .PHONY : fun_cor/fun_ld.c.s
 
 fun_cor/fun_ldi.o: fun_cor/fun_ldi.c.o
@@ -264,7 +264,7 @@ fun_cor/fun_ldi.o: fun_cor/fun_ldi.c.o
 
 # target to build an object file
 fun_cor/fun_ldi.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_ldi.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_ldi.c.o
 .PHONY : fun_cor/fun_ldi.c.o
 
 fun_cor/fun_ldi.i: fun_cor/fun_ldi.c.i
@@ -273,7 +273,7 @@ fun_cor/fun_ldi.i: fun_cor/fun_ldi.c.i
 
 # target to preprocess a source file
 fun_cor/fun_ldi.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_ldi.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_ldi.c.i
 .PHONY : fun_cor/fun_ldi.c.i
 
 fun_cor/fun_ldi.s: fun_cor/fun_ldi.c.s
@@ -282,8 +282,35 @@ fun_cor/fun_ldi.s: fun_cor/fun_ldi.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_ldi.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_ldi.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_ldi.c.s
 .PHONY : fun_cor/fun_ldi.c.s
+
+fun_cor/fun_live.o: fun_cor/fun_live.c.o
+
+.PHONY : fun_cor/fun_live.o
+
+# target to build an object file
+fun_cor/fun_live.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_live.c.o
+.PHONY : fun_cor/fun_live.c.o
+
+fun_cor/fun_live.i: fun_cor/fun_live.c.i
+
+.PHONY : fun_cor/fun_live.i
+
+# target to preprocess a source file
+fun_cor/fun_live.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_live.c.i
+.PHONY : fun_cor/fun_live.c.i
+
+fun_cor/fun_live.s: fun_cor/fun_live.c.s
+
+.PHONY : fun_cor/fun_live.s
+
+# target to generate assembly for a file
+fun_cor/fun_live.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_live.c.s
+.PHONY : fun_cor/fun_live.c.s
 
 fun_cor/fun_lld.o: fun_cor/fun_lld.c.o
 
@@ -291,7 +318,7 @@ fun_cor/fun_lld.o: fun_cor/fun_lld.c.o
 
 # target to build an object file
 fun_cor/fun_lld.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_lld.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_lld.c.o
 .PHONY : fun_cor/fun_lld.c.o
 
 fun_cor/fun_lld.i: fun_cor/fun_lld.c.i
@@ -300,7 +327,7 @@ fun_cor/fun_lld.i: fun_cor/fun_lld.c.i
 
 # target to preprocess a source file
 fun_cor/fun_lld.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_lld.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_lld.c.i
 .PHONY : fun_cor/fun_lld.c.i
 
 fun_cor/fun_lld.s: fun_cor/fun_lld.c.s
@@ -309,7 +336,7 @@ fun_cor/fun_lld.s: fun_cor/fun_lld.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_lld.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_lld.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_lld.c.s
 .PHONY : fun_cor/fun_lld.c.s
 
 fun_cor/fun_lldi.o: fun_cor/fun_lldi.c.o
@@ -318,7 +345,7 @@ fun_cor/fun_lldi.o: fun_cor/fun_lldi.c.o
 
 # target to build an object file
 fun_cor/fun_lldi.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_lldi.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_lldi.c.o
 .PHONY : fun_cor/fun_lldi.c.o
 
 fun_cor/fun_lldi.i: fun_cor/fun_lldi.c.i
@@ -327,7 +354,7 @@ fun_cor/fun_lldi.i: fun_cor/fun_lldi.c.i
 
 # target to preprocess a source file
 fun_cor/fun_lldi.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_lldi.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_lldi.c.i
 .PHONY : fun_cor/fun_lldi.c.i
 
 fun_cor/fun_lldi.s: fun_cor/fun_lldi.c.s
@@ -336,7 +363,7 @@ fun_cor/fun_lldi.s: fun_cor/fun_lldi.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_lldi.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_lldi.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_lldi.c.s
 .PHONY : fun_cor/fun_lldi.c.s
 
 fun_cor/fun_or.o: fun_cor/fun_or.c.o
@@ -345,7 +372,7 @@ fun_cor/fun_or.o: fun_cor/fun_or.c.o
 
 # target to build an object file
 fun_cor/fun_or.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_or.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_or.c.o
 .PHONY : fun_cor/fun_or.c.o
 
 fun_cor/fun_or.i: fun_cor/fun_or.c.i
@@ -354,7 +381,7 @@ fun_cor/fun_or.i: fun_cor/fun_or.c.i
 
 # target to preprocess a source file
 fun_cor/fun_or.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_or.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_or.c.i
 .PHONY : fun_cor/fun_or.c.i
 
 fun_cor/fun_or.s: fun_cor/fun_or.c.s
@@ -363,7 +390,7 @@ fun_cor/fun_or.s: fun_cor/fun_or.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_or.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_or.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_or.c.s
 .PHONY : fun_cor/fun_or.c.s
 
 fun_cor/fun_st.o: fun_cor/fun_st.c.o
@@ -372,7 +399,7 @@ fun_cor/fun_st.o: fun_cor/fun_st.c.o
 
 # target to build an object file
 fun_cor/fun_st.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_st.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_st.c.o
 .PHONY : fun_cor/fun_st.c.o
 
 fun_cor/fun_st.i: fun_cor/fun_st.c.i
@@ -381,7 +408,7 @@ fun_cor/fun_st.i: fun_cor/fun_st.c.i
 
 # target to preprocess a source file
 fun_cor/fun_st.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_st.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_st.c.i
 .PHONY : fun_cor/fun_st.c.i
 
 fun_cor/fun_st.s: fun_cor/fun_st.c.s
@@ -390,7 +417,7 @@ fun_cor/fun_st.s: fun_cor/fun_st.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_st.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_st.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_st.c.s
 .PHONY : fun_cor/fun_st.c.s
 
 fun_cor/fun_sti.o: fun_cor/fun_sti.c.o
@@ -399,7 +426,7 @@ fun_cor/fun_sti.o: fun_cor/fun_sti.c.o
 
 # target to build an object file
 fun_cor/fun_sti.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_sti.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_sti.c.o
 .PHONY : fun_cor/fun_sti.c.o
 
 fun_cor/fun_sti.i: fun_cor/fun_sti.c.i
@@ -408,7 +435,7 @@ fun_cor/fun_sti.i: fun_cor/fun_sti.c.i
 
 # target to preprocess a source file
 fun_cor/fun_sti.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_sti.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_sti.c.i
 .PHONY : fun_cor/fun_sti.c.i
 
 fun_cor/fun_sti.s: fun_cor/fun_sti.c.s
@@ -417,7 +444,7 @@ fun_cor/fun_sti.s: fun_cor/fun_sti.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_sti.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_sti.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_sti.c.s
 .PHONY : fun_cor/fun_sti.c.s
 
 fun_cor/fun_sub.o: fun_cor/fun_sub.c.o
@@ -426,7 +453,7 @@ fun_cor/fun_sub.o: fun_cor/fun_sub.c.o
 
 # target to build an object file
 fun_cor/fun_sub.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_sub.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_sub.c.o
 .PHONY : fun_cor/fun_sub.c.o
 
 fun_cor/fun_sub.i: fun_cor/fun_sub.c.i
@@ -435,7 +462,7 @@ fun_cor/fun_sub.i: fun_cor/fun_sub.c.i
 
 # target to preprocess a source file
 fun_cor/fun_sub.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_sub.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_sub.c.i
 .PHONY : fun_cor/fun_sub.c.i
 
 fun_cor/fun_sub.s: fun_cor/fun_sub.c.s
@@ -444,7 +471,7 @@ fun_cor/fun_sub.s: fun_cor/fun_sub.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_sub.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_sub.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_sub.c.s
 .PHONY : fun_cor/fun_sub.c.s
 
 fun_cor/fun_xor.o: fun_cor/fun_xor.c.o
@@ -453,7 +480,7 @@ fun_cor/fun_xor.o: fun_cor/fun_xor.c.o
 
 # target to build an object file
 fun_cor/fun_xor.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_xor.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_xor.c.o
 .PHONY : fun_cor/fun_xor.c.o
 
 fun_cor/fun_xor.i: fun_cor/fun_xor.c.i
@@ -462,7 +489,7 @@ fun_cor/fun_xor.i: fun_cor/fun_xor.c.i
 
 # target to preprocess a source file
 fun_cor/fun_xor.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_xor.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_xor.c.i
 .PHONY : fun_cor/fun_xor.c.i
 
 fun_cor/fun_xor.s: fun_cor/fun_xor.c.s
@@ -471,7 +498,7 @@ fun_cor/fun_xor.s: fun_cor/fun_xor.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_xor.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_xor.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_xor.c.s
 .PHONY : fun_cor/fun_xor.c.s
 
 fun_cor/fun_zjmp.o: fun_cor/fun_zjmp.c.o
@@ -480,7 +507,7 @@ fun_cor/fun_zjmp.o: fun_cor/fun_zjmp.c.o
 
 # target to build an object file
 fun_cor/fun_zjmp.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_zjmp.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_zjmp.c.o
 .PHONY : fun_cor/fun_zjmp.c.o
 
 fun_cor/fun_zjmp.i: fun_cor/fun_zjmp.c.i
@@ -489,7 +516,7 @@ fun_cor/fun_zjmp.i: fun_cor/fun_zjmp.c.i
 
 # target to preprocess a source file
 fun_cor/fun_zjmp.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_zjmp.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_zjmp.c.i
 .PHONY : fun_cor/fun_zjmp.c.i
 
 fun_cor/fun_zjmp.s: fun_cor/fun_zjmp.c.s
@@ -498,8 +525,170 @@ fun_cor/fun_zjmp.s: fun_cor/fun_zjmp.c.s
 
 # target to generate assembly for a file
 fun_cor/fun_zjmp.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/fun_cor/fun_zjmp.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/fun_zjmp.c.s
 .PHONY : fun_cor/fun_zjmp.c.s
+
+fun_cor/implement_command.o: fun_cor/implement_command.c.o
+
+.PHONY : fun_cor/implement_command.o
+
+# target to build an object file
+fun_cor/implement_command.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/implement_command.c.o
+.PHONY : fun_cor/implement_command.c.o
+
+fun_cor/implement_command.i: fun_cor/implement_command.c.i
+
+.PHONY : fun_cor/implement_command.i
+
+# target to preprocess a source file
+fun_cor/implement_command.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/implement_command.c.i
+.PHONY : fun_cor/implement_command.c.i
+
+fun_cor/implement_command.s: fun_cor/implement_command.c.s
+
+.PHONY : fun_cor/implement_command.s
+
+# target to generate assembly for a file
+fun_cor/implement_command.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/implement_command.c.s
+.PHONY : fun_cor/implement_command.c.s
+
+fun_cor/process_current.o: fun_cor/process_current.c.o
+
+.PHONY : fun_cor/process_current.o
+
+# target to build an object file
+fun_cor/process_current.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/process_current.c.o
+.PHONY : fun_cor/process_current.c.o
+
+fun_cor/process_current.i: fun_cor/process_current.c.i
+
+.PHONY : fun_cor/process_current.i
+
+# target to preprocess a source file
+fun_cor/process_current.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/process_current.c.i
+.PHONY : fun_cor/process_current.c.i
+
+fun_cor/process_current.s: fun_cor/process_current.c.s
+
+.PHONY : fun_cor/process_current.s
+
+# target to generate assembly for a file
+fun_cor/process_current.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/process_current.c.s
+.PHONY : fun_cor/process_current.c.s
+
+fun_cor/table_label.o: fun_cor/table_label.c.o
+
+.PHONY : fun_cor/table_label.o
+
+# target to build an object file
+fun_cor/table_label.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/table_label.c.o
+.PHONY : fun_cor/table_label.c.o
+
+fun_cor/table_label.i: fun_cor/table_label.c.i
+
+.PHONY : fun_cor/table_label.i
+
+# target to preprocess a source file
+fun_cor/table_label.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/table_label.c.i
+.PHONY : fun_cor/table_label.c.i
+
+fun_cor/table_label.s: fun_cor/table_label.c.s
+
+.PHONY : fun_cor/table_label.s
+
+# target to generate assembly for a file
+fun_cor/table_label.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/table_label.c.s
+.PHONY : fun_cor/table_label.c.s
+
+fun_cor/test.o: fun_cor/test.c.o
+
+.PHONY : fun_cor/test.o
+
+# target to build an object file
+fun_cor/test.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/test.c.o
+.PHONY : fun_cor/test.c.o
+
+fun_cor/test.i: fun_cor/test.c.i
+
+.PHONY : fun_cor/test.i
+
+# target to preprocess a source file
+fun_cor/test.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/test.c.i
+.PHONY : fun_cor/test.c.i
+
+fun_cor/test.s: fun_cor/test.c.s
+
+.PHONY : fun_cor/test.s
+
+# target to generate assembly for a file
+fun_cor/test.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/fun_cor/test.c.s
+.PHONY : fun_cor/test.c.s
+
+init_visual_new.o: init_visual_new.c.o
+
+.PHONY : init_visual_new.o
+
+# target to build an object file
+init_visual_new.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/init_visual_new.c.o
+.PHONY : init_visual_new.c.o
+
+init_visual_new.i: init_visual_new.c.i
+
+.PHONY : init_visual_new.i
+
+# target to preprocess a source file
+init_visual_new.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/init_visual_new.c.i
+.PHONY : init_visual_new.c.i
+
+init_visual_new.s: init_visual_new.c.s
+
+.PHONY : init_visual_new.s
+
+# target to generate assembly for a file
+init_visual_new.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/init_visual_new.c.s
+.PHONY : init_visual_new.c.s
+
+init_vizual.o: init_vizual.c.o
+
+.PHONY : init_vizual.o
+
+# target to build an object file
+init_vizual.c.o:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/init_vizual.c.o
+.PHONY : init_vizual.c.o
+
+init_vizual.i: init_vizual.c.i
+
+.PHONY : init_vizual.i
+
+# target to preprocess a source file
+init_vizual.c.i:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/init_vizual.c.i
+.PHONY : init_vizual.c.i
+
+init_vizual.s: init_vizual.c.s
+
+.PHONY : init_vizual.s
+
+# target to generate assembly for a file
+init_vizual.c.s:
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/init_vizual.c.s
+.PHONY : init_vizual.c.s
 
 libft/ft_add_at_end.o: libft/ft_add_at_end.c.o
 
@@ -507,7 +696,7 @@ libft/ft_add_at_end.o: libft/ft_add_at_end.c.o
 
 # target to build an object file
 libft/ft_add_at_end.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_add_at_end.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_add_at_end.c.o
 .PHONY : libft/ft_add_at_end.c.o
 
 libft/ft_add_at_end.i: libft/ft_add_at_end.c.i
@@ -516,7 +705,7 @@ libft/ft_add_at_end.i: libft/ft_add_at_end.c.i
 
 # target to preprocess a source file
 libft/ft_add_at_end.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_add_at_end.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_add_at_end.c.i
 .PHONY : libft/ft_add_at_end.c.i
 
 libft/ft_add_at_end.s: libft/ft_add_at_end.c.s
@@ -525,7 +714,7 @@ libft/ft_add_at_end.s: libft/ft_add_at_end.c.s
 
 # target to generate assembly for a file
 libft/ft_add_at_end.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_add_at_end.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_add_at_end.c.s
 .PHONY : libft/ft_add_at_end.c.s
 
 libft/ft_addlast.o: libft/ft_addlast.c.o
@@ -534,7 +723,7 @@ libft/ft_addlast.o: libft/ft_addlast.c.o
 
 # target to build an object file
 libft/ft_addlast.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_addlast.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_addlast.c.o
 .PHONY : libft/ft_addlast.c.o
 
 libft/ft_addlast.i: libft/ft_addlast.c.i
@@ -543,7 +732,7 @@ libft/ft_addlast.i: libft/ft_addlast.c.i
 
 # target to preprocess a source file
 libft/ft_addlast.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_addlast.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_addlast.c.i
 .PHONY : libft/ft_addlast.c.i
 
 libft/ft_addlast.s: libft/ft_addlast.c.s
@@ -552,7 +741,7 @@ libft/ft_addlast.s: libft/ft_addlast.c.s
 
 # target to generate assembly for a file
 libft/ft_addlast.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_addlast.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_addlast.c.s
 .PHONY : libft/ft_addlast.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
@@ -561,7 +750,7 @@ libft/ft_atoi.o: libft/ft_atoi.c.o
 
 # target to build an object file
 libft/ft_atoi.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_atoi.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_atoi.c.o
 .PHONY : libft/ft_atoi.c.o
 
 libft/ft_atoi.i: libft/ft_atoi.c.i
@@ -570,7 +759,7 @@ libft/ft_atoi.i: libft/ft_atoi.c.i
 
 # target to preprocess a source file
 libft/ft_atoi.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_atoi.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_atoi.c.i
 .PHONY : libft/ft_atoi.c.i
 
 libft/ft_atoi.s: libft/ft_atoi.c.s
@@ -579,7 +768,7 @@ libft/ft_atoi.s: libft/ft_atoi.c.s
 
 # target to generate assembly for a file
 libft/ft_atoi.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_atoi.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_atoi.c.s
 .PHONY : libft/ft_atoi.c.s
 
 libft/ft_bzero.o: libft/ft_bzero.c.o
@@ -588,7 +777,7 @@ libft/ft_bzero.o: libft/ft_bzero.c.o
 
 # target to build an object file
 libft/ft_bzero.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_bzero.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_bzero.c.o
 .PHONY : libft/ft_bzero.c.o
 
 libft/ft_bzero.i: libft/ft_bzero.c.i
@@ -597,7 +786,7 @@ libft/ft_bzero.i: libft/ft_bzero.c.i
 
 # target to preprocess a source file
 libft/ft_bzero.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_bzero.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_bzero.c.i
 .PHONY : libft/ft_bzero.c.i
 
 libft/ft_bzero.s: libft/ft_bzero.c.s
@@ -606,7 +795,7 @@ libft/ft_bzero.s: libft/ft_bzero.c.s
 
 # target to generate assembly for a file
 libft/ft_bzero.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_bzero.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_bzero.c.s
 .PHONY : libft/ft_bzero.c.s
 
 libft/ft_ch_to_hex.o: libft/ft_ch_to_hex.c.o
@@ -615,7 +804,7 @@ libft/ft_ch_to_hex.o: libft/ft_ch_to_hex.c.o
 
 # target to build an object file
 libft/ft_ch_to_hex.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_ch_to_hex.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_ch_to_hex.c.o
 .PHONY : libft/ft_ch_to_hex.c.o
 
 libft/ft_ch_to_hex.i: libft/ft_ch_to_hex.c.i
@@ -624,7 +813,7 @@ libft/ft_ch_to_hex.i: libft/ft_ch_to_hex.c.i
 
 # target to preprocess a source file
 libft/ft_ch_to_hex.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_ch_to_hex.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_ch_to_hex.c.i
 .PHONY : libft/ft_ch_to_hex.c.i
 
 libft/ft_ch_to_hex.s: libft/ft_ch_to_hex.c.s
@@ -633,7 +822,7 @@ libft/ft_ch_to_hex.s: libft/ft_ch_to_hex.c.s
 
 # target to generate assembly for a file
 libft/ft_ch_to_hex.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_ch_to_hex.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_ch_to_hex.c.s
 .PHONY : libft/ft_ch_to_hex.c.s
 
 libft/ft_dell_arr_str.o: libft/ft_dell_arr_str.c.o
@@ -642,7 +831,7 @@ libft/ft_dell_arr_str.o: libft/ft_dell_arr_str.c.o
 
 # target to build an object file
 libft/ft_dell_arr_str.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_dell_arr_str.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_dell_arr_str.c.o
 .PHONY : libft/ft_dell_arr_str.c.o
 
 libft/ft_dell_arr_str.i: libft/ft_dell_arr_str.c.i
@@ -651,7 +840,7 @@ libft/ft_dell_arr_str.i: libft/ft_dell_arr_str.c.i
 
 # target to preprocess a source file
 libft/ft_dell_arr_str.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_dell_arr_str.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_dell_arr_str.c.i
 .PHONY : libft/ft_dell_arr_str.c.i
 
 libft/ft_dell_arr_str.s: libft/ft_dell_arr_str.c.s
@@ -660,7 +849,7 @@ libft/ft_dell_arr_str.s: libft/ft_dell_arr_str.c.s
 
 # target to generate assembly for a file
 libft/ft_dell_arr_str.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_dell_arr_str.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_dell_arr_str.c.s
 .PHONY : libft/ft_dell_arr_str.c.s
 
 libft/ft_hex_to_int.o: libft/ft_hex_to_int.c.o
@@ -669,7 +858,7 @@ libft/ft_hex_to_int.o: libft/ft_hex_to_int.c.o
 
 # target to build an object file
 libft/ft_hex_to_int.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_hex_to_int.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_hex_to_int.c.o
 .PHONY : libft/ft_hex_to_int.c.o
 
 libft/ft_hex_to_int.i: libft/ft_hex_to_int.c.i
@@ -678,7 +867,7 @@ libft/ft_hex_to_int.i: libft/ft_hex_to_int.c.i
 
 # target to preprocess a source file
 libft/ft_hex_to_int.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_hex_to_int.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_hex_to_int.c.i
 .PHONY : libft/ft_hex_to_int.c.i
 
 libft/ft_hex_to_int.s: libft/ft_hex_to_int.c.s
@@ -687,7 +876,7 @@ libft/ft_hex_to_int.s: libft/ft_hex_to_int.c.s
 
 # target to generate assembly for a file
 libft/ft_hex_to_int.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_hex_to_int.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_hex_to_int.c.s
 .PHONY : libft/ft_hex_to_int.c.s
 
 libft/ft_is_valid_hex.o: libft/ft_is_valid_hex.c.o
@@ -696,7 +885,7 @@ libft/ft_is_valid_hex.o: libft/ft_is_valid_hex.c.o
 
 # target to build an object file
 libft/ft_is_valid_hex.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_is_valid_hex.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_is_valid_hex.c.o
 .PHONY : libft/ft_is_valid_hex.c.o
 
 libft/ft_is_valid_hex.i: libft/ft_is_valid_hex.c.i
@@ -705,7 +894,7 @@ libft/ft_is_valid_hex.i: libft/ft_is_valid_hex.c.i
 
 # target to preprocess a source file
 libft/ft_is_valid_hex.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_is_valid_hex.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_is_valid_hex.c.i
 .PHONY : libft/ft_is_valid_hex.c.i
 
 libft/ft_is_valid_hex.s: libft/ft_is_valid_hex.c.s
@@ -714,7 +903,7 @@ libft/ft_is_valid_hex.s: libft/ft_is_valid_hex.c.s
 
 # target to generate assembly for a file
 libft/ft_is_valid_hex.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_is_valid_hex.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_is_valid_hex.c.s
 .PHONY : libft/ft_is_valid_hex.c.s
 
 libft/ft_is_valid_nbr.o: libft/ft_is_valid_nbr.c.o
@@ -723,7 +912,7 @@ libft/ft_is_valid_nbr.o: libft/ft_is_valid_nbr.c.o
 
 # target to build an object file
 libft/ft_is_valid_nbr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_is_valid_nbr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_is_valid_nbr.c.o
 .PHONY : libft/ft_is_valid_nbr.c.o
 
 libft/ft_is_valid_nbr.i: libft/ft_is_valid_nbr.c.i
@@ -732,7 +921,7 @@ libft/ft_is_valid_nbr.i: libft/ft_is_valid_nbr.c.i
 
 # target to preprocess a source file
 libft/ft_is_valid_nbr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_is_valid_nbr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_is_valid_nbr.c.i
 .PHONY : libft/ft_is_valid_nbr.c.i
 
 libft/ft_is_valid_nbr.s: libft/ft_is_valid_nbr.c.s
@@ -741,7 +930,7 @@ libft/ft_is_valid_nbr.s: libft/ft_is_valid_nbr.c.s
 
 # target to generate assembly for a file
 libft/ft_is_valid_nbr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_is_valid_nbr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_is_valid_nbr.c.s
 .PHONY : libft/ft_is_valid_nbr.c.s
 
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
@@ -750,7 +939,7 @@ libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 # target to build an object file
 libft/ft_isalnum.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isalnum.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isalnum.c.o
 .PHONY : libft/ft_isalnum.c.o
 
 libft/ft_isalnum.i: libft/ft_isalnum.c.i
@@ -759,7 +948,7 @@ libft/ft_isalnum.i: libft/ft_isalnum.c.i
 
 # target to preprocess a source file
 libft/ft_isalnum.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isalnum.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isalnum.c.i
 .PHONY : libft/ft_isalnum.c.i
 
 libft/ft_isalnum.s: libft/ft_isalnum.c.s
@@ -768,7 +957,7 @@ libft/ft_isalnum.s: libft/ft_isalnum.c.s
 
 # target to generate assembly for a file
 libft/ft_isalnum.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isalnum.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isalnum.c.s
 .PHONY : libft/ft_isalnum.c.s
 
 libft/ft_isalpha.o: libft/ft_isalpha.c.o
@@ -777,7 +966,7 @@ libft/ft_isalpha.o: libft/ft_isalpha.c.o
 
 # target to build an object file
 libft/ft_isalpha.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isalpha.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isalpha.c.o
 .PHONY : libft/ft_isalpha.c.o
 
 libft/ft_isalpha.i: libft/ft_isalpha.c.i
@@ -786,7 +975,7 @@ libft/ft_isalpha.i: libft/ft_isalpha.c.i
 
 # target to preprocess a source file
 libft/ft_isalpha.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isalpha.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isalpha.c.i
 .PHONY : libft/ft_isalpha.c.i
 
 libft/ft_isalpha.s: libft/ft_isalpha.c.s
@@ -795,7 +984,7 @@ libft/ft_isalpha.s: libft/ft_isalpha.c.s
 
 # target to generate assembly for a file
 libft/ft_isalpha.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isalpha.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isalpha.c.s
 .PHONY : libft/ft_isalpha.c.s
 
 libft/ft_isascii.o: libft/ft_isascii.c.o
@@ -804,7 +993,7 @@ libft/ft_isascii.o: libft/ft_isascii.c.o
 
 # target to build an object file
 libft/ft_isascii.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isascii.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isascii.c.o
 .PHONY : libft/ft_isascii.c.o
 
 libft/ft_isascii.i: libft/ft_isascii.c.i
@@ -813,7 +1002,7 @@ libft/ft_isascii.i: libft/ft_isascii.c.i
 
 # target to preprocess a source file
 libft/ft_isascii.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isascii.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isascii.c.i
 .PHONY : libft/ft_isascii.c.i
 
 libft/ft_isascii.s: libft/ft_isascii.c.s
@@ -822,7 +1011,7 @@ libft/ft_isascii.s: libft/ft_isascii.c.s
 
 # target to generate assembly for a file
 libft/ft_isascii.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isascii.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isascii.c.s
 .PHONY : libft/ft_isascii.c.s
 
 libft/ft_isdigit.o: libft/ft_isdigit.c.o
@@ -831,7 +1020,7 @@ libft/ft_isdigit.o: libft/ft_isdigit.c.o
 
 # target to build an object file
 libft/ft_isdigit.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isdigit.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isdigit.c.o
 .PHONY : libft/ft_isdigit.c.o
 
 libft/ft_isdigit.i: libft/ft_isdigit.c.i
@@ -840,7 +1029,7 @@ libft/ft_isdigit.i: libft/ft_isdigit.c.i
 
 # target to preprocess a source file
 libft/ft_isdigit.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isdigit.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isdigit.c.i
 .PHONY : libft/ft_isdigit.c.i
 
 libft/ft_isdigit.s: libft/ft_isdigit.c.s
@@ -849,7 +1038,7 @@ libft/ft_isdigit.s: libft/ft_isdigit.c.s
 
 # target to generate assembly for a file
 libft/ft_isdigit.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isdigit.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isdigit.c.s
 .PHONY : libft/ft_isdigit.c.s
 
 libft/ft_isprint.o: libft/ft_isprint.c.o
@@ -858,7 +1047,7 @@ libft/ft_isprint.o: libft/ft_isprint.c.o
 
 # target to build an object file
 libft/ft_isprint.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isprint.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isprint.c.o
 .PHONY : libft/ft_isprint.c.o
 
 libft/ft_isprint.i: libft/ft_isprint.c.i
@@ -867,7 +1056,7 @@ libft/ft_isprint.i: libft/ft_isprint.c.i
 
 # target to preprocess a source file
 libft/ft_isprint.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isprint.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isprint.c.i
 .PHONY : libft/ft_isprint.c.i
 
 libft/ft_isprint.s: libft/ft_isprint.c.s
@@ -876,7 +1065,7 @@ libft/ft_isprint.s: libft/ft_isprint.c.s
 
 # target to generate assembly for a file
 libft/ft_isprint.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_isprint.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_isprint.c.s
 .PHONY : libft/ft_isprint.c.s
 
 libft/ft_itoa.o: libft/ft_itoa.c.o
@@ -885,7 +1074,7 @@ libft/ft_itoa.o: libft/ft_itoa.c.o
 
 # target to build an object file
 libft/ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_itoa.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_itoa.c.o
 .PHONY : libft/ft_itoa.c.o
 
 libft/ft_itoa.i: libft/ft_itoa.c.i
@@ -894,7 +1083,7 @@ libft/ft_itoa.i: libft/ft_itoa.c.i
 
 # target to preprocess a source file
 libft/ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_itoa.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_itoa.c.i
 .PHONY : libft/ft_itoa.c.i
 
 libft/ft_itoa.s: libft/ft_itoa.c.s
@@ -903,7 +1092,7 @@ libft/ft_itoa.s: libft/ft_itoa.c.s
 
 # target to generate assembly for a file
 libft/ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_itoa.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_itoa.c.s
 .PHONY : libft/ft_itoa.c.s
 
 libft/ft_itoa_base.o: libft/ft_itoa_base.c.o
@@ -912,7 +1101,7 @@ libft/ft_itoa_base.o: libft/ft_itoa_base.c.o
 
 # target to build an object file
 libft/ft_itoa_base.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_itoa_base.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_itoa_base.c.o
 .PHONY : libft/ft_itoa_base.c.o
 
 libft/ft_itoa_base.i: libft/ft_itoa_base.c.i
@@ -921,7 +1110,7 @@ libft/ft_itoa_base.i: libft/ft_itoa_base.c.i
 
 # target to preprocess a source file
 libft/ft_itoa_base.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_itoa_base.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_itoa_base.c.i
 .PHONY : libft/ft_itoa_base.c.i
 
 libft/ft_itoa_base.s: libft/ft_itoa_base.c.s
@@ -930,7 +1119,7 @@ libft/ft_itoa_base.s: libft/ft_itoa_base.c.s
 
 # target to generate assembly for a file
 libft/ft_itoa_base.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_itoa_base.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_itoa_base.c.s
 .PHONY : libft/ft_itoa_base.c.s
 
 libft/ft_len_arr_str.o: libft/ft_len_arr_str.c.o
@@ -939,7 +1128,7 @@ libft/ft_len_arr_str.o: libft/ft_len_arr_str.c.o
 
 # target to build an object file
 libft/ft_len_arr_str.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_len_arr_str.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_len_arr_str.c.o
 .PHONY : libft/ft_len_arr_str.c.o
 
 libft/ft_len_arr_str.i: libft/ft_len_arr_str.c.i
@@ -948,7 +1137,7 @@ libft/ft_len_arr_str.i: libft/ft_len_arr_str.c.i
 
 # target to preprocess a source file
 libft/ft_len_arr_str.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_len_arr_str.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_len_arr_str.c.i
 .PHONY : libft/ft_len_arr_str.c.i
 
 libft/ft_len_arr_str.s: libft/ft_len_arr_str.c.s
@@ -957,7 +1146,7 @@ libft/ft_len_arr_str.s: libft/ft_len_arr_str.c.s
 
 # target to generate assembly for a file
 libft/ft_len_arr_str.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_len_arr_str.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_len_arr_str.c.s
 .PHONY : libft/ft_len_arr_str.c.s
 
 libft/ft_lstadd.o: libft/ft_lstadd.c.o
@@ -966,7 +1155,7 @@ libft/ft_lstadd.o: libft/ft_lstadd.c.o
 
 # target to build an object file
 libft/ft_lstadd.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstadd.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstadd.c.o
 .PHONY : libft/ft_lstadd.c.o
 
 libft/ft_lstadd.i: libft/ft_lstadd.c.i
@@ -975,7 +1164,7 @@ libft/ft_lstadd.i: libft/ft_lstadd.c.i
 
 # target to preprocess a source file
 libft/ft_lstadd.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstadd.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstadd.c.i
 .PHONY : libft/ft_lstadd.c.i
 
 libft/ft_lstadd.s: libft/ft_lstadd.c.s
@@ -984,7 +1173,7 @@ libft/ft_lstadd.s: libft/ft_lstadd.c.s
 
 # target to generate assembly for a file
 libft/ft_lstadd.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstadd.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstadd.c.s
 .PHONY : libft/ft_lstadd.c.s
 
 libft/ft_lstdel.o: libft/ft_lstdel.c.o
@@ -993,7 +1182,7 @@ libft/ft_lstdel.o: libft/ft_lstdel.c.o
 
 # target to build an object file
 libft/ft_lstdel.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdel.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdel.c.o
 .PHONY : libft/ft_lstdel.c.o
 
 libft/ft_lstdel.i: libft/ft_lstdel.c.i
@@ -1002,7 +1191,7 @@ libft/ft_lstdel.i: libft/ft_lstdel.c.i
 
 # target to preprocess a source file
 libft/ft_lstdel.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdel.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdel.c.i
 .PHONY : libft/ft_lstdel.c.i
 
 libft/ft_lstdel.s: libft/ft_lstdel.c.s
@@ -1011,7 +1200,7 @@ libft/ft_lstdel.s: libft/ft_lstdel.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdel.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdel.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdel.c.s
 .PHONY : libft/ft_lstdel.c.s
 
 libft/ft_lstdel_top.o: libft/ft_lstdel_top.c.o
@@ -1020,7 +1209,7 @@ libft/ft_lstdel_top.o: libft/ft_lstdel_top.c.o
 
 # target to build an object file
 libft/ft_lstdel_top.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdel_top.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdel_top.c.o
 .PHONY : libft/ft_lstdel_top.c.o
 
 libft/ft_lstdel_top.i: libft/ft_lstdel_top.c.i
@@ -1029,7 +1218,7 @@ libft/ft_lstdel_top.i: libft/ft_lstdel_top.c.i
 
 # target to preprocess a source file
 libft/ft_lstdel_top.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdel_top.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdel_top.c.i
 .PHONY : libft/ft_lstdel_top.c.i
 
 libft/ft_lstdel_top.s: libft/ft_lstdel_top.c.s
@@ -1038,7 +1227,7 @@ libft/ft_lstdel_top.s: libft/ft_lstdel_top.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdel_top.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdel_top.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdel_top.c.s
 .PHONY : libft/ft_lstdel_top.c.s
 
 libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
@@ -1047,7 +1236,7 @@ libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
 
 # target to build an object file
 libft/ft_lstdelone.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdelone.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdelone.c.o
 .PHONY : libft/ft_lstdelone.c.o
 
 libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
@@ -1056,7 +1245,7 @@ libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
 
 # target to preprocess a source file
 libft/ft_lstdelone.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdelone.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdelone.c.i
 .PHONY : libft/ft_lstdelone.c.i
 
 libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
@@ -1065,7 +1254,7 @@ libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdelone.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstdelone.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstdelone.c.s
 .PHONY : libft/ft_lstdelone.c.s
 
 libft/ft_lstiter.o: libft/ft_lstiter.c.o
@@ -1074,7 +1263,7 @@ libft/ft_lstiter.o: libft/ft_lstiter.c.o
 
 # target to build an object file
 libft/ft_lstiter.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstiter.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstiter.c.o
 .PHONY : libft/ft_lstiter.c.o
 
 libft/ft_lstiter.i: libft/ft_lstiter.c.i
@@ -1083,7 +1272,7 @@ libft/ft_lstiter.i: libft/ft_lstiter.c.i
 
 # target to preprocess a source file
 libft/ft_lstiter.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstiter.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstiter.c.i
 .PHONY : libft/ft_lstiter.c.i
 
 libft/ft_lstiter.s: libft/ft_lstiter.c.s
@@ -1092,7 +1281,7 @@ libft/ft_lstiter.s: libft/ft_lstiter.c.s
 
 # target to generate assembly for a file
 libft/ft_lstiter.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstiter.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstiter.c.s
 .PHONY : libft/ft_lstiter.c.s
 
 libft/ft_lstmap.o: libft/ft_lstmap.c.o
@@ -1101,7 +1290,7 @@ libft/ft_lstmap.o: libft/ft_lstmap.c.o
 
 # target to build an object file
 libft/ft_lstmap.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstmap.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstmap.c.o
 .PHONY : libft/ft_lstmap.c.o
 
 libft/ft_lstmap.i: libft/ft_lstmap.c.i
@@ -1110,7 +1299,7 @@ libft/ft_lstmap.i: libft/ft_lstmap.c.i
 
 # target to preprocess a source file
 libft/ft_lstmap.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstmap.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstmap.c.i
 .PHONY : libft/ft_lstmap.c.i
 
 libft/ft_lstmap.s: libft/ft_lstmap.c.s
@@ -1119,7 +1308,7 @@ libft/ft_lstmap.s: libft/ft_lstmap.c.s
 
 # target to generate assembly for a file
 libft/ft_lstmap.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstmap.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstmap.c.s
 .PHONY : libft/ft_lstmap.c.s
 
 libft/ft_lstnew.o: libft/ft_lstnew.c.o
@@ -1128,7 +1317,7 @@ libft/ft_lstnew.o: libft/ft_lstnew.c.o
 
 # target to build an object file
 libft/ft_lstnew.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstnew.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstnew.c.o
 .PHONY : libft/ft_lstnew.c.o
 
 libft/ft_lstnew.i: libft/ft_lstnew.c.i
@@ -1137,7 +1326,7 @@ libft/ft_lstnew.i: libft/ft_lstnew.c.i
 
 # target to preprocess a source file
 libft/ft_lstnew.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstnew.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstnew.c.i
 .PHONY : libft/ft_lstnew.c.i
 
 libft/ft_lstnew.s: libft/ft_lstnew.c.s
@@ -1146,7 +1335,7 @@ libft/ft_lstnew.s: libft/ft_lstnew.c.s
 
 # target to generate assembly for a file
 libft/ft_lstnew.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_lstnew.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_lstnew.c.s
 .PHONY : libft/ft_lstnew.c.s
 
 libft/ft_memalloc.o: libft/ft_memalloc.c.o
@@ -1155,7 +1344,7 @@ libft/ft_memalloc.o: libft/ft_memalloc.c.o
 
 # target to build an object file
 libft/ft_memalloc.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memalloc.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memalloc.c.o
 .PHONY : libft/ft_memalloc.c.o
 
 libft/ft_memalloc.i: libft/ft_memalloc.c.i
@@ -1164,7 +1353,7 @@ libft/ft_memalloc.i: libft/ft_memalloc.c.i
 
 # target to preprocess a source file
 libft/ft_memalloc.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memalloc.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memalloc.c.i
 .PHONY : libft/ft_memalloc.c.i
 
 libft/ft_memalloc.s: libft/ft_memalloc.c.s
@@ -1173,7 +1362,7 @@ libft/ft_memalloc.s: libft/ft_memalloc.c.s
 
 # target to generate assembly for a file
 libft/ft_memalloc.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memalloc.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memalloc.c.s
 .PHONY : libft/ft_memalloc.c.s
 
 libft/ft_memccpy.o: libft/ft_memccpy.c.o
@@ -1182,7 +1371,7 @@ libft/ft_memccpy.o: libft/ft_memccpy.c.o
 
 # target to build an object file
 libft/ft_memccpy.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memccpy.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memccpy.c.o
 .PHONY : libft/ft_memccpy.c.o
 
 libft/ft_memccpy.i: libft/ft_memccpy.c.i
@@ -1191,7 +1380,7 @@ libft/ft_memccpy.i: libft/ft_memccpy.c.i
 
 # target to preprocess a source file
 libft/ft_memccpy.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memccpy.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memccpy.c.i
 .PHONY : libft/ft_memccpy.c.i
 
 libft/ft_memccpy.s: libft/ft_memccpy.c.s
@@ -1200,7 +1389,7 @@ libft/ft_memccpy.s: libft/ft_memccpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memccpy.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memccpy.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memccpy.c.s
 .PHONY : libft/ft_memccpy.c.s
 
 libft/ft_memchr.o: libft/ft_memchr.c.o
@@ -1209,7 +1398,7 @@ libft/ft_memchr.o: libft/ft_memchr.c.o
 
 # target to build an object file
 libft/ft_memchr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memchr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memchr.c.o
 .PHONY : libft/ft_memchr.c.o
 
 libft/ft_memchr.i: libft/ft_memchr.c.i
@@ -1218,7 +1407,7 @@ libft/ft_memchr.i: libft/ft_memchr.c.i
 
 # target to preprocess a source file
 libft/ft_memchr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memchr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memchr.c.i
 .PHONY : libft/ft_memchr.c.i
 
 libft/ft_memchr.s: libft/ft_memchr.c.s
@@ -1227,7 +1416,7 @@ libft/ft_memchr.s: libft/ft_memchr.c.s
 
 # target to generate assembly for a file
 libft/ft_memchr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memchr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memchr.c.s
 .PHONY : libft/ft_memchr.c.s
 
 libft/ft_memcmp.o: libft/ft_memcmp.c.o
@@ -1236,7 +1425,7 @@ libft/ft_memcmp.o: libft/ft_memcmp.c.o
 
 # target to build an object file
 libft/ft_memcmp.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memcmp.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memcmp.c.o
 .PHONY : libft/ft_memcmp.c.o
 
 libft/ft_memcmp.i: libft/ft_memcmp.c.i
@@ -1245,7 +1434,7 @@ libft/ft_memcmp.i: libft/ft_memcmp.c.i
 
 # target to preprocess a source file
 libft/ft_memcmp.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memcmp.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memcmp.c.i
 .PHONY : libft/ft_memcmp.c.i
 
 libft/ft_memcmp.s: libft/ft_memcmp.c.s
@@ -1254,7 +1443,7 @@ libft/ft_memcmp.s: libft/ft_memcmp.c.s
 
 # target to generate assembly for a file
 libft/ft_memcmp.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memcmp.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memcmp.c.s
 .PHONY : libft/ft_memcmp.c.s
 
 libft/ft_memcpy.o: libft/ft_memcpy.c.o
@@ -1263,7 +1452,7 @@ libft/ft_memcpy.o: libft/ft_memcpy.c.o
 
 # target to build an object file
 libft/ft_memcpy.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memcpy.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memcpy.c.o
 .PHONY : libft/ft_memcpy.c.o
 
 libft/ft_memcpy.i: libft/ft_memcpy.c.i
@@ -1272,7 +1461,7 @@ libft/ft_memcpy.i: libft/ft_memcpy.c.i
 
 # target to preprocess a source file
 libft/ft_memcpy.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memcpy.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memcpy.c.i
 .PHONY : libft/ft_memcpy.c.i
 
 libft/ft_memcpy.s: libft/ft_memcpy.c.s
@@ -1281,7 +1470,7 @@ libft/ft_memcpy.s: libft/ft_memcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memcpy.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memcpy.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memcpy.c.s
 .PHONY : libft/ft_memcpy.c.s
 
 libft/ft_memdel.o: libft/ft_memdel.c.o
@@ -1290,7 +1479,7 @@ libft/ft_memdel.o: libft/ft_memdel.c.o
 
 # target to build an object file
 libft/ft_memdel.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memdel.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memdel.c.o
 .PHONY : libft/ft_memdel.c.o
 
 libft/ft_memdel.i: libft/ft_memdel.c.i
@@ -1299,7 +1488,7 @@ libft/ft_memdel.i: libft/ft_memdel.c.i
 
 # target to preprocess a source file
 libft/ft_memdel.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memdel.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memdel.c.i
 .PHONY : libft/ft_memdel.c.i
 
 libft/ft_memdel.s: libft/ft_memdel.c.s
@@ -1308,7 +1497,7 @@ libft/ft_memdel.s: libft/ft_memdel.c.s
 
 # target to generate assembly for a file
 libft/ft_memdel.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memdel.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memdel.c.s
 .PHONY : libft/ft_memdel.c.s
 
 libft/ft_memmove.o: libft/ft_memmove.c.o
@@ -1317,7 +1506,7 @@ libft/ft_memmove.o: libft/ft_memmove.c.o
 
 # target to build an object file
 libft/ft_memmove.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memmove.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memmove.c.o
 .PHONY : libft/ft_memmove.c.o
 
 libft/ft_memmove.i: libft/ft_memmove.c.i
@@ -1326,7 +1515,7 @@ libft/ft_memmove.i: libft/ft_memmove.c.i
 
 # target to preprocess a source file
 libft/ft_memmove.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memmove.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memmove.c.i
 .PHONY : libft/ft_memmove.c.i
 
 libft/ft_memmove.s: libft/ft_memmove.c.s
@@ -1335,7 +1524,7 @@ libft/ft_memmove.s: libft/ft_memmove.c.s
 
 # target to generate assembly for a file
 libft/ft_memmove.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memmove.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memmove.c.s
 .PHONY : libft/ft_memmove.c.s
 
 libft/ft_memset.o: libft/ft_memset.c.o
@@ -1344,7 +1533,7 @@ libft/ft_memset.o: libft/ft_memset.c.o
 
 # target to build an object file
 libft/ft_memset.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memset.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memset.c.o
 .PHONY : libft/ft_memset.c.o
 
 libft/ft_memset.i: libft/ft_memset.c.i
@@ -1353,7 +1542,7 @@ libft/ft_memset.i: libft/ft_memset.c.i
 
 # target to preprocess a source file
 libft/ft_memset.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memset.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memset.c.i
 .PHONY : libft/ft_memset.c.i
 
 libft/ft_memset.s: libft/ft_memset.c.s
@@ -1362,7 +1551,7 @@ libft/ft_memset.s: libft/ft_memset.c.s
 
 # target to generate assembly for a file
 libft/ft_memset.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_memset.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
 
 libft/ft_printf.o: libft/ft_printf.c.o
@@ -1371,7 +1560,7 @@ libft/ft_printf.o: libft/ft_printf.c.o
 
 # target to build an object file
 libft/ft_printf.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_printf.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_printf.c.o
 .PHONY : libft/ft_printf.c.o
 
 libft/ft_printf.i: libft/ft_printf.c.i
@@ -1380,7 +1569,7 @@ libft/ft_printf.i: libft/ft_printf.c.i
 
 # target to preprocess a source file
 libft/ft_printf.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_printf.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_printf.c.i
 .PHONY : libft/ft_printf.c.i
 
 libft/ft_printf.s: libft/ft_printf.c.s
@@ -1389,7 +1578,7 @@ libft/ft_printf.s: libft/ft_printf.c.s
 
 # target to generate assembly for a file
 libft/ft_printf.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_printf.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_printf.c.s
 .PHONY : libft/ft_printf.c.s
 
 libft/ft_putchar.o: libft/ft_putchar.c.o
@@ -1398,7 +1587,7 @@ libft/ft_putchar.o: libft/ft_putchar.c.o
 
 # target to build an object file
 libft/ft_putchar.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putchar.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putchar.c.o
 .PHONY : libft/ft_putchar.c.o
 
 libft/ft_putchar.i: libft/ft_putchar.c.i
@@ -1407,7 +1596,7 @@ libft/ft_putchar.i: libft/ft_putchar.c.i
 
 # target to preprocess a source file
 libft/ft_putchar.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putchar.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putchar.c.i
 .PHONY : libft/ft_putchar.c.i
 
 libft/ft_putchar.s: libft/ft_putchar.c.s
@@ -1416,7 +1605,7 @@ libft/ft_putchar.s: libft/ft_putchar.c.s
 
 # target to generate assembly for a file
 libft/ft_putchar.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putchar.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putchar.c.s
 .PHONY : libft/ft_putchar.c.s
 
 libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
@@ -1425,7 +1614,7 @@ libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
 
 # target to build an object file
 libft/ft_putchar_fd.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putchar_fd.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putchar_fd.c.o
 .PHONY : libft/ft_putchar_fd.c.o
 
 libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
@@ -1434,7 +1623,7 @@ libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putchar_fd.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putchar_fd.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putchar_fd.c.i
 .PHONY : libft/ft_putchar_fd.c.i
 
 libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
@@ -1443,7 +1632,7 @@ libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putchar_fd.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putchar_fd.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putchar_fd.c.s
 .PHONY : libft/ft_putchar_fd.c.s
 
 libft/ft_putendl.o: libft/ft_putendl.c.o
@@ -1452,7 +1641,7 @@ libft/ft_putendl.o: libft/ft_putendl.c.o
 
 # target to build an object file
 libft/ft_putendl.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putendl.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putendl.c.o
 .PHONY : libft/ft_putendl.c.o
 
 libft/ft_putendl.i: libft/ft_putendl.c.i
@@ -1461,7 +1650,7 @@ libft/ft_putendl.i: libft/ft_putendl.c.i
 
 # target to preprocess a source file
 libft/ft_putendl.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putendl.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putendl.c.i
 .PHONY : libft/ft_putendl.c.i
 
 libft/ft_putendl.s: libft/ft_putendl.c.s
@@ -1470,7 +1659,7 @@ libft/ft_putendl.s: libft/ft_putendl.c.s
 
 # target to generate assembly for a file
 libft/ft_putendl.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putendl.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putendl.c.s
 .PHONY : libft/ft_putendl.c.s
 
 libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
@@ -1479,7 +1668,7 @@ libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
 
 # target to build an object file
 libft/ft_putendl_fd.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putendl_fd.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putendl_fd.c.o
 .PHONY : libft/ft_putendl_fd.c.o
 
 libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
@@ -1488,7 +1677,7 @@ libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putendl_fd.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putendl_fd.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putendl_fd.c.i
 .PHONY : libft/ft_putendl_fd.c.i
 
 libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
@@ -1497,7 +1686,7 @@ libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putendl_fd.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putendl_fd.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putendl_fd.c.s
 .PHONY : libft/ft_putendl_fd.c.s
 
 libft/ft_putnbr.o: libft/ft_putnbr.c.o
@@ -1506,7 +1695,7 @@ libft/ft_putnbr.o: libft/ft_putnbr.c.o
 
 # target to build an object file
 libft/ft_putnbr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putnbr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putnbr.c.o
 .PHONY : libft/ft_putnbr.c.o
 
 libft/ft_putnbr.i: libft/ft_putnbr.c.i
@@ -1515,7 +1704,7 @@ libft/ft_putnbr.i: libft/ft_putnbr.c.i
 
 # target to preprocess a source file
 libft/ft_putnbr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putnbr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putnbr.c.i
 .PHONY : libft/ft_putnbr.c.i
 
 libft/ft_putnbr.s: libft/ft_putnbr.c.s
@@ -1524,7 +1713,7 @@ libft/ft_putnbr.s: libft/ft_putnbr.c.s
 
 # target to generate assembly for a file
 libft/ft_putnbr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putnbr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putnbr.c.s
 .PHONY : libft/ft_putnbr.c.s
 
 libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
@@ -1533,7 +1722,7 @@ libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
 
 # target to build an object file
 libft/ft_putnbr_fd.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putnbr_fd.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putnbr_fd.c.o
 .PHONY : libft/ft_putnbr_fd.c.o
 
 libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
@@ -1542,7 +1731,7 @@ libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putnbr_fd.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putnbr_fd.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putnbr_fd.c.i
 .PHONY : libft/ft_putnbr_fd.c.i
 
 libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
@@ -1551,7 +1740,7 @@ libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putnbr_fd.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putnbr_fd.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putnbr_fd.c.s
 .PHONY : libft/ft_putnbr_fd.c.s
 
 libft/ft_putstr.o: libft/ft_putstr.c.o
@@ -1560,7 +1749,7 @@ libft/ft_putstr.o: libft/ft_putstr.c.o
 
 # target to build an object file
 libft/ft_putstr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putstr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putstr.c.o
 .PHONY : libft/ft_putstr.c.o
 
 libft/ft_putstr.i: libft/ft_putstr.c.i
@@ -1569,7 +1758,7 @@ libft/ft_putstr.i: libft/ft_putstr.c.i
 
 # target to preprocess a source file
 libft/ft_putstr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putstr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putstr.c.i
 .PHONY : libft/ft_putstr.c.i
 
 libft/ft_putstr.s: libft/ft_putstr.c.s
@@ -1578,7 +1767,7 @@ libft/ft_putstr.s: libft/ft_putstr.c.s
 
 # target to generate assembly for a file
 libft/ft_putstr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putstr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putstr.c.s
 .PHONY : libft/ft_putstr.c.s
 
 libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
@@ -1587,7 +1776,7 @@ libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
 
 # target to build an object file
 libft/ft_putstr_fd.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putstr_fd.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putstr_fd.c.o
 .PHONY : libft/ft_putstr_fd.c.o
 
 libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
@@ -1596,7 +1785,7 @@ libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putstr_fd.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putstr_fd.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putstr_fd.c.i
 .PHONY : libft/ft_putstr_fd.c.i
 
 libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
@@ -1605,7 +1794,7 @@ libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putstr_fd.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_putstr_fd.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
 
 libft/ft_strcat.o: libft/ft_strcat.c.o
@@ -1614,7 +1803,7 @@ libft/ft_strcat.o: libft/ft_strcat.c.o
 
 # target to build an object file
 libft/ft_strcat.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcat.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcat.c.o
 .PHONY : libft/ft_strcat.c.o
 
 libft/ft_strcat.i: libft/ft_strcat.c.i
@@ -1623,7 +1812,7 @@ libft/ft_strcat.i: libft/ft_strcat.c.i
 
 # target to preprocess a source file
 libft/ft_strcat.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcat.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcat.c.i
 .PHONY : libft/ft_strcat.c.i
 
 libft/ft_strcat.s: libft/ft_strcat.c.s
@@ -1632,7 +1821,7 @@ libft/ft_strcat.s: libft/ft_strcat.c.s
 
 # target to generate assembly for a file
 libft/ft_strcat.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcat.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcat.c.s
 .PHONY : libft/ft_strcat.c.s
 
 libft/ft_strchr.o: libft/ft_strchr.c.o
@@ -1641,7 +1830,7 @@ libft/ft_strchr.o: libft/ft_strchr.c.o
 
 # target to build an object file
 libft/ft_strchr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strchr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strchr.c.o
 .PHONY : libft/ft_strchr.c.o
 
 libft/ft_strchr.i: libft/ft_strchr.c.i
@@ -1650,7 +1839,7 @@ libft/ft_strchr.i: libft/ft_strchr.c.i
 
 # target to preprocess a source file
 libft/ft_strchr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strchr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strchr.c.i
 .PHONY : libft/ft_strchr.c.i
 
 libft/ft_strchr.s: libft/ft_strchr.c.s
@@ -1659,7 +1848,7 @@ libft/ft_strchr.s: libft/ft_strchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strchr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strchr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strchr.c.s
 .PHONY : libft/ft_strchr.c.s
 
 libft/ft_strclr.o: libft/ft_strclr.c.o
@@ -1668,7 +1857,7 @@ libft/ft_strclr.o: libft/ft_strclr.c.o
 
 # target to build an object file
 libft/ft_strclr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strclr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strclr.c.o
 .PHONY : libft/ft_strclr.c.o
 
 libft/ft_strclr.i: libft/ft_strclr.c.i
@@ -1677,7 +1866,7 @@ libft/ft_strclr.i: libft/ft_strclr.c.i
 
 # target to preprocess a source file
 libft/ft_strclr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strclr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strclr.c.i
 .PHONY : libft/ft_strclr.c.i
 
 libft/ft_strclr.s: libft/ft_strclr.c.s
@@ -1686,7 +1875,7 @@ libft/ft_strclr.s: libft/ft_strclr.c.s
 
 # target to generate assembly for a file
 libft/ft_strclr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strclr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strclr.c.s
 .PHONY : libft/ft_strclr.c.s
 
 libft/ft_strcmp.o: libft/ft_strcmp.c.o
@@ -1695,7 +1884,7 @@ libft/ft_strcmp.o: libft/ft_strcmp.c.o
 
 # target to build an object file
 libft/ft_strcmp.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcmp.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcmp.c.o
 .PHONY : libft/ft_strcmp.c.o
 
 libft/ft_strcmp.i: libft/ft_strcmp.c.i
@@ -1704,7 +1893,7 @@ libft/ft_strcmp.i: libft/ft_strcmp.c.i
 
 # target to preprocess a source file
 libft/ft_strcmp.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcmp.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcmp.c.i
 .PHONY : libft/ft_strcmp.c.i
 
 libft/ft_strcmp.s: libft/ft_strcmp.c.s
@@ -1713,7 +1902,7 @@ libft/ft_strcmp.s: libft/ft_strcmp.c.s
 
 # target to generate assembly for a file
 libft/ft_strcmp.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcmp.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcmp.c.s
 .PHONY : libft/ft_strcmp.c.s
 
 libft/ft_strcpy.o: libft/ft_strcpy.c.o
@@ -1722,7 +1911,7 @@ libft/ft_strcpy.o: libft/ft_strcpy.c.o
 
 # target to build an object file
 libft/ft_strcpy.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcpy.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcpy.c.o
 .PHONY : libft/ft_strcpy.c.o
 
 libft/ft_strcpy.i: libft/ft_strcpy.c.i
@@ -1731,7 +1920,7 @@ libft/ft_strcpy.i: libft/ft_strcpy.c.i
 
 # target to preprocess a source file
 libft/ft_strcpy.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcpy.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcpy.c.i
 .PHONY : libft/ft_strcpy.c.i
 
 libft/ft_strcpy.s: libft/ft_strcpy.c.s
@@ -1740,7 +1929,7 @@ libft/ft_strcpy.s: libft/ft_strcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strcpy.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strcpy.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strcpy.c.s
 .PHONY : libft/ft_strcpy.c.s
 
 libft/ft_strdel.o: libft/ft_strdel.c.o
@@ -1749,7 +1938,7 @@ libft/ft_strdel.o: libft/ft_strdel.c.o
 
 # target to build an object file
 libft/ft_strdel.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strdel.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strdel.c.o
 .PHONY : libft/ft_strdel.c.o
 
 libft/ft_strdel.i: libft/ft_strdel.c.i
@@ -1758,7 +1947,7 @@ libft/ft_strdel.i: libft/ft_strdel.c.i
 
 # target to preprocess a source file
 libft/ft_strdel.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strdel.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strdel.c.i
 .PHONY : libft/ft_strdel.c.i
 
 libft/ft_strdel.s: libft/ft_strdel.c.s
@@ -1767,7 +1956,7 @@ libft/ft_strdel.s: libft/ft_strdel.c.s
 
 # target to generate assembly for a file
 libft/ft_strdel.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strdel.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strdel.c.s
 .PHONY : libft/ft_strdel.c.s
 
 libft/ft_strdup.o: libft/ft_strdup.c.o
@@ -1776,7 +1965,7 @@ libft/ft_strdup.o: libft/ft_strdup.c.o
 
 # target to build an object file
 libft/ft_strdup.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strdup.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strdup.c.o
 .PHONY : libft/ft_strdup.c.o
 
 libft/ft_strdup.i: libft/ft_strdup.c.i
@@ -1785,7 +1974,7 @@ libft/ft_strdup.i: libft/ft_strdup.c.i
 
 # target to preprocess a source file
 libft/ft_strdup.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strdup.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strdup.c.i
 .PHONY : libft/ft_strdup.c.i
 
 libft/ft_strdup.s: libft/ft_strdup.c.s
@@ -1794,7 +1983,7 @@ libft/ft_strdup.s: libft/ft_strdup.c.s
 
 # target to generate assembly for a file
 libft/ft_strdup.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strdup.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strdup.c.s
 .PHONY : libft/ft_strdup.c.s
 
 libft/ft_strequ.o: libft/ft_strequ.c.o
@@ -1803,7 +1992,7 @@ libft/ft_strequ.o: libft/ft_strequ.c.o
 
 # target to build an object file
 libft/ft_strequ.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strequ.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strequ.c.o
 .PHONY : libft/ft_strequ.c.o
 
 libft/ft_strequ.i: libft/ft_strequ.c.i
@@ -1812,7 +2001,7 @@ libft/ft_strequ.i: libft/ft_strequ.c.i
 
 # target to preprocess a source file
 libft/ft_strequ.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strequ.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strequ.c.i
 .PHONY : libft/ft_strequ.c.i
 
 libft/ft_strequ.s: libft/ft_strequ.c.s
@@ -1821,7 +2010,7 @@ libft/ft_strequ.s: libft/ft_strequ.c.s
 
 # target to generate assembly for a file
 libft/ft_strequ.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strequ.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strequ.c.s
 .PHONY : libft/ft_strequ.c.s
 
 libft/ft_striter.o: libft/ft_striter.c.o
@@ -1830,7 +2019,7 @@ libft/ft_striter.o: libft/ft_striter.c.o
 
 # target to build an object file
 libft/ft_striter.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_striter.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_striter.c.o
 .PHONY : libft/ft_striter.c.o
 
 libft/ft_striter.i: libft/ft_striter.c.i
@@ -1839,7 +2028,7 @@ libft/ft_striter.i: libft/ft_striter.c.i
 
 # target to preprocess a source file
 libft/ft_striter.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_striter.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_striter.c.i
 .PHONY : libft/ft_striter.c.i
 
 libft/ft_striter.s: libft/ft_striter.c.s
@@ -1848,7 +2037,7 @@ libft/ft_striter.s: libft/ft_striter.c.s
 
 # target to generate assembly for a file
 libft/ft_striter.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_striter.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_striter.c.s
 .PHONY : libft/ft_striter.c.s
 
 libft/ft_striteri.o: libft/ft_striteri.c.o
@@ -1857,7 +2046,7 @@ libft/ft_striteri.o: libft/ft_striteri.c.o
 
 # target to build an object file
 libft/ft_striteri.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_striteri.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_striteri.c.o
 .PHONY : libft/ft_striteri.c.o
 
 libft/ft_striteri.i: libft/ft_striteri.c.i
@@ -1866,7 +2055,7 @@ libft/ft_striteri.i: libft/ft_striteri.c.i
 
 # target to preprocess a source file
 libft/ft_striteri.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_striteri.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_striteri.c.i
 .PHONY : libft/ft_striteri.c.i
 
 libft/ft_striteri.s: libft/ft_striteri.c.s
@@ -1875,7 +2064,7 @@ libft/ft_striteri.s: libft/ft_striteri.c.s
 
 # target to generate assembly for a file
 libft/ft_striteri.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_striteri.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_striteri.c.s
 .PHONY : libft/ft_striteri.c.s
 
 libft/ft_strjoin.o: libft/ft_strjoin.c.o
@@ -1884,7 +2073,7 @@ libft/ft_strjoin.o: libft/ft_strjoin.c.o
 
 # target to build an object file
 libft/ft_strjoin.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strjoin.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strjoin.c.o
 .PHONY : libft/ft_strjoin.c.o
 
 libft/ft_strjoin.i: libft/ft_strjoin.c.i
@@ -1893,7 +2082,7 @@ libft/ft_strjoin.i: libft/ft_strjoin.c.i
 
 # target to preprocess a source file
 libft/ft_strjoin.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strjoin.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strjoin.c.i
 .PHONY : libft/ft_strjoin.c.i
 
 libft/ft_strjoin.s: libft/ft_strjoin.c.s
@@ -1902,7 +2091,7 @@ libft/ft_strjoin.s: libft/ft_strjoin.c.s
 
 # target to generate assembly for a file
 libft/ft_strjoin.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strjoin.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strjoin.c.s
 .PHONY : libft/ft_strjoin.c.s
 
 libft/ft_strlcat.o: libft/ft_strlcat.c.o
@@ -1911,7 +2100,7 @@ libft/ft_strlcat.o: libft/ft_strlcat.c.o
 
 # target to build an object file
 libft/ft_strlcat.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strlcat.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strlcat.c.o
 .PHONY : libft/ft_strlcat.c.o
 
 libft/ft_strlcat.i: libft/ft_strlcat.c.i
@@ -1920,7 +2109,7 @@ libft/ft_strlcat.i: libft/ft_strlcat.c.i
 
 # target to preprocess a source file
 libft/ft_strlcat.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strlcat.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strlcat.c.i
 .PHONY : libft/ft_strlcat.c.i
 
 libft/ft_strlcat.s: libft/ft_strlcat.c.s
@@ -1929,7 +2118,7 @@ libft/ft_strlcat.s: libft/ft_strlcat.c.s
 
 # target to generate assembly for a file
 libft/ft_strlcat.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strlcat.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strlcat.c.s
 .PHONY : libft/ft_strlcat.c.s
 
 libft/ft_strlen.o: libft/ft_strlen.c.o
@@ -1938,7 +2127,7 @@ libft/ft_strlen.o: libft/ft_strlen.c.o
 
 # target to build an object file
 libft/ft_strlen.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strlen.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strlen.c.o
 .PHONY : libft/ft_strlen.c.o
 
 libft/ft_strlen.i: libft/ft_strlen.c.i
@@ -1947,7 +2136,7 @@ libft/ft_strlen.i: libft/ft_strlen.c.i
 
 # target to preprocess a source file
 libft/ft_strlen.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strlen.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strlen.c.i
 .PHONY : libft/ft_strlen.c.i
 
 libft/ft_strlen.s: libft/ft_strlen.c.s
@@ -1956,7 +2145,7 @@ libft/ft_strlen.s: libft/ft_strlen.c.s
 
 # target to generate assembly for a file
 libft/ft_strlen.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strlen.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strlen.c.s
 .PHONY : libft/ft_strlen.c.s
 
 libft/ft_strmap.o: libft/ft_strmap.c.o
@@ -1965,7 +2154,7 @@ libft/ft_strmap.o: libft/ft_strmap.c.o
 
 # target to build an object file
 libft/ft_strmap.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strmap.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strmap.c.o
 .PHONY : libft/ft_strmap.c.o
 
 libft/ft_strmap.i: libft/ft_strmap.c.i
@@ -1974,7 +2163,7 @@ libft/ft_strmap.i: libft/ft_strmap.c.i
 
 # target to preprocess a source file
 libft/ft_strmap.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strmap.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strmap.c.i
 .PHONY : libft/ft_strmap.c.i
 
 libft/ft_strmap.s: libft/ft_strmap.c.s
@@ -1983,7 +2172,7 @@ libft/ft_strmap.s: libft/ft_strmap.c.s
 
 # target to generate assembly for a file
 libft/ft_strmap.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strmap.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strmap.c.s
 .PHONY : libft/ft_strmap.c.s
 
 libft/ft_strmapi.o: libft/ft_strmapi.c.o
@@ -1992,7 +2181,7 @@ libft/ft_strmapi.o: libft/ft_strmapi.c.o
 
 # target to build an object file
 libft/ft_strmapi.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strmapi.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strmapi.c.o
 .PHONY : libft/ft_strmapi.c.o
 
 libft/ft_strmapi.i: libft/ft_strmapi.c.i
@@ -2001,7 +2190,7 @@ libft/ft_strmapi.i: libft/ft_strmapi.c.i
 
 # target to preprocess a source file
 libft/ft_strmapi.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strmapi.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strmapi.c.i
 .PHONY : libft/ft_strmapi.c.i
 
 libft/ft_strmapi.s: libft/ft_strmapi.c.s
@@ -2010,7 +2199,7 @@ libft/ft_strmapi.s: libft/ft_strmapi.c.s
 
 # target to generate assembly for a file
 libft/ft_strmapi.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strmapi.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strmapi.c.s
 .PHONY : libft/ft_strmapi.c.s
 
 libft/ft_strncat.o: libft/ft_strncat.c.o
@@ -2019,7 +2208,7 @@ libft/ft_strncat.o: libft/ft_strncat.c.o
 
 # target to build an object file
 libft/ft_strncat.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncat.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncat.c.o
 .PHONY : libft/ft_strncat.c.o
 
 libft/ft_strncat.i: libft/ft_strncat.c.i
@@ -2028,7 +2217,7 @@ libft/ft_strncat.i: libft/ft_strncat.c.i
 
 # target to preprocess a source file
 libft/ft_strncat.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncat.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncat.c.i
 .PHONY : libft/ft_strncat.c.i
 
 libft/ft_strncat.s: libft/ft_strncat.c.s
@@ -2037,7 +2226,7 @@ libft/ft_strncat.s: libft/ft_strncat.c.s
 
 # target to generate assembly for a file
 libft/ft_strncat.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncat.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncat.c.s
 .PHONY : libft/ft_strncat.c.s
 
 libft/ft_strnchr.o: libft/ft_strnchr.c.o
@@ -2046,7 +2235,7 @@ libft/ft_strnchr.o: libft/ft_strnchr.c.o
 
 # target to build an object file
 libft/ft_strnchr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnchr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnchr.c.o
 .PHONY : libft/ft_strnchr.c.o
 
 libft/ft_strnchr.i: libft/ft_strnchr.c.i
@@ -2055,7 +2244,7 @@ libft/ft_strnchr.i: libft/ft_strnchr.c.i
 
 # target to preprocess a source file
 libft/ft_strnchr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnchr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnchr.c.i
 .PHONY : libft/ft_strnchr.c.i
 
 libft/ft_strnchr.s: libft/ft_strnchr.c.s
@@ -2064,7 +2253,7 @@ libft/ft_strnchr.s: libft/ft_strnchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strnchr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnchr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnchr.c.s
 .PHONY : libft/ft_strnchr.c.s
 
 libft/ft_strncmp.o: libft/ft_strncmp.c.o
@@ -2073,7 +2262,7 @@ libft/ft_strncmp.o: libft/ft_strncmp.c.o
 
 # target to build an object file
 libft/ft_strncmp.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncmp.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncmp.c.o
 .PHONY : libft/ft_strncmp.c.o
 
 libft/ft_strncmp.i: libft/ft_strncmp.c.i
@@ -2082,7 +2271,7 @@ libft/ft_strncmp.i: libft/ft_strncmp.c.i
 
 # target to preprocess a source file
 libft/ft_strncmp.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncmp.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncmp.c.i
 .PHONY : libft/ft_strncmp.c.i
 
 libft/ft_strncmp.s: libft/ft_strncmp.c.s
@@ -2091,7 +2280,7 @@ libft/ft_strncmp.s: libft/ft_strncmp.c.s
 
 # target to generate assembly for a file
 libft/ft_strncmp.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncmp.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncmp.c.s
 .PHONY : libft/ft_strncmp.c.s
 
 libft/ft_strncpy.o: libft/ft_strncpy.c.o
@@ -2100,7 +2289,7 @@ libft/ft_strncpy.o: libft/ft_strncpy.c.o
 
 # target to build an object file
 libft/ft_strncpy.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncpy.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncpy.c.o
 .PHONY : libft/ft_strncpy.c.o
 
 libft/ft_strncpy.i: libft/ft_strncpy.c.i
@@ -2109,7 +2298,7 @@ libft/ft_strncpy.i: libft/ft_strncpy.c.i
 
 # target to preprocess a source file
 libft/ft_strncpy.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncpy.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncpy.c.i
 .PHONY : libft/ft_strncpy.c.i
 
 libft/ft_strncpy.s: libft/ft_strncpy.c.s
@@ -2118,7 +2307,7 @@ libft/ft_strncpy.s: libft/ft_strncpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strncpy.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strncpy.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strncpy.c.s
 .PHONY : libft/ft_strncpy.c.s
 
 libft/ft_strnequ.o: libft/ft_strnequ.c.o
@@ -2127,7 +2316,7 @@ libft/ft_strnequ.o: libft/ft_strnequ.c.o
 
 # target to build an object file
 libft/ft_strnequ.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnequ.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnequ.c.o
 .PHONY : libft/ft_strnequ.c.o
 
 libft/ft_strnequ.i: libft/ft_strnequ.c.i
@@ -2136,7 +2325,7 @@ libft/ft_strnequ.i: libft/ft_strnequ.c.i
 
 # target to preprocess a source file
 libft/ft_strnequ.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnequ.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnequ.c.i
 .PHONY : libft/ft_strnequ.c.i
 
 libft/ft_strnequ.s: libft/ft_strnequ.c.s
@@ -2145,7 +2334,7 @@ libft/ft_strnequ.s: libft/ft_strnequ.c.s
 
 # target to generate assembly for a file
 libft/ft_strnequ.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnequ.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnequ.c.s
 .PHONY : libft/ft_strnequ.c.s
 
 libft/ft_strnew.o: libft/ft_strnew.c.o
@@ -2154,7 +2343,7 @@ libft/ft_strnew.o: libft/ft_strnew.c.o
 
 # target to build an object file
 libft/ft_strnew.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnew.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnew.c.o
 .PHONY : libft/ft_strnew.c.o
 
 libft/ft_strnew.i: libft/ft_strnew.c.i
@@ -2163,7 +2352,7 @@ libft/ft_strnew.i: libft/ft_strnew.c.i
 
 # target to preprocess a source file
 libft/ft_strnew.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnew.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnew.c.i
 .PHONY : libft/ft_strnew.c.i
 
 libft/ft_strnew.s: libft/ft_strnew.c.s
@@ -2172,7 +2361,7 @@ libft/ft_strnew.s: libft/ft_strnew.c.s
 
 # target to generate assembly for a file
 libft/ft_strnew.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnew.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnew.c.s
 .PHONY : libft/ft_strnew.c.s
 
 libft/ft_strnew_cpy.o: libft/ft_strnew_cpy.c.o
@@ -2181,7 +2370,7 @@ libft/ft_strnew_cpy.o: libft/ft_strnew_cpy.c.o
 
 # target to build an object file
 libft/ft_strnew_cpy.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnew_cpy.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnew_cpy.c.o
 .PHONY : libft/ft_strnew_cpy.c.o
 
 libft/ft_strnew_cpy.i: libft/ft_strnew_cpy.c.i
@@ -2190,7 +2379,7 @@ libft/ft_strnew_cpy.i: libft/ft_strnew_cpy.c.i
 
 # target to preprocess a source file
 libft/ft_strnew_cpy.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnew_cpy.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnew_cpy.c.i
 .PHONY : libft/ft_strnew_cpy.c.i
 
 libft/ft_strnew_cpy.s: libft/ft_strnew_cpy.c.s
@@ -2199,7 +2388,7 @@ libft/ft_strnew_cpy.s: libft/ft_strnew_cpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strnew_cpy.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnew_cpy.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnew_cpy.c.s
 .PHONY : libft/ft_strnew_cpy.c.s
 
 libft/ft_strnstr.o: libft/ft_strnstr.c.o
@@ -2208,7 +2397,7 @@ libft/ft_strnstr.o: libft/ft_strnstr.c.o
 
 # target to build an object file
 libft/ft_strnstr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnstr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnstr.c.o
 .PHONY : libft/ft_strnstr.c.o
 
 libft/ft_strnstr.i: libft/ft_strnstr.c.i
@@ -2217,7 +2406,7 @@ libft/ft_strnstr.i: libft/ft_strnstr.c.i
 
 # target to preprocess a source file
 libft/ft_strnstr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnstr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnstr.c.i
 .PHONY : libft/ft_strnstr.c.i
 
 libft/ft_strnstr.s: libft/ft_strnstr.c.s
@@ -2226,7 +2415,7 @@ libft/ft_strnstr.s: libft/ft_strnstr.c.s
 
 # target to generate assembly for a file
 libft/ft_strnstr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strnstr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strnstr.c.s
 .PHONY : libft/ft_strnstr.c.s
 
 libft/ft_strrchr.o: libft/ft_strrchr.c.o
@@ -2235,7 +2424,7 @@ libft/ft_strrchr.o: libft/ft_strrchr.c.o
 
 # target to build an object file
 libft/ft_strrchr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strrchr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strrchr.c.o
 .PHONY : libft/ft_strrchr.c.o
 
 libft/ft_strrchr.i: libft/ft_strrchr.c.i
@@ -2244,7 +2433,7 @@ libft/ft_strrchr.i: libft/ft_strrchr.c.i
 
 # target to preprocess a source file
 libft/ft_strrchr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strrchr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strrchr.c.i
 .PHONY : libft/ft_strrchr.c.i
 
 libft/ft_strrchr.s: libft/ft_strrchr.c.s
@@ -2253,7 +2442,7 @@ libft/ft_strrchr.s: libft/ft_strrchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strrchr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strrchr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strrchr.c.s
 .PHONY : libft/ft_strrchr.c.s
 
 libft/ft_strsplit.o: libft/ft_strsplit.c.o
@@ -2262,7 +2451,7 @@ libft/ft_strsplit.o: libft/ft_strsplit.c.o
 
 # target to build an object file
 libft/ft_strsplit.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strsplit.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strsplit.c.o
 .PHONY : libft/ft_strsplit.c.o
 
 libft/ft_strsplit.i: libft/ft_strsplit.c.i
@@ -2271,7 +2460,7 @@ libft/ft_strsplit.i: libft/ft_strsplit.c.i
 
 # target to preprocess a source file
 libft/ft_strsplit.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strsplit.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strsplit.c.i
 .PHONY : libft/ft_strsplit.c.i
 
 libft/ft_strsplit.s: libft/ft_strsplit.c.s
@@ -2280,7 +2469,7 @@ libft/ft_strsplit.s: libft/ft_strsplit.c.s
 
 # target to generate assembly for a file
 libft/ft_strsplit.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strsplit.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strsplit.c.s
 .PHONY : libft/ft_strsplit.c.s
 
 libft/ft_strstr.o: libft/ft_strstr.c.o
@@ -2289,7 +2478,7 @@ libft/ft_strstr.o: libft/ft_strstr.c.o
 
 # target to build an object file
 libft/ft_strstr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strstr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strstr.c.o
 .PHONY : libft/ft_strstr.c.o
 
 libft/ft_strstr.i: libft/ft_strstr.c.i
@@ -2298,7 +2487,7 @@ libft/ft_strstr.i: libft/ft_strstr.c.i
 
 # target to preprocess a source file
 libft/ft_strstr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strstr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strstr.c.i
 .PHONY : libft/ft_strstr.c.i
 
 libft/ft_strstr.s: libft/ft_strstr.c.s
@@ -2307,7 +2496,7 @@ libft/ft_strstr.s: libft/ft_strstr.c.s
 
 # target to generate assembly for a file
 libft/ft_strstr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strstr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strstr.c.s
 .PHONY : libft/ft_strstr.c.s
 
 libft/ft_strsub.o: libft/ft_strsub.c.o
@@ -2316,7 +2505,7 @@ libft/ft_strsub.o: libft/ft_strsub.c.o
 
 # target to build an object file
 libft/ft_strsub.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strsub.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strsub.c.o
 .PHONY : libft/ft_strsub.c.o
 
 libft/ft_strsub.i: libft/ft_strsub.c.i
@@ -2325,7 +2514,7 @@ libft/ft_strsub.i: libft/ft_strsub.c.i
 
 # target to preprocess a source file
 libft/ft_strsub.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strsub.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strsub.c.i
 .PHONY : libft/ft_strsub.c.i
 
 libft/ft_strsub.s: libft/ft_strsub.c.s
@@ -2334,7 +2523,7 @@ libft/ft_strsub.s: libft/ft_strsub.c.s
 
 # target to generate assembly for a file
 libft/ft_strsub.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strsub.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strsub.c.s
 .PHONY : libft/ft_strsub.c.s
 
 libft/ft_strtrim.o: libft/ft_strtrim.c.o
@@ -2343,7 +2532,7 @@ libft/ft_strtrim.o: libft/ft_strtrim.c.o
 
 # target to build an object file
 libft/ft_strtrim.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strtrim.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strtrim.c.o
 .PHONY : libft/ft_strtrim.c.o
 
 libft/ft_strtrim.i: libft/ft_strtrim.c.i
@@ -2352,7 +2541,7 @@ libft/ft_strtrim.i: libft/ft_strtrim.c.i
 
 # target to preprocess a source file
 libft/ft_strtrim.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strtrim.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strtrim.c.i
 .PHONY : libft/ft_strtrim.c.i
 
 libft/ft_strtrim.s: libft/ft_strtrim.c.s
@@ -2361,7 +2550,7 @@ libft/ft_strtrim.s: libft/ft_strtrim.c.s
 
 # target to generate assembly for a file
 libft/ft_strtrim.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_strtrim.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_strtrim.c.s
 .PHONY : libft/ft_strtrim.c.s
 
 libft/ft_swapbits.o: libft/ft_swapbits.c.o
@@ -2370,7 +2559,7 @@ libft/ft_swapbits.o: libft/ft_swapbits.c.o
 
 # target to build an object file
 libft/ft_swapbits.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_swapbits.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_swapbits.c.o
 .PHONY : libft/ft_swapbits.c.o
 
 libft/ft_swapbits.i: libft/ft_swapbits.c.i
@@ -2379,7 +2568,7 @@ libft/ft_swapbits.i: libft/ft_swapbits.c.i
 
 # target to preprocess a source file
 libft/ft_swapbits.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_swapbits.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_swapbits.c.i
 .PHONY : libft/ft_swapbits.c.i
 
 libft/ft_swapbits.s: libft/ft_swapbits.c.s
@@ -2388,7 +2577,7 @@ libft/ft_swapbits.s: libft/ft_swapbits.c.s
 
 # target to generate assembly for a file
 libft/ft_swapbits.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_swapbits.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_swapbits.c.s
 .PHONY : libft/ft_swapbits.c.s
 
 libft/ft_tolower.o: libft/ft_tolower.c.o
@@ -2397,7 +2586,7 @@ libft/ft_tolower.o: libft/ft_tolower.c.o
 
 # target to build an object file
 libft/ft_tolower.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_tolower.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_tolower.c.o
 .PHONY : libft/ft_tolower.c.o
 
 libft/ft_tolower.i: libft/ft_tolower.c.i
@@ -2406,7 +2595,7 @@ libft/ft_tolower.i: libft/ft_tolower.c.i
 
 # target to preprocess a source file
 libft/ft_tolower.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_tolower.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_tolower.c.i
 .PHONY : libft/ft_tolower.c.i
 
 libft/ft_tolower.s: libft/ft_tolower.c.s
@@ -2415,7 +2604,7 @@ libft/ft_tolower.s: libft/ft_tolower.c.s
 
 # target to generate assembly for a file
 libft/ft_tolower.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_tolower.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_tolower.c.s
 .PHONY : libft/ft_tolower.c.s
 
 libft/ft_toupper.o: libft/ft_toupper.c.o
@@ -2424,7 +2613,7 @@ libft/ft_toupper.o: libft/ft_toupper.c.o
 
 # target to build an object file
 libft/ft_toupper.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_toupper.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_toupper.c.o
 .PHONY : libft/ft_toupper.c.o
 
 libft/ft_toupper.i: libft/ft_toupper.c.i
@@ -2433,7 +2622,7 @@ libft/ft_toupper.i: libft/ft_toupper.c.i
 
 # target to preprocess a source file
 libft/ft_toupper.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_toupper.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_toupper.c.i
 .PHONY : libft/ft_toupper.c.i
 
 libft/ft_toupper.s: libft/ft_toupper.c.s
@@ -2442,7 +2631,7 @@ libft/ft_toupper.s: libft/ft_toupper.c.s
 
 # target to generate assembly for a file
 libft/ft_toupper.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/ft_toupper.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
 libft/get_next_line.o: libft/get_next_line.c.o
@@ -2451,7 +2640,7 @@ libft/get_next_line.o: libft/get_next_line.c.o
 
 # target to build an object file
 libft/get_next_line.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/get_next_line.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/get_next_line.c.o
 .PHONY : libft/get_next_line.c.o
 
 libft/get_next_line.i: libft/get_next_line.c.i
@@ -2460,7 +2649,7 @@ libft/get_next_line.i: libft/get_next_line.c.i
 
 # target to preprocess a source file
 libft/get_next_line.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/get_next_line.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/get_next_line.c.i
 .PHONY : libft/get_next_line.c.i
 
 libft/get_next_line.s: libft/get_next_line.c.s
@@ -2469,7 +2658,7 @@ libft/get_next_line.s: libft/get_next_line.c.s
 
 # target to generate assembly for a file
 libft/get_next_line.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/get_next_line.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
 libft/pf_funcs.o: libft/pf_funcs.c.o
@@ -2478,7 +2667,7 @@ libft/pf_funcs.o: libft/pf_funcs.c.o
 
 # target to build an object file
 libft/pf_funcs.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_funcs.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_funcs.c.o
 .PHONY : libft/pf_funcs.c.o
 
 libft/pf_funcs.i: libft/pf_funcs.c.i
@@ -2487,7 +2676,7 @@ libft/pf_funcs.i: libft/pf_funcs.c.i
 
 # target to preprocess a source file
 libft/pf_funcs.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_funcs.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_funcs.c.i
 .PHONY : libft/pf_funcs.c.i
 
 libft/pf_funcs.s: libft/pf_funcs.c.s
@@ -2496,7 +2685,7 @@ libft/pf_funcs.s: libft/pf_funcs.c.s
 
 # target to generate assembly for a file
 libft/pf_funcs.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_funcs.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_funcs.c.s
 .PHONY : libft/pf_funcs.c.s
 
 libft/pf_get_sign_arg.o: libft/pf_get_sign_arg.c.o
@@ -2505,7 +2694,7 @@ libft/pf_get_sign_arg.o: libft/pf_get_sign_arg.c.o
 
 # target to build an object file
 libft/pf_get_sign_arg.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_get_sign_arg.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_get_sign_arg.c.o
 .PHONY : libft/pf_get_sign_arg.c.o
 
 libft/pf_get_sign_arg.i: libft/pf_get_sign_arg.c.i
@@ -2514,7 +2703,7 @@ libft/pf_get_sign_arg.i: libft/pf_get_sign_arg.c.i
 
 # target to preprocess a source file
 libft/pf_get_sign_arg.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_get_sign_arg.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_get_sign_arg.c.i
 .PHONY : libft/pf_get_sign_arg.c.i
 
 libft/pf_get_sign_arg.s: libft/pf_get_sign_arg.c.s
@@ -2523,7 +2712,7 @@ libft/pf_get_sign_arg.s: libft/pf_get_sign_arg.c.s
 
 # target to generate assembly for a file
 libft/pf_get_sign_arg.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_get_sign_arg.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_get_sign_arg.c.s
 .PHONY : libft/pf_get_sign_arg.c.s
 
 libft/pf_itoabase.o: libft/pf_itoabase.c.o
@@ -2532,7 +2721,7 @@ libft/pf_itoabase.o: libft/pf_itoabase.c.o
 
 # target to build an object file
 libft/pf_itoabase.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_itoabase.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_itoabase.c.o
 .PHONY : libft/pf_itoabase.c.o
 
 libft/pf_itoabase.i: libft/pf_itoabase.c.i
@@ -2541,7 +2730,7 @@ libft/pf_itoabase.i: libft/pf_itoabase.c.i
 
 # target to preprocess a source file
 libft/pf_itoabase.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_itoabase.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_itoabase.c.i
 .PHONY : libft/pf_itoabase.c.i
 
 libft/pf_itoabase.s: libft/pf_itoabase.c.s
@@ -2550,7 +2739,7 @@ libft/pf_itoabase.s: libft/pf_itoabase.c.s
 
 # target to generate assembly for a file
 libft/pf_itoabase.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_itoabase.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_itoabase.c.s
 .PHONY : libft/pf_itoabase.c.s
 
 libft/pf_lst_ctr.o: libft/pf_lst_ctr.c.o
@@ -2559,7 +2748,7 @@ libft/pf_lst_ctr.o: libft/pf_lst_ctr.c.o
 
 # target to build an object file
 libft/pf_lst_ctr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_lst_ctr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_lst_ctr.c.o
 .PHONY : libft/pf_lst_ctr.c.o
 
 libft/pf_lst_ctr.i: libft/pf_lst_ctr.c.i
@@ -2568,7 +2757,7 @@ libft/pf_lst_ctr.i: libft/pf_lst_ctr.c.i
 
 # target to preprocess a source file
 libft/pf_lst_ctr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_lst_ctr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_lst_ctr.c.i
 .PHONY : libft/pf_lst_ctr.c.i
 
 libft/pf_lst_ctr.s: libft/pf_lst_ctr.c.s
@@ -2577,7 +2766,7 @@ libft/pf_lst_ctr.s: libft/pf_lst_ctr.c.s
 
 # target to generate assembly for a file
 libft/pf_lst_ctr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_lst_ctr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_lst_ctr.c.s
 .PHONY : libft/pf_lst_ctr.c.s
 
 libft/pf_lst_res.o: libft/pf_lst_res.c.o
@@ -2586,7 +2775,7 @@ libft/pf_lst_res.o: libft/pf_lst_res.c.o
 
 # target to build an object file
 libft/pf_lst_res.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_lst_res.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_lst_res.c.o
 .PHONY : libft/pf_lst_res.c.o
 
 libft/pf_lst_res.i: libft/pf_lst_res.c.i
@@ -2595,7 +2784,7 @@ libft/pf_lst_res.i: libft/pf_lst_res.c.i
 
 # target to preprocess a source file
 libft/pf_lst_res.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_lst_res.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_lst_res.c.i
 .PHONY : libft/pf_lst_res.c.i
 
 libft/pf_lst_res.s: libft/pf_lst_res.c.s
@@ -2604,7 +2793,7 @@ libft/pf_lst_res.s: libft/pf_lst_res.c.s
 
 # target to generate assembly for a file
 libft/pf_lst_res.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_lst_res.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_lst_res.c.s
 .PHONY : libft/pf_lst_res.c.s
 
 libft/pf_parse_fl_aux1.o: libft/pf_parse_fl_aux1.c.o
@@ -2613,7 +2802,7 @@ libft/pf_parse_fl_aux1.o: libft/pf_parse_fl_aux1.c.o
 
 # target to build an object file
 libft/pf_parse_fl_aux1.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_aux1.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_aux1.c.o
 .PHONY : libft/pf_parse_fl_aux1.c.o
 
 libft/pf_parse_fl_aux1.i: libft/pf_parse_fl_aux1.c.i
@@ -2622,7 +2811,7 @@ libft/pf_parse_fl_aux1.i: libft/pf_parse_fl_aux1.c.i
 
 # target to preprocess a source file
 libft/pf_parse_fl_aux1.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_aux1.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_aux1.c.i
 .PHONY : libft/pf_parse_fl_aux1.c.i
 
 libft/pf_parse_fl_aux1.s: libft/pf_parse_fl_aux1.c.s
@@ -2631,7 +2820,7 @@ libft/pf_parse_fl_aux1.s: libft/pf_parse_fl_aux1.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_fl_aux1.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_aux1.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_aux1.c.s
 .PHONY : libft/pf_parse_fl_aux1.c.s
 
 libft/pf_parse_fl_aux2.o: libft/pf_parse_fl_aux2.c.o
@@ -2640,7 +2829,7 @@ libft/pf_parse_fl_aux2.o: libft/pf_parse_fl_aux2.c.o
 
 # target to build an object file
 libft/pf_parse_fl_aux2.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_aux2.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_aux2.c.o
 .PHONY : libft/pf_parse_fl_aux2.c.o
 
 libft/pf_parse_fl_aux2.i: libft/pf_parse_fl_aux2.c.i
@@ -2649,7 +2838,7 @@ libft/pf_parse_fl_aux2.i: libft/pf_parse_fl_aux2.c.i
 
 # target to preprocess a source file
 libft/pf_parse_fl_aux2.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_aux2.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_aux2.c.i
 .PHONY : libft/pf_parse_fl_aux2.c.i
 
 libft/pf_parse_fl_aux2.s: libft/pf_parse_fl_aux2.c.s
@@ -2658,7 +2847,7 @@ libft/pf_parse_fl_aux2.s: libft/pf_parse_fl_aux2.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_fl_aux2.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_aux2.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_aux2.c.s
 .PHONY : libft/pf_parse_fl_aux2.c.s
 
 libft/pf_parse_fl_nbr.o: libft/pf_parse_fl_nbr.c.o
@@ -2667,7 +2856,7 @@ libft/pf_parse_fl_nbr.o: libft/pf_parse_fl_nbr.c.o
 
 # target to build an object file
 libft/pf_parse_fl_nbr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_nbr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_nbr.c.o
 .PHONY : libft/pf_parse_fl_nbr.c.o
 
 libft/pf_parse_fl_nbr.i: libft/pf_parse_fl_nbr.c.i
@@ -2676,7 +2865,7 @@ libft/pf_parse_fl_nbr.i: libft/pf_parse_fl_nbr.c.i
 
 # target to preprocess a source file
 libft/pf_parse_fl_nbr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_nbr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_nbr.c.i
 .PHONY : libft/pf_parse_fl_nbr.c.i
 
 libft/pf_parse_fl_nbr.s: libft/pf_parse_fl_nbr.c.s
@@ -2685,7 +2874,7 @@ libft/pf_parse_fl_nbr.s: libft/pf_parse_fl_nbr.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_fl_nbr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_nbr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_nbr.c.s
 .PHONY : libft/pf_parse_fl_nbr.c.s
 
 libft/pf_parse_fl_str.o: libft/pf_parse_fl_str.c.o
@@ -2694,7 +2883,7 @@ libft/pf_parse_fl_str.o: libft/pf_parse_fl_str.c.o
 
 # target to build an object file
 libft/pf_parse_fl_str.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_str.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_str.c.o
 .PHONY : libft/pf_parse_fl_str.c.o
 
 libft/pf_parse_fl_str.i: libft/pf_parse_fl_str.c.i
@@ -2703,7 +2892,7 @@ libft/pf_parse_fl_str.i: libft/pf_parse_fl_str.c.i
 
 # target to preprocess a source file
 libft/pf_parse_fl_str.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_str.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_str.c.i
 .PHONY : libft/pf_parse_fl_str.c.i
 
 libft/pf_parse_fl_str.s: libft/pf_parse_fl_str.c.s
@@ -2712,7 +2901,7 @@ libft/pf_parse_fl_str.s: libft/pf_parse_fl_str.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_fl_str.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_fl_str.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_fl_str.c.s
 .PHONY : libft/pf_parse_fl_str.c.s
 
 libft/pf_parse_nbr.o: libft/pf_parse_nbr.c.o
@@ -2721,7 +2910,7 @@ libft/pf_parse_nbr.o: libft/pf_parse_nbr.c.o
 
 # target to build an object file
 libft/pf_parse_nbr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_nbr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_nbr.c.o
 .PHONY : libft/pf_parse_nbr.c.o
 
 libft/pf_parse_nbr.i: libft/pf_parse_nbr.c.i
@@ -2730,7 +2919,7 @@ libft/pf_parse_nbr.i: libft/pf_parse_nbr.c.i
 
 # target to preprocess a source file
 libft/pf_parse_nbr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_nbr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_nbr.c.i
 .PHONY : libft/pf_parse_nbr.c.i
 
 libft/pf_parse_nbr.s: libft/pf_parse_nbr.c.s
@@ -2739,7 +2928,7 @@ libft/pf_parse_nbr.s: libft/pf_parse_nbr.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_nbr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_nbr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_nbr.c.s
 .PHONY : libft/pf_parse_nbr.c.s
 
 libft/pf_parse_p.o: libft/pf_parse_p.c.o
@@ -2748,7 +2937,7 @@ libft/pf_parse_p.o: libft/pf_parse_p.c.o
 
 # target to build an object file
 libft/pf_parse_p.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_p.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_p.c.o
 .PHONY : libft/pf_parse_p.c.o
 
 libft/pf_parse_p.i: libft/pf_parse_p.c.i
@@ -2757,7 +2946,7 @@ libft/pf_parse_p.i: libft/pf_parse_p.c.i
 
 # target to preprocess a source file
 libft/pf_parse_p.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_p.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_p.c.i
 .PHONY : libft/pf_parse_p.c.i
 
 libft/pf_parse_p.s: libft/pf_parse_p.c.s
@@ -2766,7 +2955,7 @@ libft/pf_parse_p.s: libft/pf_parse_p.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_p.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_p.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_p.c.s
 .PHONY : libft/pf_parse_p.c.s
 
 libft/pf_parse_str.o: libft/pf_parse_str.c.o
@@ -2775,7 +2964,7 @@ libft/pf_parse_str.o: libft/pf_parse_str.c.o
 
 # target to build an object file
 libft/pf_parse_str.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_str.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_str.c.o
 .PHONY : libft/pf_parse_str.c.o
 
 libft/pf_parse_str.i: libft/pf_parse_str.c.i
@@ -2784,7 +2973,7 @@ libft/pf_parse_str.i: libft/pf_parse_str.c.i
 
 # target to preprocess a source file
 libft/pf_parse_str.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_str.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_str.c.i
 .PHONY : libft/pf_parse_str.c.i
 
 libft/pf_parse_str.s: libft/pf_parse_str.c.s
@@ -2793,7 +2982,7 @@ libft/pf_parse_str.s: libft/pf_parse_str.c.s
 
 # target to generate assembly for a file
 libft/pf_parse_str.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_parse_str.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_parse_str.c.s
 .PHONY : libft/pf_parse_str.c.s
 
 libft/pf_uchr.o: libft/pf_uchr.c.o
@@ -2802,7 +2991,7 @@ libft/pf_uchr.o: libft/pf_uchr.c.o
 
 # target to build an object file
 libft/pf_uchr.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_uchr.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_uchr.c.o
 .PHONY : libft/pf_uchr.c.o
 
 libft/pf_uchr.i: libft/pf_uchr.c.i
@@ -2811,7 +3000,7 @@ libft/pf_uchr.i: libft/pf_uchr.c.i
 
 # target to preprocess a source file
 libft/pf_uchr.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_uchr.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_uchr.c.i
 .PHONY : libft/pf_uchr.c.i
 
 libft/pf_uchr.s: libft/pf_uchr.c.s
@@ -2820,7 +3009,7 @@ libft/pf_uchr.s: libft/pf_uchr.c.s
 
 # target to generate assembly for a file
 libft/pf_uchr.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/libft/pf_uchr.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/libft/pf_uchr.c.s
 .PHONY : libft/pf_uchr.c.s
 
 main.o: main.c.o
@@ -2829,7 +3018,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/main.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -2838,7 +3027,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/main.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -2847,7 +3036,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/main.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/main.c.s
 .PHONY : main.c.s
 
 make_cycle.o: make_cycle.c.o
@@ -2856,7 +3045,7 @@ make_cycle.o: make_cycle.c.o
 
 # target to build an object file
 make_cycle.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/make_cycle.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/make_cycle.c.o
 .PHONY : make_cycle.c.o
 
 make_cycle.i: make_cycle.c.i
@@ -2865,7 +3054,7 @@ make_cycle.i: make_cycle.c.i
 
 # target to preprocess a source file
 make_cycle.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/make_cycle.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/make_cycle.c.i
 .PHONY : make_cycle.c.i
 
 make_cycle.s: make_cycle.c.s
@@ -2874,7 +3063,7 @@ make_cycle.s: make_cycle.c.s
 
 # target to generate assembly for a file
 make_cycle.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/make_cycle.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/make_cycle.c.s
 .PHONY : make_cycle.c.s
 
 op.o: op.c.o
@@ -2883,7 +3072,7 @@ op.o: op.c.o
 
 # target to build an object file
 op.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/op.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/op.c.o
 .PHONY : op.c.o
 
 op.i: op.c.i
@@ -2892,7 +3081,7 @@ op.i: op.c.i
 
 # target to preprocess a source file
 op.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/op.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/op.c.i
 .PHONY : op.c.i
 
 op.s: op.c.s
@@ -2901,7 +3090,7 @@ op.s: op.c.s
 
 # target to generate assembly for a file
 op.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/op.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/op.c.s
 .PHONY : op.c.s
 
 read_bots.o: read_bots.c.o
@@ -2910,7 +3099,7 @@ read_bots.o: read_bots.c.o
 
 # target to build an object file
 read_bots.c.o:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/read_bots.c.o
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/read_bots.c.o
 .PHONY : read_bots.c.o
 
 read_bots.i: read_bots.c.i
@@ -2919,7 +3108,7 @@ read_bots.i: read_bots.c.i
 
 # target to preprocess a source file
 read_bots.c.i:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/read_bots.c.i
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/read_bots.c.i
 .PHONY : read_bots.c.i
 
 read_bots.s: read_bots.c.s
@@ -2928,7 +3117,7 @@ read_bots.s: read_bots.c.s
 
 # target to generate assembly for a file
 read_bots.c.s:
-	$(MAKE) -f CMakeFiles/kostya_2_1.dir/build.make CMakeFiles/kostya_2_1.dir/read_bots.c.s
+	$(MAKE) -f CMakeFiles/corewar_kmykhail.dir/build.make CMakeFiles/corewar_kmykhail.dir/read_bots.c.s
 .PHONY : read_bots.c.s
 
 # Help Target
@@ -2939,7 +3128,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... kostya_2_1"
+	@echo "... corewar_kmykhail"
 	@echo "... fun_cor/fun_add.o"
 	@echo "... fun_cor/fun_add.i"
 	@echo "... fun_cor/fun_add.s"
@@ -2958,6 +3147,9 @@ help:
 	@echo "... fun_cor/fun_ldi.o"
 	@echo "... fun_cor/fun_ldi.i"
 	@echo "... fun_cor/fun_ldi.s"
+	@echo "... fun_cor/fun_live.o"
+	@echo "... fun_cor/fun_live.i"
+	@echo "... fun_cor/fun_live.s"
 	@echo "... fun_cor/fun_lld.o"
 	@echo "... fun_cor/fun_lld.i"
 	@echo "... fun_cor/fun_lld.s"
@@ -2982,6 +3174,24 @@ help:
 	@echo "... fun_cor/fun_zjmp.o"
 	@echo "... fun_cor/fun_zjmp.i"
 	@echo "... fun_cor/fun_zjmp.s"
+	@echo "... fun_cor/implement_command.o"
+	@echo "... fun_cor/implement_command.i"
+	@echo "... fun_cor/implement_command.s"
+	@echo "... fun_cor/process_current.o"
+	@echo "... fun_cor/process_current.i"
+	@echo "... fun_cor/process_current.s"
+	@echo "... fun_cor/table_label.o"
+	@echo "... fun_cor/table_label.i"
+	@echo "... fun_cor/table_label.s"
+	@echo "... fun_cor/test.o"
+	@echo "... fun_cor/test.i"
+	@echo "... fun_cor/test.s"
+	@echo "... init_visual_new.o"
+	@echo "... init_visual_new.i"
+	@echo "... init_visual_new.s"
+	@echo "... init_vizual.o"
+	@echo "... init_vizual.i"
+	@echo "... init_vizual.s"
 	@echo "... libft/ft_add_at_end.o"
 	@echo "... libft/ft_add_at_end.i"
 	@echo "... libft/ft_add_at_end.s"

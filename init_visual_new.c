@@ -14,10 +14,10 @@ t_process	*lst_newproc(t_main *main, int pl_indx)
 	new_proc = (t_process*)malloc(sizeof(t_process));
 	while (c < 16)
 	{
-		main->lst_proc->rg[c][0] = (!c) ? -1 : 0;
-		main->lst_proc->rg[c][1] = (!c) ? -1 : 0;
-		main->lst_proc->rg[c][2] = (!c) ? -1 : 0;
-		main->lst_proc->rg[c][3] = (!c) ? -1 : 0;
+		new_proc->rg[c][0] = (!c) ? (pl_indx - ((pl_indx * 2) + 1)) : 0;
+		new_proc->rg[c][1] = (!c) ? (pl_indx - ((pl_indx * 2) + 1)) : 0;
+		new_proc->rg[c][2] = (!c) ? (pl_indx - ((pl_indx * 2) + 1)) : 0;
+		new_proc->rg[c][3] = (!c) ? (pl_indx - ((pl_indx * 2) + 1)) : 0;
 		c++;
 	}
 	new_proc->index = main->coor_of_p[pl_indx];
