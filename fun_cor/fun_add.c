@@ -32,4 +32,5 @@ void	fun_add(t_main *main, t_process *proc)
         proc->rg[num_reg][i] = res;
         res = res >> 8;
     }
+    proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }

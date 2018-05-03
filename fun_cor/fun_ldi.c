@@ -52,4 +52,5 @@ void	fun_ldi(t_main *main, t_process *proc)
 		r++;
 	}
 	fun_ldi_wright_to_reg(main, num, proc);
+	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }

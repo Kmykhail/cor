@@ -12,53 +12,68 @@
 
 #include "../main.h"
 
-static void	choose_function_1(t_main *main, t_process *proc)
+int		choose_function_1(t_main *main, t_process *proc)
 {
-	// if (main->map[proc->pc] == 1)
-	// 	fun_live(main, proc);
-	if (main->map[proc->pc] == 2)
+	if (main->map[proc->index] == 1 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
+		fun_live(main, proc);
+	else if (main->map[proc->index] == 2 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_ld(main, proc);
-	if (main->map[proc->pc] == 3)
+	else if (main->map[proc->index] == 3 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_st(main, proc);
-	if (main->map[proc->pc] == 4)
+	else if (main->map[proc->index] == 4 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_add(main, proc);
-	if (main->map[proc->pc] == 5)
+	else if (main->map[proc->index] == 5 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_sub(main, proc);
-	if (main->map[proc->pc] == 6)
+	else if (main->map[proc->index] == 6 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_and(main, proc);
-	if (main->map[proc->pc] == 7)
+	else if (main->map[proc->index] == 7 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_or(main, proc);
-	if (main->map[proc->pc] == 8)
+	else if (main->map[proc->index] == 8 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_xor(main, proc);
+	return (1);
 }
 
-static void	choose_function_2(t_main *main, t_process *proc)
+int		choose_function_2(t_main *main, t_process *proc)
 {
-	if (main->map[proc->pc] == 9)
+	if (main->map[proc->index] == 9 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_zjmp(main, proc);
-	if (main->map[proc->pc] == 10)
+	else if (main->map[proc->index] == 10 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_ldi(main, proc);
-	if (main->map[proc->pc] == 11)
+	else if (main->map[proc->index] == 11 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_sti(main, proc);
-	// else if (main->map[proc->pc] == 12)
-	// 	fun_fork(main, proc);
-	if (main->map[proc->pc] == 13)
+	else if (main->map[proc->index] == 12 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
+		fun_fork(main, proc);
+	else if (main->map[proc->index] == 13 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_lld(main, proc);
-	if (main->map[proc->pc] == 14)
+	else if (main->map[proc->index] == 14 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_lldi(main, proc);
-	// else if (main->map[proc->pc] == 15)
+	// else if (main->map[proc->index] == 15)
 	// 	fun_lfork(main, proc);
-	else if (main->map[proc->pc] == 16)
+	else if (main->map[proc->index] == 16 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_aff(main, proc);
+	return (1);
 }
 
 
 void    ft_implement_command(t_main *main, t_process *proc)
 {
-    if (main->map[proc->pc] >= 1 && main->map[proc->pc] < 9)
-        choose_function_1(main, proc);
-    else if (main->map[proc->pc] >=9 && main->map[proc->pc] <= 16)
-        choose_function_2(main, proc);
+    if (main->map[proc->index] >= 1 && main->map[proc->index] < 9)
+    {
+        if (choose_function_1(main, proc))
+        {
+        	return ;
+        }
+    }
+    else if (main->map[proc->index] >=9 && main->map[proc->index] <= 16)
+    {
+        if (choose_function_2(main, proc))
+        {
+        	return ;
+        }
+        
+    }
+
+    dprintf(FD, "||||||||||||||proc->index = %d\n", proc->index);
 }
 
 

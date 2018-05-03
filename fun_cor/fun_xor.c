@@ -12,7 +12,7 @@
 
 #include "../main.h"
 
-// static void	fun_xor_reg(t_main *main, int res)
+// static void	fun_xor_reg(t_main *main, int res, t_process *proc)
 // {
 // 	int     i;
 //     int     num_reg;
@@ -26,7 +26,7 @@
 //     }
 // }
 
-// static void	fun_xor_dir(t_main *main, int res)
+// static void	fun_xor_dir(t_main *main, int res, t_process *proc)
 // {
 // 	int 	i;
 // 	int 	curr;
@@ -40,7 +40,7 @@
 // 	}
 // }
 
-// static void	fun_xor_ind(t_main *main, int res)
+// static void	fun_xor_ind(t_main *main, int res, t_process *proc)
 // {
 // 	int		step;
 
@@ -58,6 +58,9 @@ void    fun_xor(t_main *main, t_process *proc)
     
     // test_show_me_label_arg(main);
     ready_arg(main, proc);
+
+    // dprintf(FD, "main->ready_arg[0][0] = %d\n", main->ready_arg[0][0]);
+    // dprintf(FD, "main->ready_arg[1][0] = %d\n", main->ready_arg[1][0]);
     res = main->ready_arg[0][0] ^ main->ready_arg[1][0];
     if (res)
         carry = 0;
@@ -71,6 +74,7 @@ void    fun_xor(t_main *main, t_process *proc)
         res = res >> 8;
     }
     // test_show_me_label_arg(main);
+    proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }
 
 

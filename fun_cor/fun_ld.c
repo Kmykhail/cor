@@ -62,9 +62,16 @@ static	void	fun_ld_second_ind(t_main *main, t_process *proc)
 
 void	fun_ld(t_main *main, t_process *proc)
 {
+	dprintf(FD, "______________________________\n");
+	dprintf(FD, "FUN_LD\n");
 	ready_arg(main, proc);
 	if (main->arg[0] == 1)
 		fun_ld_second_reg(main, proc);
 	if (main->arg[0] == 3)
 		fun_ld_second_ind(main, proc);
+	dprintf(FD, "____________________________________\n");
+	dprintf(FD, ">>>>>>>>>>>>>main->map[proc->index] = %d\n", main->map[proc->index]);
+	dprintf(FD, "proc->index === %d\n", proc->index);
+	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
+	dprintf(FD, "next proc->index = %d\n", proc->index);
 }

@@ -41,7 +41,8 @@ typedef struct			s_changes // все измениня кидаю в голову
 	int					start;// стартовый индекс на карте выгрузки
 	int					finish; // конечный индекс-----//---------
 	unsigned int		cycle_init;//цикл на котором произошла выгрузка
-	t_process			*process;// какой процес
+	t_process			*process;// какой процес//????
+	//КОРОЧЕ НЕ БУДЕТ УКАЗАТЕЛЯ НА ПРОЦЕСС, А БУДЕТ ПЕРЕМЕННАЯ В КОТОРОЙ БУДЕТ ХРАНИТЬСЯ НОМЕР (nNBR_LIVE), просто копируй
 	struct s_changes	*next;
 }						t_changes;
 
@@ -69,7 +70,7 @@ typedef struct			s_main
 	int 				label[16][4];// таблица
 	int					code_codage[3];// ????? 
 	uint8_t 			arg[3];
-    int 				ready_arg[3][2];//
+    unsigned int 		ready_arg[3][2];//
 	int 				coor_of_p[4];
 	char				*filename[5];
 	unsigned char		map[MEM_SIZE];//
@@ -87,15 +88,15 @@ typedef struct			s_main
 
 }						t_main;
 
+void					init_players(t_main *main, int indx);
 int						make_cycle(t_main *main);//kmykhail
 int						ft_print_error(int code);//kmykhail
 void					ft_table_label(t_main *main);//kmykhail
 void					valid_bots(t_main *main, int ac, char **av);//kmykhail
-void					check_map(t_main *main, uint8_t num);//kmykhail
+void					check_codage(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
-void					lst_newchanges(t_main *main, t_process *proc, int i, int fin);//kmykhail
-t_process				*lst_newproc(t_main *main, int pl_indx);//kmykhail
-void					init_players(t_main *main, int indx);//kmykhail
+void					lst_newchanges(t_main *main, t_process *proc, int i, int fin, int ch);
+t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 
 */
@@ -108,9 +109,7 @@ void    		ft_implement_command(t_main *main, t_process *proc);
 void		    ready_arg(t_main *main, t_process *proc);
 int     		ft_step_pc(t_main *main, int num, t_process *proc);
 
-/*
- void	fun_live()
- */
+void			fun_live(t_main *main, t_process *proc);
 void			fun_ld(t_main *main, t_process *proc);
 void			fun_st(t_main *main, t_process *proc);
 void			fun_add(t_main *main, t_process *proc);
@@ -121,9 +120,7 @@ void			fun_xor(t_main *main, t_process *proc);
 void			fun_zjmp(t_main *main, t_process *proc);
 void			fun_ldi(t_main *main, t_process *proc);
 void			fun_sti(t_main *main, t_process *proc);
-/*
- void	fun_fork()
- */
+void			fun_fork(t_main *main, t_process *proc);
 void			fun_lld(t_main *main, t_process *proc);
 void			fun_lldi(t_main *main, t_process *proc);
 /*
@@ -140,5 +137,5 @@ void			fun_aff(t_main *main, t_process *proc);
  **				PART OF TEST FUNCTION (ALL DEL)
  */
 void			test_open(t_main *main);
-void			test_show_me_label_arg(t_main *main);
+void		    test_show_me_label_arg(t_main *main, t_process *proc);
 #endif

@@ -27,12 +27,12 @@ t_process	*lst_newproc(t_main *main, int pl_indx)
 	return (new_proc);
 }
 
-void	lst_newchanges(t_main *main, t_process *proc, int start, int fin)
+void	lst_newchanges(t_main *main, t_process *proc, int start, int fin, int ch)
 {
 	t_changes	*new_change;
 
 	new_change = (t_changes*)malloc(sizeof(t_changes));
-	new_change->start =  main->coor_of_p[start];
+	new_change->start = (!ch) ? main->coor_of_p[start] : start;
 	new_change->finish = fin;
 	new_change->cycle_init = main->cur_cycle;
 	new_change->process = proc;

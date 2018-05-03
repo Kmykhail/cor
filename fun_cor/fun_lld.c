@@ -80,5 +80,6 @@ void	fun_lld(t_main *main, t_process *proc)
 		fun_lld_second_dir(main, proc);
 	if (main->arg[0] == 3)
 		fun_lld_second_ind(main, proc);
+	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }
 

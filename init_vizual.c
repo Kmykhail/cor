@@ -25,7 +25,7 @@ void	init_vizual(t_main *main, int i, int fin)
 			dprintf(FD, "NEXT\n");
 			main->lst_changes = main->lst_changes->next;
 		}*/
-		lst_newchanges(main, main->lst_proc->next, i, fin);
+		lst_newchanges(main, main->lst_proc->next, i, fin, 0);
 		//dprintf(FD, "main->lst_changes->finish %d\n", main->lst_changes->finish);
 		return ;
 	}

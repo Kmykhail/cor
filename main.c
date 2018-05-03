@@ -33,7 +33,6 @@ static void	init_main(t_main *main)
 	t_changes	*chang2;
 	t_player	*player1;
 	t_player	*player2;
-
 	player1 = (t_player*)malloc(sizeof(t_player));
 	player2 = (t_player*)malloc(sizeof(t_player));
 	ft_bzero(player1->player_name, PROG_NAME_LENGTH + 1);
@@ -141,7 +140,7 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	init_struct(&main, argc);
-	main.ddddd = open("/Users/kmykhail/Desktop/kostya_2_1/fun_cor/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	main.ddddd = open("/Users/ozharko/Desktop/cor-master/fun_cor/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
 	/*while (main.lst_changes)

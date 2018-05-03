@@ -35,5 +35,6 @@ void    fun_and(t_main *main, t_process *proc)
         res = res >> 8;
     }
     // test_show_me_label_arg(main);
+    proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }
 

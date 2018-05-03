@@ -14,7 +14,7 @@
 #include "../main.h"
 
 /*
-** main->map[proc->pc + 1 + k]; прибавление 1 должно быть в виде переменной которая покажет есть ли кожэдж у данной функции
+** main->map[proc->index + 1 + k]; прибавление 1 должно быть в виде переменной которая покажет есть ли кожэдж у данной функции
 */
 void     ready_arg(t_main *main, t_process *proc)
 {
@@ -40,9 +40,9 @@ void     ready_arg(t_main *main, t_process *proc)
     {
         if (main->arg[i] == 1) 		 // (если аргумент регист в котором надо взять значение внутри)
         {
-            num = main->map[proc->pc];
+            num = main->map[proc->index];
             r = 0;
-            main->ready_arg[i][1] = main->map[proc->pc + 1 + k];  // записать номер T_REG 
+            main->ready_arg[i][1] = main->map[proc->index + 1 + k];  // записать номер T_REG 
             while (r < 4)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
@@ -55,12 +55,12 @@ void     ready_arg(t_main *main, t_process *proc)
         }
         else if (main->arg[i] == 2)
         {
-            num = main->map[proc->pc];   // беру текущею позицию на карте;
+            num = main->map[proc->index] - 1;   // беру текущею позицию на карте;
             num = main->label[num][3];     // эту позицию вставляю в поиск строки в лейбл и беру размер T_DIR // num = РАЗМЕР T_DIR
             while (num--)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + k];  // 0b 68 00 00 00 01
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->index + 1 + k];  // 0b 68 00 00 00 01
                 k++;
             }
             // dprintf(FD, "main->ready->arg[%i][0] = %d\n", i, main->ready_arg[i][0]);
@@ -68,109 +68,122 @@ void     ready_arg(t_main *main, t_process *proc)
         /*
         ** для функции ldi надо считать T_IND "4 байта считаные с позиции ((T_IND % IDX_MOD) плюс текущая позиция PC)."
         */
-        else if (main->arg[i] == 3 && (main->map[proc->pc] == 2 || main->map[proc->pc] == 3 || main->map[proc->pc] == 10 || main->map[proc->pc] == 11 || main->map[proc->pc] == 14))
+        else if (main->arg[i] == 3 && (main->map[proc->index] == 2 || main->map[proc->index] == 3 || main->map[proc->index] == 10 || main->map[proc->index] == 11 || main->map[proc->index] == 14))
         {
             num = 0;
-            num = num | main->map[proc->pc + 1 + k++];
+            num = num | main->map[proc->index + 1 + k++];
             num = num << 8;
-            num = num | main->map[proc->pc + 1 + k++];
+            num = num | main->map[proc->index + 1 + k++];
             num = num % IDX_MOD;
             r = 0;
             while (r < 4)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + num++]; 
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->index + 1 + num++]; 
                 r++;
             }
         }
         /*
         ** отдельное условие для ld КАК ОН ТУТ ПЕРЕЗАПИШЕТСЯ
         */
-        else if (main->arg[i] == 3 && (main->map[proc->pc] == 2))
+        else if (main->arg[i] == 3 && (main->map[proc->index] == 2))
         {
             num = 0;
-            num = num | main->map[proc->pc + 1 + k++];
+            num = num | main->map[proc->index + 1 + k++];
             num = num << 8;
-            num = num | main->map[proc->pc + 1 + k++];
+            num = num | main->map[proc->index + 1 + k++];
             num = num % IDX_MOD; // ключевой момоент IND для этой функции
             r = 0;
             while (r < 4)
             {
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + num++]; 
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->index + 1 + num++]; 
                 r++;
             }
         }
         else if (main->arg[i] == 3)
         {
         	num = 0;
-        	num = num | main->map[proc->pc + 1 + k++];
+        	num = num | main->map[proc->index + 1 + k++];
         	num = num << 8;
-        	num = num | main->map[proc->pc + 1 + k++];
+        	num = num | main->map[proc->index + 1 + k++];
         	r = 0;
         	while (r < 4)
         	{
                 main->ready_arg[i][0] = main->ready_arg[i][0] << 8;
-                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->pc + 1 + num++]; 
+                main->ready_arg[i][0] = main->ready_arg[i][0] | main->map[proc->index + 1 + num++]; 
                 r++;
         	}
         }
         i++;
     }
+    dprintf(FD, "______________________________\n");
+    dprintf(FD, "RESALT ready_arg\n");
+    dprintf(FD, "main->ready_arg[0][0] = %d\n", main->ready_arg[0][0]);
+    dprintf(FD, "main->ready_arg[1][0] = %d\n", main->ready_arg[1][0]);
+    dprintf(FD, "main->ready_arg[2][0] = %d\n", main->ready_arg[2][0]);
+
+    dprintf(FD, "main->ready_arg[0][1] = %d\n", main->ready_arg[0][1]);
+    dprintf(FD, "main->ready_arg[1][1] = %d\n", main->ready_arg[1][1]);
+    dprintf(FD, "main->ready_arg[2][1] = %d\n", main->ready_arg[2][1]);
+    dprintf(FD, "______________________________\n");
 }
 
 int     ft_step_pc(t_main *main, int num, t_process *proc)
 {
 	int     step;
 	
-	step = 1;
-    if (proc->pc == 0)
-        step = 2;
+	// step = 1;
+ //    if (proc->index == 0)
+        step = 2; // один для codeage и еще один чтобы стать на следующей позиции 
 	if (main->arg[0])
 	{
 		if (main->arg[0] == 1)
 			step += 1;
 		if (main->arg[0] == 2)
-			step += main->label[num][3];
+			step += main->label[num - 1][3];
 		if (main->arg[0] == 3)
 			step += 2;
+        dprintf(FD, "step = %d\n", step);
 	}
 	if (main->arg[1])
 	{
 		if (main->arg[1] == 1)
 			step += 1;
 		if (main->arg[1] == 2)
-			step += main->label[num][3];
+			step += main->label[num - 1][3];
 		if (main->arg[1] == 3)
 			step += 2;
+        dprintf(FD, "step = %d\n", step);
 	}
 	if (main->arg[2])
 	{
 		if (main->arg[2] == 1)
 			step += 1;
 		if (main->arg[2] == 2)
-			step += main->label[num][3];
+			step += main->label[num - 1][3];
+        dprintf(FD, "step = %d\n", step);
 	}
-
-    //dprintf(FD, "ft_step_pc %d\n ", step);
 	main->arg[0] = 0;
 	main->arg[1] = 0;
 	main->arg[2] = 0;
-    //printf(">>>>>>>step<<<<<<:%d\n", step);
+    dprintf(FD, "STEEEEPP == %d\n", step);
 	return (step);
 }
 
-void    check_map(t_main *main, uint8_t num)
+void    check_codage(t_main *main, uint8_t num)
 {
 	int     i;
 
 	i = 1;
+    main->arg[0] = 0;
+    main->arg[1] = 0;
+    main->arg[2] = 0;
 	// main->codage = num;     // зачем нам знать это codage если у нас все будет в 	uint8_t arg[3];    ready_arg[3][2]; ????????????????????????????
 	while (1)
 	{
 		if ((i == 1 || i == 2))
 		{
-            // printf("main->arg[0] %d", main->arg[0]);
 			main->arg[0] = main->arg[0] << 1;
 			main->arg[0] += (num >= 128) ? 1 : 0;
 		}
@@ -189,39 +202,8 @@ void    check_map(t_main *main, uint8_t num)
 		num = num << 1;
 		i++;
 	}
+    dprintf(FD, "main->arg[0] = %d\n", main->arg[0]);
+    dprintf(FD, "main->arg[1] = %d\n", main->arg[1]);
+    dprintf(FD, "main->arg[2] = %d\n", main->arg[2]);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

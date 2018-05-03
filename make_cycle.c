@@ -15,34 +15,34 @@ int    make_cycle_second(t_main *main, t_process **proc)
 		while (head)
 		{
 			dprintf(FD, "IN\n");
-			dprintf(FD, "head->pc = %d\n", head->pc);
-			dprintf(FD, "main->map[head->pc] = %d\n", main->map[head->pc]);
-			if (main->map[head->pc] >= 16)
+			dprintf(FD, "head->index = %d\n", head->index);
+			dprintf(FD, "main->map[head->index] = %d\n", main->map[head->index]);
+			if (main->map[head->index] >= 16)
 			{
 				dprintf(FD, "GOOD 1\n");
 				ft_print_error(5);
 			}
-			if (main->map[head->pc] != 1 &&  main->map[head->pc] != 8 && main->map[head->pc] != 12 \
-			&& main->map[head->pc] != 15 && main->map[head->pc] != 16 && main->cur_cycle % main->label[head->pc][2] == 0 && main->cur_cycle != 0)
+			if (main->map[head->index] != 1 &&  main->map[head->index] != 8 && main->map[head->index] != 12 \
+			&& main->map[head->index] != 15 && main->map[head->index] != 16 && main->cur_cycle % main->label[head->index][2] == 0 && main->cur_cycle != 0)
 			{
 				dprintf(FD, "GOOD 2\n");
-				check_map(main, main->map[head->pc + 1]);
+				check_map(main, main->map[head->index + 1]);
 				ft_implement_command(main, head);
-				head->index += ft_step_pc(main, main->map[head->pc], head);//изменить step на indx
+				head->index += ft_step_pc(main, main->map[head->index], head);//изменить step на indx
 				ITR++;
 				break ;
 			}
-			else if (main->cur_cycle % main->label[head->pc][2] == 0 && main->cur_cycle != 0)
+			else if (main->cur_cycle % main->label[head->index][2] == 0 && main->cur_cycle != 0)
 			{
 				dprintf(FD, "GOOD 3\n");
 				ft_implement_command(main, head);
-				head->index = main->label[head->pc][3];
-				head->pc += head->index;
+				head->index = main->label[head->index][3];
+				head->index += head->index;
 				break ;
 			}
 			head = head->next;
 		}
-		if (main->map[head->pc] == 11 && main->cur_cycle % main->label[head->pc][2] == 0 && main->cur_cycle != 0)
+		if (main->map[head->index] == 11 && main->cur_cycle % main->label[head->index][2] == 0 && main->cur_cycle != 0)
 		{
 			dprintf(FD, "return 1\n");
 			return (1);
@@ -55,49 +55,46 @@ int    make_cycle_second(t_main *main, t_process **proc)
 }
 */
 
-int		make_cycle_second(t_main *main, t_process **proc)
+int 	make_cycle_second(t_main *main, t_process **proc)
 {
-	t_process *head;
+	t_process	*head;
 
-	while (1)
+	head = *proc;
+    dprintf(FD, "//////////////////////////////////////////\n");
+	while (head)
 	{
-		while (head)
+		dprintf(FD, "WHAT_COMMAND:%d\n", main->map[head->index]);
+		if (main->map[head->index] >= 16)
+			ft_print_error(1);
+		dprintf(FD, "CHE_TO TAM\n");
+		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
+		&& main->map[head->index] != 15 && main->map[head->index] != 16)
 		{
-			/*dprintf(FD, "head %p\n", head);
-			dprintf(FD, "head->pc %d\n", head->pc);*/
-			if (main->map[head->pc] >= 16)
-				ft_print_error(5);
-			if (main->map[head->pc] != 1 &&  main->map[head->pc] != 8 && main->map[head->pc] != 12 \
- 			&& main->map[head->pc] != 15 && main->map[head->pc] != 16 && main->cur_cycle % main->label[head->pc][2] == 0 && main->cur_cycle != 0)
-			{
- 				check_map(main, main->map[head->pc + 1]);
- 				ft_implement_command(main, head);
- 				head->index += ft_step_pc(main, main->map[head->pc], head);//изменить step на indx
- 				ITR++;
- 				return (1);
-			}
-			else if (main->cur_cycle % main->label[head->pc][2] == 0 && main->cur_cycle != 0)
-			{
-				ft_implement_command(main, head);
-				head->index = main->label[head->pc][3];
-				head->pc += head->index;
-				return (1);
-			}
-			head =  head->next;
-			main->cur_cycle++;
+			dprintf(FD, "COMMAND_A:%d\n", main->map[head->index]);
+			check_codage(main, main->map[head->index + 1]);
+			ft_implement_command(main, head);
 		}
+		else if (main->map[head->index] == 1 || main->map[head->index] == 12 \
+		|| main->map[head->index] == 15 || main->map[head->index] == 16)
+		{
+			dprintf(FD, "COMMAND_B:%d\n", main->map[head->index]);
+			ft_implement_command(main, head);
+            break ;
+		}
+		else
+			return (0);
+		head = head->next;
 	}
-	return (0);
+	main->cur_cycle++;
+	return (1);
 }
 
 int     make_cycle(t_main *main)
 {
-	// t_process     *proc;
-
-
+	// t_process	*proc;
 	if (make_cycle_second(main, &main->lst_proc))
 		return (1);
 	else
 		return (0);
-
 }
+

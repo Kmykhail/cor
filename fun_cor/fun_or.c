@@ -12,7 +12,7 @@
 
 #include "../main.h"
 
-// static void	fun_or_reg(t_main *main, int res)
+// static void	fun_or_reg(t_main *main, int res, t_process *proc)
 // {
 // 	int     i;
 //     int     num_reg;
@@ -26,7 +26,7 @@
 //     }
 // }
 
-// static void	fun_or_dir(t_main *main, int res)
+// static void	fun_or_dir(t_main *main, int res, t_process *proc)
 // {
 // 	int 	i;
 // 	int 	curr;
@@ -40,7 +40,7 @@
 // 	}
 // }
 
-// static void	fun_of_ind(t_main *main, int res)
+// static void	fun_of_ind(t_main *main, int res, t_process *proc)
 // {
 // 	int		step;
 
@@ -56,7 +56,7 @@ void    fun_or(t_main *main, t_process *proc)
     int     i;
     int     num_reg;
     
-    test_show_me_label_arg(main);
+    // test_show_me_label_arg(main);
     ready_arg(main, proc);
     res = main->ready_arg[0][0] | main->ready_arg[1][0];
     if (res)
@@ -70,7 +70,8 @@ void    fun_or(t_main *main, t_process *proc)
         proc->rg[num_reg][i] = res;
         res = res >> 8;
     }
-    test_show_me_label_arg(main);
+    // test_show_me_label_arg(main);
+    proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }
 
 
