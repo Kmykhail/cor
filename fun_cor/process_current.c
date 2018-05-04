@@ -62,17 +62,17 @@ void     ready_arg(t_main *main, t_process *proc)
         }
         else if (main->arg[i] == 3 && (main->map[proc->index] == 2 || main->map[proc->index] == 10 || main->map[proc->index] == 11 || main->map[proc->index] == 14))
         {
-            dprintf(FD, "k = %d \n", k);
+            //dprintf(FD, "k = %d \n", k);
             num = 0;
             num = num | main->map[proc->index + 1 + k++];
-            dprintf(FD, "num = %d\n", num);
+            //dprintf(FD, "num = %d\n", num);
             num = num << 8;
-            dprintf(FD, "num << 8 = %d\n", num);
-            dprintf(FD, "main->map[proc->index + 1 + k++] = %d\n", main->map[proc->index + 1 + k]);
+            //dprintf(FD, "num << 8 = %d\n", num);
+            //dprintf(FD, "main->map[proc->index + 1 + k++] = %d\n", main->map[proc->index + 1 + k]);
             num = num | main->map[proc->index + 1 + k++];
-            dprintf(FD, "num = %d\n", num);
+            //dprintf(FD, "num = %d\n", num);
             num = num % IDX_MOD;
-            dprintf(FD, "num = %d\n", num);
+            //dprintf(FD, "num = %d\n", num);
             r = 0;
             while (r < 4)
             {
@@ -91,18 +91,18 @@ void     ready_arg(t_main *main, t_process *proc)
             num = num << 8;
             num = num | main->map[proc->index + 1 + k++];
             
-            dprintf(FD, "num = %d\n", num);
+            //dprintf(FD, "num = %d\n", num);
             
             num = num % IDX_MOD;
             
-            dprintf(FD, "num = %d\n", num);
+            //dprintf(FD, "num = %d\n", num);
            
             r = 0;
             main->ready_arg[i][0] = num;
         }
         i++;
     }
-    dprintf(FD, "______________________________\n");
+    /*dprintf(FD, "______________________________\n");
     dprintf(FD, "RESALT ready_arg\n");
     dprintf(FD, "main->ready_arg[0][0] = %d\n", main->ready_arg[0][0]);
     dprintf(FD, "main->ready_arg[1][0] = %d\n", main->ready_arg[1][0]);
@@ -111,7 +111,7 @@ void     ready_arg(t_main *main, t_process *proc)
     dprintf(FD, "main->ready_arg[0][1] = %d\n", main->ready_arg[0][1]);
     dprintf(FD, "main->ready_arg[1][1] = %d\n", main->ready_arg[1][1]);
     dprintf(FD, "main->ready_arg[2][1] = %d\n", main->ready_arg[2][1]);
-    dprintf(FD, "______________________________\n");
+    dprintf(FD, "______________________________\n");*/
 }
 
 int     ft_step_pc(t_main *main, int num, t_process *proc)
@@ -181,8 +181,8 @@ void    check_codage(t_main *main, uint8_t num)
 		num = num << 1;
 		i++;
 	}
-    dprintf(FD, "main->arg[0] = %d\n", main->arg[0]);
+    /*dprintf(FD, "main->arg[0] = %d\n", main->arg[0]);
     dprintf(FD, "main->arg[1] = %d\n", main->arg[1]);
-    dprintf(FD, "main->arg[2] = %d\n", main->arg[2]);
+    dprintf(FD, "main->arg[2] = %d\n", main->arg[2]);*/
 }
 

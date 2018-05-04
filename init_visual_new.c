@@ -42,14 +42,4 @@ void	lst_newchanges(t_main *main, t_process *proc, int start, int fin, int ch)
 	else
 		new_change->next = NULL;
 	main->lst_changes = new_change;
-	/*dprintf(FD, "new_change \n");
-	dprintf(FD, "main->lst_changes->start %d\n", main->lst_changes->start);
-	dprintf(FD, "main->lst_changes->finish %d\n", main->lst_changes->finish);
-	dprintf(FD, "main->lst_changes->cycle_init %d\n", main->lst_changes->cycle_init);
-	dprintf(FD, "main->slst_changes->process->nbr_pl %x\n", main->lst_changes->process->nbr_pl);
-	dprintf(FD, "main->lst_changes->process->index %d\n", main->lst_changes->process->index);
-	dprintf(FD, "main->lst_changes %p\n", main->lst_changes);
-	dprintf(FD, "ITR%d\n", ITR);*/
-
-	//free(new_change);
 }

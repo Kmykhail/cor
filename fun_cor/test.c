@@ -34,18 +34,18 @@ void    test_open(t_main *main)
 
 void    test_show_part_of_map(t_main *main, t_process *proc)
 {
-    dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 0]);
+    /*dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 0]);
     dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 1]);
     dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 2]);
     dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 3]);
     dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 4]);
     dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 5]);
-    dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 6]);
+    dprintf(FD, "@main->map[%d] = %x\n",proc->index, main->map[proc->index + 6]);*/
 }
 
 void    test_show_me_label_arg(t_main *main, t_process *proc)
 {
-    dprintf(FD, "_____________test_show_me_label_arg__________________________\n");
+    //dprintf(FD, "_____________test_show_me_label_arg__________________________\n");
 
     int i;
     int k;
@@ -63,7 +63,7 @@ void    test_show_me_label_arg(t_main *main, t_process *proc)
         dprintf(FD, "\n");
         i++;
     }
-    dprintf(FD, "______________,,,,,,,,,,,,,,,,,,,,,,,,,,_________________________\n");
+    //dprintf(FD, "______________,,,,,,,,,,,,,,,,,,,,,,,,,,_________________________\n");
     // i = 0;
     // while (i < 16)
     // {

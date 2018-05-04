@@ -58,15 +58,15 @@ void    fun_xor(t_main *main, t_process *proc)
     
     ready_arg(main, proc);
 
-    dprintf(FD, "main->ready_arg[1][0] = %d\nmain->ready_arg[1][0] = %d\n", main->ready_arg[0][0], main->ready_arg[1][0]);
+    //dprintf(FD, "main->ready_arg[1][0] = %d\nmain->ready_arg[1][0] = %d\n", main->ready_arg[0][0], main->ready_arg[1][0]);
     res = main->ready_arg[0][0] ^ main->ready_arg[1][0];
     if (res)
         proc->carry = 0;
     else
         proc->carry = 1;
     i = 4;
-    dprintf(FD, "num_reg = %d\n", main->ready_arg[2][1]);
-    dprintf(FD, "num_reg - 1 = %d\n", main->ready_arg[2][1] - 1);
+    //dprintf(FD, "num_reg = %d\n", main->ready_arg[2][1]);
+    //dprintf(FD, "num_reg - 1 = %d\n", main->ready_arg[2][1] - 1);
     num_reg = main->ready_arg[2][1] - 1;
     while (i--)
     {

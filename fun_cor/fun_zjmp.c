@@ -26,16 +26,16 @@ void	fun_zjmp(t_main *main, t_process *proc)
 	k = 0;
 	jump = 0;
 
-	dprintf(FD, "________________________proc->carry = %d\n", proc->carry);
+	//dprintf(FD, "________________________proc->carry = %d\n", proc->carry);
 	if (proc->carry == 1)
 	{
 	    num = 2;
 	    while (num--)
 	    {
 	        jump = jump << 8;
-	        dprintf(FD, "main->map[proc->index + 1 + k] = %x\n", main->map[proc->index + 1 + k]);
+	        //dprintf(FD, "main->map[proc->index + 1 + k] = %x\n", main->map[proc->index + 1 + k]);
 	        jump = jump | main->map[proc->index + 1 + k];
-	        dprintf(FD, "jump = %d && num = %d\n", jump, num);
+	        //dprintf(FD, "jump = %d && num = %d\n", jump, num);
 	        k++;
 	    }
 		num = 0;

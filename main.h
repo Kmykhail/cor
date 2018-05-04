@@ -68,6 +68,7 @@ typedef	struct			s_crap
 
 typedef struct			s_main
 {
+	int 				cmd_cycle;
 	int 				steper;//в нем храниться 
 	int 				label[16][4];// таблица
 	int					code_codage[3];// ????? 

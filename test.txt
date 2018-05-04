@@ -1,0 +1,113 @@
+[255] [255] [255] [255] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+FUN FORK _______________________________
+proc->pc:0
+proc->index:35
+proc->nbr_pl:ff
+proc->live:0
+proc->live:0
+______________________________
+new_proc->pc:0
+new_proc->index:223
+new_proc->nbr_pl:ff
+new_proc->live:0
+new_proc->live:0
+___________________________________
+>>main->cycle:809
+>>proc->index:38
+>>main->cycle:810
+>>proc->index:38
+i = 0
+>>main->cycle:810
+>>proc->index:223
+i = 0
+>>main->cycle:811
+>>proc->index:43
+>>main->cycle:811
+>>proc->index:228
+>>main->cycle:812
+>>proc->index:43
+>>main->cycle:812
+>>proc->index:228
+>>main->cycle:813
+>>proc->index:43
+>>main->cycle:813
+>>proc->index:228
+>>main->cycle:814
+>>proc->index:43
+>>main->cycle:814
+>>proc->index:228
+>>main->cycle:815
+>>proc->index:43
+[255] [255] [255] [255] 
+[26] [43] [ 0] [240] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+>>main->cycle:815
+>>proc->index:228
+>>main->cycle:816
+>>proc->index:50
+>>main->cycle:816
+>>proc->index:228
+>>main->cycle:817
+>>proc->index:50
+>>main->cycle:817
+>>proc->index:228
+>>main->cycle:818
+>>proc->index:50
+>>main->cycle:818
+>>proc->index:228
+>>main->cycle:819
+>>proc->index:50
+>>main->cycle:819
+>>proc->index:228
+>>main->cycle:820
+>>proc->index:50
+[255] [255] [255] [255] 
+[26] [43] [ 0] [240] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+[ 0] [ 0] [ 0] [ 0] 
+>>main->cycle:820
+>>proc->index:228
+>>main->cycle:821
+>>proc->index:57
+>>main->cycle:821
+>>proc->index:231

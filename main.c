@@ -108,6 +108,7 @@ void	init_struct(t_main *main, int argc)
 	i = 0;
 	STEP = 0;
 	main->cnt_pl = 0;
+	main->cmd_cycle = 0;
 	main->cur_cycle = 0;
 	main->cl_to_die = CYCLE_TO_DIE;
 	main->nbr_proc = 0;
@@ -140,7 +141,7 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	init_struct(&main, argc);
-	main.ddddd = open("/Users/ozharko/Desktop/cor-master/fun_cor/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
 	/*while (main.lst_changes)
