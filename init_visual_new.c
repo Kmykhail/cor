@@ -35,7 +35,7 @@ void	lst_newchanges(t_main *main, t_process *proc, int start, int fin, int ch)
 	new_change->start = (!ch) ? main->coor_of_p[start] : start;
 	new_change->finish = fin;
 	new_change->cycle_init = main->cur_cycle;
-	new_change->process = proc;
+	new_change->nbr_pl = proc->nbr_pl;
 	//new_change->next = main->lst_changes;
 	if (main->lst_changes)
 		new_change->next = main->lst_changes;

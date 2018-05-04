@@ -47,8 +47,8 @@ int		choose_function_2(t_main *main, t_process *proc)
 		fun_lld(main, proc);
 	else if (main->map[proc->index] == 14 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_lldi(main, proc);
-	// else if (main->map[proc->index] == 15)
-	// 	fun_lfork(main, proc);
+	else if (main->map[proc->index] == 15 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
+		fun_lfork(main, proc);
 	else if (main->map[proc->index] == 16 && main->cur_cycle % main->label[main->map[proc->index] - 1][2] == 0 && main->cur_cycle != 0)
 		fun_aff(main, proc);
 	return (1);
@@ -73,7 +73,6 @@ void    ft_implement_command(t_main *main, t_process *proc)
         
     }
 
-    dprintf(FD, "||||||||||||||proc->index = %d\n", proc->index);
 }
 
 

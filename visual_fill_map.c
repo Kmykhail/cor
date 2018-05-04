@@ -23,7 +23,7 @@ int		fill_changes(t_changes *chang, t_vis *win, unsigned int *cur_cycle)
 			chang->next = NULL;
 	i = chang->start - 1;
 	while (++i < chang->finish + 1)
-		win->color[i] = (chang->process->nbr_pl * -1) + SHIFT_MARKER;
+		win->color[i] = (chang->nbr_pl * -1) + SHIFT_MARKER;
 	if ((*cur_cycle - chang->cycle_init) >= 50)
 	{
 		i = chang->start - 1;
@@ -46,7 +46,7 @@ void	fill_start_changes(t_changes *chang, t_vis *win)
 	chang->next = NULL;
 	i = chang->start - 1;
 	while (++i < chang->finish + 1)
-		win->color[i] = (chang->process->nbr_pl * -1);
+		win->color[i] = (chang->nbr_pl * -1);
 	free(chang);
 }
 
@@ -89,7 +89,7 @@ void	fill_process(t_main *main, t_vis *win)
 					&& win->color[tmp->index] <= EMPTY_CELL)
 				win->color[tmp->index] = win->color[tmp->index] + SHIFT_PR;
 		}
-		else if (win->color[tmp->index] != EMPTY_CELL)
+		else if (win->color[tmp->index] < FST_PL_LIVE || win->color[tmp->index] > FRTH_PL_LIVE)
 		{
 			live = (t_live*)malloc(sizeof(t_live));
 			live->cycle_init = main->cur_cycle;

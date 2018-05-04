@@ -28,9 +28,9 @@ static void		fun_lldi_wright_to_reg(t_main *main, int res, t_process *proc)
     carry = 0;
 	i = 4;
 	if (res)
-		carry = 0;
+		proc->carry = 0;
 	else
-		carry = 1;
+		proc->carry = 1;
    	num_reg = main->ready_arg[2][1];
     while (i--)
     {

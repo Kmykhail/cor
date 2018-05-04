@@ -61,9 +61,9 @@ static	void	fun_lld_second_ind(t_main *main, t_process *proc)
 		r++;
 	}
 	if (res)
-		carry = 0;
+		proc->carry = 0;
 	else
-		carry = 1;
+		proc->carry = 1;
 	r = 0;
 	while (r < 4)
 	{

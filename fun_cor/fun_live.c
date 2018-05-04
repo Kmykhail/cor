@@ -14,23 +14,16 @@
 
 void	fun_live(t_main *main, t_process *proc)
 {
-	dprintf(FD, "|||||||||LLLLLIIIIIVVVVVVEEEEEEE||||||||||||||||||||||\n");
 	int i;
 
 	i = 0;
 	proc->live++;
-	/*if (proc->nbr_pl == main->map[proc->index + 4])
-	{
-		main->last_live_player->
-	}*/
-
+	proc->carry = 0;
 	while (main->players[i] != NULL)
 	{
 		dprintf(FD, "i = %d\n", i);
 		if (main->map[proc->index + 4] == main->players[i]->nbr_pl)
 		{
-			// dprintf(FD, "NAME_PL:%x\n", main->players[i]->nbr_pl)
-
 			main->players[i]->ll_cycle = main->cur_cycle;
 
 			main->players[i]->live_cur_per = 1;
@@ -39,7 +32,5 @@ void	fun_live(t_main *main, t_process *proc)
 		}
 		i++;
 	}
-	dprintf(FD, ">>>>proc->index = %d\n", proc->index);
 	proc->index += 5;
-	dprintf(FD, " new proc->index = %d\n", proc->index);
 }

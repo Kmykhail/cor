@@ -1,28 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
-project(corewar_kmykhail)
+project(kostya_2_1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(corewar_kmykhail
-        fun_cor/fun_add.c
-        fun_cor/fun_aff.c
-        fun_cor/fun_and.c
-        fun_cor/fun_fork.c
-        fun_cor/fun_ld.c
-        fun_cor/fun_ldi.c
-        fun_cor/fun_live.c
-        fun_cor/fun_lld.c
-        fun_cor/fun_lldi.c
-        fun_cor/fun_or.c
-        fun_cor/fun_st.c
-        fun_cor/fun_sti.c
-        fun_cor/fun_sub.c
-        fun_cor/fun_xor.c
-        fun_cor/fun_zjmp.c
-        fun_cor/implement_command.c
-        fun_cor/process_current.c
-        fun_cor/table_label.c
-        fun_cor/test.c
+add_executable(kostya_2_1
         libft/ft_add_at_end.c
         libft/ft_addlast.c
         libft/ft_atoi.c
@@ -112,18 +93,25 @@ add_executable(corewar_kmykhail
         libft/pf_parse_p.c
         libft/pf_parse_str.c
         libft/pf_uchr.c
-        function.h
-        init_visual_new.c
-        init_vizual.c
         main.c
         main.h
-        make_cycle.c
         op.c
         op.h
-        read_bots.c)
-        ##visual.c
-        ##visual.h
-        ##visual_fill_bar.c
-        ##visual_fill_charts.c
-        ##visual_fill_map.c
-        ##visual_window.c)
+        read_bots.c
+        visual.h make_cycle.c
+        fun_cor/fun_ld.c
+		fun_cor/fun_st.c
+		fun_cor/fun_add.c
+		fun_cor/fun_sub.c
+		fun_cor/fun_and.c
+		fun_cor/fun_or.c
+		fun_cor/fun_xor.c
+		fun_cor/fun_zjmp.c
+		fun_cor/fun_ldi.c
+		fun_cor/fun_sti.c
+		fun_cor/fun_lld.c
+		fun_cor/fun_lldi.c
+		fun_cor/fun_aff.c
+		fun_cor/fun_fork.c
+		make_cycle.c
+		)

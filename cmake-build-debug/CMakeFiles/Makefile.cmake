@@ -49,5 +49,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/corewar_kmykhail.dir/DependInfo.cmake"
+  "CMakeFiles/kostya_2_1.dir/DependInfo.cmake"
   )

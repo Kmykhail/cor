@@ -23,8 +23,12 @@ static	void	fun_ld_second_reg(t_main *main, t_process *proc)
 	int		num_reg;
 
 	res = main->ready_arg[0][0];
+	if (res)
+		proc->carry = 0;
+	else
+		proc->carry = 1;
 	i = 4;
-	num_reg = main->ready_arg[1][1];
+	num_reg = main->ready_arg[1][1] - 1;
 	while (i--)
 	{
 		proc->rg[num_reg][i] = res;
@@ -38,19 +42,17 @@ static	void	fun_ld_second_reg(t_main *main, t_process *proc)
 
 static	void	fun_ld_second_ind(t_main *main, t_process *proc)
 {
-	int		carry;
 	int		step;
 	int		res;
 	int		r;
 	int		num_reg;
 
 	num_reg = main->ready_arg[1][1];
-	carry = 0;
 	res = main->ready_arg[0][0];
 	if (res)
-		carry = 0;
+		proc->carry = 0;
 	else
-		carry = 1;
+		proc->carry = 1;
 	r = 0;
 	while (r < 4)
 	{
@@ -62,16 +64,16 @@ static	void	fun_ld_second_ind(t_main *main, t_process *proc)
 
 void	fun_ld(t_main *main, t_process *proc)
 {
-	dprintf(FD, "______________________________\n");
-	dprintf(FD, "FUN_LD\n");
+	test_show_part_of_map(main, proc);
 	ready_arg(main, proc);
-	if (main->arg[0] == 1)
+	if (main->arg[0] == 2)
+	{
 		fun_ld_second_reg(main, proc);
+	}
 	if (main->arg[0] == 3)
+	{
 		fun_ld_second_ind(main, proc);
-	dprintf(FD, "____________________________________\n");
-	dprintf(FD, ">>>>>>>>>>>>>main->map[proc->index] = %d\n", main->map[proc->index]);
-	dprintf(FD, "proc->index === %d\n", proc->index);
+	}
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
-	dprintf(FD, "next proc->index = %d\n", proc->index);
+	test_show_me_label_arg(main, proc);
 }

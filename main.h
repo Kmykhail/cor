@@ -33,6 +33,7 @@ typedef struct			s_process
 	int					index;//индех элемнта на (в) карте игрока
 	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
 	unsigned int		live;//инкремент
+	int 				carry;
 	struct s_process	*next;
 }						t_process;
 
@@ -41,7 +42,8 @@ typedef struct			s_changes // все измениня кидаю в голову
 	int					start;// стартовый индекс на карте выгрузки
 	int					finish; // конечный индекс-----//---------
 	unsigned int		cycle_init;//цикл на котором произошла выгрузка
-	t_process			*process;// какой процес//????
+//	t_process			*process;// какой процес//????
+	unsigned char		nbr_pl;
 	//КОРОЧЕ НЕ БУДЕТ УКАЗАТЕЛЯ НА ПРОЦЕСС, А БУДЕТ ПЕРЕМЕННАЯ В КОТОРОЙ БУДЕТ ХРАНИТЬСЯ НОМЕР (nNBR_LIVE), просто копируй
 	struct s_changes	*next;
 }						t_changes;
@@ -96,8 +98,7 @@ void					valid_bots(t_main *main, int ac, char **av);//kmykhail
 void					check_codage(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
 void					lst_newchanges(t_main *main, t_process *proc, int i, int fin, int ch);
-void					free_process(t_process **proc);
-t_process				*lst_newproc(t_main *main, int pl_indx);//kmykhail
+t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 
 */
@@ -124,9 +125,7 @@ void			fun_sti(t_main *main, t_process *proc);
 void			fun_fork(t_main *main, t_process *proc);
 void			fun_lld(t_main *main, t_process *proc);
 void			fun_lldi(t_main *main, t_process *proc);
-/*
- void	fun_lfork()
- */
+void			fun_lfork(t_main *main, t_process *proc);
 void			fun_aff(t_main *main, t_process *proc);
 
 
@@ -139,4 +138,5 @@ void			fun_aff(t_main *main, t_process *proc);
  */
 void			test_open(t_main *main);
 void		    test_show_me_label_arg(t_main *main, t_process *proc);
+void    		test_show_part_of_map(t_main *main, t_process *proc);
 #endif
