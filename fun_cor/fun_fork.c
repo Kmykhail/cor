@@ -24,13 +24,17 @@ void	fun_fork(t_main *main, t_process *proc)
 	i = 0;
 	num = 2;
     k = 0;
+   	if (main->tmp_fork && main->tmp_fork + 800 != main->cmd_cycle)
+   	{
+   		dprintf(FD, "MAIN->CMD:%d TMP_FORK:%d\n", main->cmd_cycle, main->tmp_fork);
+   		return ;
+   	}
     while (num--)
     {
         res = res << 8;
         res = res | main->map[proc->index + 1 + k];  // 0b 68 00 00 00 01
         k++;
     }
-    //dprintf(FD, "_____________REEEESSS = %d\n", res);
 	new_proc = (t_process *)malloc(sizeof(t_process));
 	while (i < 16)
 	{
@@ -50,19 +54,19 @@ void	fun_fork(t_main *main, t_process *proc)
 	dprintf(FD, "______________________________\n");
 	new_proc->pc = proc->pc;
 	new_proc->index = proc->index;
-	//dprintf(FD, "____________proc->index = %d\n", proc->index);
 	new_proc->nbr_pl = proc->nbr_pl;
 	new_proc->live = proc->live;
 	new_proc->next = NULL;
 	proc->index += 3;
 	new_proc->index += res % IDX_MOD;
+	new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2] + 1;
 	dprintf(FD, "new_proc->pc:%d\n", new_proc->pc);
 	dprintf(FD, "new_proc->index:%d\n", new_proc->index);
+	dprintf(FD, "new_proc->cmd_cycle:%d\n", new_proc->cmd_cycle);
 	dprintf(FD, "new_proc->nbr_pl:%x\n", new_proc->nbr_pl);
 	dprintf(FD, "new_proc->live:%x\n", new_proc->live);
 	dprintf(FD, "new_proc->live:%x\n", new_proc->live);
 	dprintf(FD, "___________________________________\n");
-	//dprintf(FD, "_____________new_proc->index = %d\n", new_proc->index);
 	while (proc->next)
 		proc = proc->next;
 	proc->next = new_proc;

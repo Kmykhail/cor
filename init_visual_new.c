@@ -20,9 +20,11 @@ t_process	*lst_newproc(t_main *main, int pl_indx)
 		new_proc->rg[c][3] = (!c) ? (pl_indx - ((pl_indx * 2) + 1)) : 0;
 		c++;
 	}
+	new_proc->pc = 0;
 	new_proc->index = main->coor_of_p[pl_indx];
-	new_proc->nbr_pl = main->players[pl_indx]->nbr_pl;//что кидать
-	new_proc->live = 0;//
+	new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2];
+	new_proc->nbr_pl = main->players[pl_indx]->nbr_pl;
+	new_proc->live = 0;
 	new_proc->next = NULL;
 	return (new_proc);
 }
@@ -36,7 +38,6 @@ void	lst_newchanges(t_main *main, t_process *proc, int start, int fin, int ch)
 	new_change->finish = fin;
 	new_change->cycle_init = main->cur_cycle;
 	new_change->nbr_pl = proc->nbr_pl;
-	//new_change->next = main->lst_changes;
 	if (main->lst_changes)
 		new_change->next = main->lst_changes;
 	else

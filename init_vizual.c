@@ -29,6 +29,7 @@ void	init_vizual(t_main *main, int i, int fin)
 	}
 	main->lst_proc->pc = 0;
 	main->lst_proc->index = main->coor_of_p[i];
+	main->lst_proc->cmd_cycle = main->label[main->map[main->lst_proc->index] - 1][2];
 	main->lst_proc->nbr_pl = main->players[i]->nbr_pl;
 	main->lst_proc->live = 0;
 	main->lst_proc->next = NULL;

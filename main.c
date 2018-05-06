@@ -107,6 +107,7 @@ void	init_struct(t_main *main, int argc)
 
 	i = 0;
 	STEP = 0;
+	main->tmp_fork = 0;
 	main->cnt_pl = 0;
 	main->cmd_cycle = 0;
 	main->cur_cycle = 0;
@@ -144,13 +145,10 @@ int		main(int argc, char **argv)
 	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
-	/*while (main.lst_changes)
+	/*while (main.lst_proc)
 	{
-		printf("start:%d ", main.lst_changes->start);
-		printf(" end:%d name:%x\n", main.lst_changes->finish, main.lst_changes->process->nbr_pl);
-		printf("proc->index: %d\n", main.lst_changes->process->index);
-		printf("\n");
-		main.lst_changes = main.lst_changes->next;
+		printf("proc_cmd_cycle:%d\n", main.lst_proc->cmd_cycle);
+		main.lst_proc = main.lst_proc->next;
 	}
 	exit(1);*/
 	while (++i < argc)

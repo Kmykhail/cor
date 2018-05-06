@@ -28,7 +28,8 @@
 
 typedef struct			s_process
 {
-	uint8_t 			rg[16][4];	
+	uint8_t 			rg[16][4];
+	int 				cmd_cycle;
 	int 				pc;//счеткик
 	int					index;//индех элемнта на (в) карте игрока
 	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
@@ -69,6 +70,7 @@ typedef	struct			s_crap
 typedef struct			s_main
 {
 	int 				cmd_cycle;
+	int 				tmp_fork;
 	int 				steper;//в нем храниться 
 	int 				label[16][4];// таблица
 	int					code_codage[3];// ????? 
