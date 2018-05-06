@@ -26,7 +26,9 @@ void	fun_zjmp(t_main *main, t_process *proc)
 	k = 0;
 	jump = 0;
 
-	//dprintf(FD, "________________________proc->carry = %d\n", proc->carry);
+	dprintf(FD, "__FUN_ZJMP__\n");
+	dprintf(FD, "MAIN->CUR_CYCLE:%d PROC->INDEX:%d\n", main->cur_cycle, proc->index);
+	dprintf(FD, "________________________proc->carry = %d\n", proc->carry);
 	if (proc->carry == 1)
 	{
 	    num = 2;

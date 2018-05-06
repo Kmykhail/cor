@@ -24,6 +24,7 @@ t_process	*lst_newproc(t_main *main, int pl_indx)
 	new_proc->index = main->coor_of_p[pl_indx];
 	new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2];
 	new_proc->nbr_pl = main->players[pl_indx]->nbr_pl;
+	new_proc->carry = 0;
 	new_proc->live = 0;
 	new_proc->next = NULL;
 	return (new_proc);

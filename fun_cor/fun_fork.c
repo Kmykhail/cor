@@ -14,21 +14,16 @@
 
 void	fun_fork(t_main *main, t_process *proc)
 {
-	dprintf(FD, "FUN FORK _______________________________\n");
 	t_process	*new_proc;
 	int			i;
 	int			k;
 	int 		num;
 	short int	res;
 
+	dprintf(FD, "______FORK____\n");
 	i = 0;
 	num = 2;
     k = 0;
-   	if (main->tmp_fork && main->tmp_fork + 800 != main->cmd_cycle)
-   	{
-   		dprintf(FD, "MAIN->CMD:%d TMP_FORK:%d\n", main->cmd_cycle, main->tmp_fork);
-   		return ;
-   	}
     while (num--)
     {
         res = res << 8;
@@ -46,27 +41,16 @@ void	fun_fork(t_main *main, t_process *proc)
 		}
 		i++;
 	}
-	dprintf(FD, "proc->pc:%d\n", proc->pc);
-	dprintf(FD, "proc->index:%d\n", proc->index);
-	dprintf(FD, "proc->nbr_pl:%x\n", proc->nbr_pl);
-	dprintf(FD, "proc->live:%x\n", proc->live);
-	dprintf(FD, "proc->live:%x\n", proc->live);
-	dprintf(FD, "______________________________\n");
 	new_proc->pc = proc->pc;
 	new_proc->index = proc->index;
 	new_proc->nbr_pl = proc->nbr_pl;
 	new_proc->live = proc->live;
+	new_proc->carry = proc->carry;
 	new_proc->next = NULL;
 	proc->index += 3;
 	new_proc->index += res % IDX_MOD;
 	new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2] + 1;
-	dprintf(FD, "new_proc->pc:%d\n", new_proc->pc);
-	dprintf(FD, "new_proc->index:%d\n", new_proc->index);
-	dprintf(FD, "new_proc->cmd_cycle:%d\n", new_proc->cmd_cycle);
-	dprintf(FD, "new_proc->nbr_pl:%x\n", new_proc->nbr_pl);
-	dprintf(FD, "new_proc->live:%x\n", new_proc->live);
-	dprintf(FD, "new_proc->live:%x\n", new_proc->live);
-	dprintf(FD, "___________________________________\n");
+	dprintf(FD, "::proc->carry:%d:: new_proc->carry::%d\n", proc->carry, new_proc->carry);
 	while (proc->next)
 		proc = proc->next;
 	proc->next = new_proc;

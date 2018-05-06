@@ -59,10 +59,10 @@ void    fun_or(t_main *main, t_process *proc)
     // test_show_me_label_arg(main);
     ready_arg(main, proc);
     res = main->ready_arg[0][0] | main->ready_arg[1][0];
-    if (res)
+    /*if (res)
         proc->carry = 0;
     else
-        proc->carry = 1;
+        proc->carry = 1;*/
     i = 4;
     num_reg = main->ready_arg[2][1];
     while (i--)

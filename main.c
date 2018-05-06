@@ -107,9 +107,7 @@ void	init_struct(t_main *main, int argc)
 
 	i = 0;
 	STEP = 0;
-	main->tmp_fork = 0;
 	main->cnt_pl = 0;
-	main->cmd_cycle = 0;
 	main->cur_cycle = 0;
 	main->cl_to_die = CYCLE_TO_DIE;
 	main->nbr_proc = 0;

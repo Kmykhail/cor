@@ -18,7 +18,6 @@ void	fun_live(t_main *main, t_process *proc)
 
 	i = 0;
 	proc->live++;
-	proc->carry = 0;
 	while (main->players[i] != NULL)
 	{
 		dprintf(FD, "i = %d\n", i);

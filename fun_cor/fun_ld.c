@@ -64,6 +64,8 @@ static	void	fun_ld_second_ind(t_main *main, t_process *proc)
 
 void	fun_ld(t_main *main, t_process *proc)
 {
+	dprintf(FD, "____FUN_LD__02____\n");
+	dprintf(FD, "MAIN->CUR_CYCLE:%d PROC->INDEX:%d\n", main->cur_cycle, proc->index);
 	test_show_part_of_map(main, proc);
 	ready_arg(main, proc);
 	if (main->arg[0] == 2)
@@ -76,4 +78,5 @@ void	fun_ld(t_main *main, t_process *proc)
 	}
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 	test_show_me_label_arg(main, proc);
+	dprintf(FD, "___proc->carry:%d____\n", proc->carry);
 }
