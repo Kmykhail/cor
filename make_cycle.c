@@ -3,7 +3,7 @@
 //
 # include "main.h"
 
-/*void	test_list(t_main *main, t_process *proc)
+void	test_list(t_main *main, t_process *proc)
 {
 	t_process *tmp;
 
@@ -21,13 +21,42 @@
 		tmp = tmp->next;
 	}
 	dprintf(FD, "___END__TEST__LIST\n\n");
-}*/
+}
+
+void	cycle_live_die(t_main *main, t_process *proc)
+{
+	int i;
+	int check;
+
+	i = 0;
+	check = 0;
+	while (main->players[i])
+	{
+		if (main->players[i]->live_cur_per >= NBR_LIVE)
+		{
+			main->cl_to_die -= CYCLE_DELTA;
+			main->players[i]->live_cur_per = 0;
+			check = 1;
+		}
+		/*else if (main->players[i]->live)
+		{
+
+		}*/
+		i++;
+	}
+	if (check)
+	{
+
+	}
+}
 
 int 	make_cycle_second(t_main *main, t_process **proc)
 {
 	t_process	*head;
 
 	head = *proc;
+	/*if (main->cl_to_die == main->cur_cycle)
+		cycle_live_die(main, *proc);*/
     main->cur_cycle++;
 	while (head)
 	{

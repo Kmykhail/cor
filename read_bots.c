@@ -134,6 +134,8 @@ void	valid_bots(t_main *main, int ac, char **av)
 		init_players(main, i);
 		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
 			ft_print_error(1);
+		/*СМОТРИ ДЛЫНЫ ДЛЯ ИМЕН, КОМЕНТОВ, ДОЛЖНО БЫТЬ ВЫРАВНИВАЮЩИЙ
+		БАЙТЫ МЕЖДУ ИМЕНЕМ И КОМЕНТОМ (КАКИХ ТО 4-РИ БАЙТА)*/
 		read_bots(main, main->players[i], i,  fd);
 		close(fd);
 		i++;

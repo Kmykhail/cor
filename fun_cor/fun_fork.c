@@ -50,7 +50,6 @@ void	fun_fork(t_main *main, t_process *proc)
 	proc->index += 3;
 	new_proc->index += res % IDX_MOD;
 	new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2] + 1;
-	dprintf(FD, "::proc->carry:%d:: new_proc->carry::%d\n", proc->carry, new_proc->carry);
 	while (proc->next)
 		proc = proc->next;
 	proc->next = new_proc;

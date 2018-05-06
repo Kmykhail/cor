@@ -17,59 +17,28 @@ MAIN->CUR_CYCLE:105 PROC->INDEX:28
 [ 0] [ 0] [ 0] [ 0] 
 [ 0] [ 0] [ 0] [ 0] 
 ___proc->carry:1____
-____FUN_LD__02____
-MAIN->CUR_CYCLE:105 PROC->INDEX:2076
-[254] [254] [254] [254] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-___proc->carry:1____
 ______FORK____
-::proc->carry:1:: new_proc->carry::1
-______FORK____
-::proc->carry:1:: new_proc->carry::1
-i = 0
-i = 1
-i = 0
-i = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:0
+<<main->cur_cycle:915>>
+<<proc->index:38>>
+<<proc->live:1>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:1***
+><<proc->live:0
+<<main->cur_cycle:915>>
+<<proc->index:223>>
+<<proc->live:1>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:2***
 ____FUN_LD__02____
 MAIN->CUR_CYCLE:920 PROC->INDEX:43
 [255] [255] [255] [255] 
-[26] [43] [ 0] [240] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-___proc->carry:0____
-____FUN_LD__02____
-MAIN->CUR_CYCLE:920 PROC->INDEX:2091
-[254] [254] [254] [254] 
 [26] [43] [ 0] [240] 
 [ 0] [ 0] [ 0] [ 0] 
 [ 0] [ 0] [ 0] [ 0] 
@@ -105,296 +74,328 @@ MAIN->CUR_CYCLE:925 PROC->INDEX:50
 [ 0] [ 0] [ 0] [ 0] 
 [ 0] [ 0] [ 0] [ 0] 
 ___proc->carry:1____
-____FUN_LD__02____
-MAIN->CUR_CYCLE:925 PROC->INDEX:2098
-[254] [254] [254] [254] 
-[26] [43] [ 0] [240] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-[ 0] [ 0] [ 0] [ 0] 
-___proc->carry:1____
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:935 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:935 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:1
+<<main->cur_cycle:945>>
+<<proc->index:223>>
+<<proc->live:2>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:3***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:965 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:965 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:2
+<<main->cur_cycle:975>>
+<<proc->index:223>>
+<<proc->live:3>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:4***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:995 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:995 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:3
+<<main->cur_cycle:1005>>
+<<proc->index:223>>
+<<proc->live:4>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:5***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1025 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1025 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:4
+<<main->cur_cycle:1035>>
+<<proc->index:223>>
+<<proc->live:5>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:6***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1055 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1055 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:5
+<<main->cur_cycle:1065>>
+<<proc->index:223>>
+<<proc->live:6>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:7***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1085 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1085 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:6
+<<main->cur_cycle:1095>>
+<<proc->index:223>>
+<<proc->live:7>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:8***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1115 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1115 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:7
+<<main->cur_cycle:1125>>
+<<proc->index:223>>
+<<proc->live:8>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:9***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1145 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1145 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:8
+<<main->cur_cycle:1155>>
+<<proc->index:223>>
+<<proc->live:9>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:10***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1175 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1175 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:9
+<<main->cur_cycle:1185>>
+<<proc->index:223>>
+<<proc->live:10>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:11***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1205 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1205 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:10
+<<main->cur_cycle:1215>>
+<<proc->index:223>>
+<<proc->live:11>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:12***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1235 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1235 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:11
+<<main->cur_cycle:1245>>
+<<proc->index:223>>
+<<proc->live:12>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:13***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1265 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1265 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:12
+<<main->cur_cycle:1275>>
+<<proc->index:223>>
+<<proc->live:13>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:14***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1295 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1295 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:13
+<<main->cur_cycle:1305>>
+<<proc->index:223>>
+<<proc->live:14>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:15***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1325 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1325 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:14
+<<main->cur_cycle:1335>>
+<<proc->index:223>>
+<<proc->live:15>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:16***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1355 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1355 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:15
+<<main->cur_cycle:1365>>
+<<proc->index:223>>
+<<proc->live:16>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:17***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1385 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1385 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:16
+<<main->cur_cycle:1395>>
+<<proc->index:223>>
+<<proc->live:17>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:18***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1415 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1415 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:17
+<<main->cur_cycle:1425>>
+<<proc->index:223>>
+<<proc->live:18>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:19***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1445 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1445 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:18
+<<main->cur_cycle:1455>>
+<<proc->index:223>>
+<<proc->live:19>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:20***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1475 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1475 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:19
+<<main->cur_cycle:1485>>
+<<proc->index:223>>
+<<proc->live:20>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:21***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1505 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1505 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:20
+<<main->cur_cycle:1515>>
+<<proc->index:223>>
+<<proc->live:21>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:22***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1535 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1535 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:21
+<<main->cur_cycle:1545>>
+<<proc->index:223>>
+<<proc->live:22>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:23***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1565 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1565 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:22
+<<main->cur_cycle:1575>>
+<<proc->index:223>>
+<<proc->live:23>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:24***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1595 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1595 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:23
+<<main->cur_cycle:1605>>
+<<proc->index:223>>
+<<proc->live:24>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:25***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1625 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1625 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:24
+<<main->cur_cycle:1635>>
+<<proc->index:223>>
+<<proc->live:25>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:26***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1655 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1655 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:25
+<<main->cur_cycle:1665>>
+<<proc->index:223>>
+<<proc->live:26>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:27***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1685 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1685 PROC->INDEX:2276
-________________________proc->carry = 1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:26
+<<main->cur_cycle:1695>>
+<<proc->index:223>>
+<<proc->live:27>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:28***
 __FUN_ZJMP__
 MAIN->CUR_CYCLE:1715 PROC->INDEX:228
 ________________________proc->carry = 1
-__FUN_ZJMP__
-MAIN->CUR_CYCLE:1715 PROC->INDEX:2276
-________________________proc->carry = 1
 ______FORK____
-::proc->carry:1:: new_proc->carry::1
-______FORK____
-::proc->carry:1:: new_proc->carry::1
-i = 0
-i = 1
-i = 0
-i = 1
+><<proc->live:27
+<<main->cur_cycle:1725>>
+<<proc->index:223>>
+<<proc->live:28>>
+
+:::CHECK:::
+
+
+***main->players[i]->live_cur_per:30***
