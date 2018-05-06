@@ -37,7 +37,6 @@ void	init_vizual(t_main *main, int i, int fin)
 
 	main->lst_changes->start = main->coor_of_p[i];
 	main->lst_changes->finish = fin;
-	main->lst_changes->finish = fin;
 	main->lst_changes->cycle_init = 1;
 	main->lst_changes->nbr_pl = main->lst_proc->nbr_pl;
 	main->lst_changes->next = NULL;

@@ -58,7 +58,7 @@ int		push_code_tomass(t_main *main, int fd, int i)
 			l++;
 		}
 	}
-	init_vizual(main, i, l);
+	init_vizual(main, i, l - 1);
 	return (l);
 }
 
