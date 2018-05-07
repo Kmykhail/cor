@@ -68,6 +68,8 @@ void	cycle_live_die(t_main *main, t_process **proc)
 	i = 0;
 	check = 0;
 	head = *proc;
+	if (main->cur_cycle == 22725)
+	dprintf(FD, "YYYY22725YYYY{3}\n");
 	while (main->players[i])
 	{
 		if (main->players[i]->live_cur_per >= NBR_LIVE)
@@ -87,7 +89,13 @@ void	cycle_live_die(t_main *main, t_process **proc)
 		i++;
 	}
 	main->mx_check += (!check && main->mx_check != 10) ? 1 : 0;
-	main->cl_to_die -= (main->mx_check == MAX_CHECKS) ? CYCLE_DELTA : 0; 
+	//main->cl_to_die -= (main->mx_check == MAX_CHECKS) ? CYCLE_DELTA : 0; 
+	if (main->mx_check == MAX_CHECKS)
+	{
+		main->cl_to_die -= CYCLE_DELTA;
+		main->cp_cl_to_die += main->cl_to_die;
+		main->mx_check = 0;
+	}
 	while (head)
 	{
 		head->live = 0;
@@ -120,10 +128,26 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 			head->index++;
 		head = head->next;
 	}
-	if (main->cp_cl_to_die == main->cur_cycle)
+	if (main->cur_cycle == 22725)
 	{
+		dprintf(FD, "YYYY22725YYYY{1}\n");
+		dprintf(FD, "Ymain->cur_cycle:%dY\n", main->cur_cycle);
+		dprintf(FD, "Ymain->cp_cl_to_die:%dY\n", main->cp_cl_to_die);
+		dprintf(FD, "Ymain->mx_check:%dY\n", main->mx_check);
+		dprintf(FD, "Ymain->cl_to_die:%dY\n", main->cl_to_die);
+		dprintf(FD, "YCYCLE_DELAT%dY\n", CYCLE_DELTA);
+	}
+	if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die >= CYCLE_DELTA)
+	{
+		if (main->cur_cycle == 22725)
+		dprintf(FD, "YYYY22725YYYY{2}\n");
 		remove_proc(main, &(*proc));
 		cycle_live_die(main, &(*proc));
+	}
+	else if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die < CYCLE_DELTA)
+	{
+		//free_proc(main, proc);
+		main->finish = 1;
 	}
 	return (1);
 }
