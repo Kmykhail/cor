@@ -65,22 +65,24 @@ typedef struct			s_player
 typedef	struct			s_crap
 {
 	int					itr;
-}						t_crap;	
+}						t_crap;
 
 typedef struct			s_main
 {
 	int 				steper;//в нем храниться 
+	int 				cp_cl_to_die;
 	int 				label[16][4];// таблица
 	int					code_codage[3];// ????? 
 	uint8_t 			arg[3];
-    unsigned int 		ready_arg[3][2];//
-	int 				coor_of_p[4];
+	unsigned int 		ready_arg[3][2];//
+	int 				coor_of_p[4];//стартовые индексы для каждого игрока
 	char				*filename[5];
 	unsigned char		map[MEM_SIZE];//
 	t_player			*players[MAX_PLAYERS];
 	unsigned char		cnt_pl;//количество игроков
 	unsigned int		cur_cycle;//вызвал меня ++
 	unsigned int		cl_to_die;//вместо константы cycle_to die
+	unsigned int		mx_check;
 	t_process			*lst_proc;
 	unsigned int		nbr_proc;//number process
 	t_changes			*lst_changes;//изменения внести в список

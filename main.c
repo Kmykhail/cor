@@ -110,6 +110,8 @@ void	init_struct(t_main *main, int argc)
 	main->cnt_pl = 0;
 	main->cur_cycle = 0;
 	main->cl_to_die = CYCLE_TO_DIE;
+	main->cp_cl_to_die = CYCLE_TO_DIE;
+	main->mx_check = 0;
 	main->nbr_proc = 0;
 	main->finish = 0;
 	while (i < MAX_PLAYERS)

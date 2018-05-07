@@ -23,30 +23,75 @@ void	test_list(t_main *main, t_process *proc)
 	dprintf(FD, "___END__TEST__LIST\n\n");
 }
 
-void	cycle_live_die(t_main *main, t_process *proc)
+void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫЧКУ УНИЧТОЖЕНИЕ ПРОЦЕССА
+{
+	t_process	*tmp;
+	t_process	*buff;
+	int			i;
+	int			ch;	
+
+	i = 0;
+	ch = 0;
+	if (*proc_list == NULL)
+		return ;
+	tmp = *proc_list;
+	buff = *proc_list;
+	while (tmp!= NULL)
+	{
+		if (!tmp->live)
+		{
+			while (ch < i)
+			{
+				if (ch == i - 1)
+					buff->next = buff->next->next;
+				buff = buff->next;
+				ch++;
+			}
+			free(tmp);//LEAKS
+			if (!ch)
+			{
+				buff = buff->next;
+				*proc_list = buff;
+			}	
+		}
+		tmp = tmp->next;
+		i++;
+	}
+}
+
+void	cycle_live_die(t_main *main, t_process **proc)
 {
 	int i;
 	int check;
+	t_process	*head;
 
 	i = 0;
 	check = 0;
+	head = *proc;
 	while (main->players[i])
 	{
 		if (main->players[i]->live_cur_per >= NBR_LIVE)
 		{
 			main->cl_to_die -= CYCLE_DELTA;
+			main->cp_cl_to_die += main->cl_to_die;
+			main->players[i]->live_last_per = main->players[i]->live_cur_per;
 			main->players[i]->live_cur_per = 0;
 			check = 1;
+			main->mx_check = 0;
 		}
-		/*else if (main->players[i]->live)
+		else
 		{
-
-		}*/
+			main->players[i]->live_last_per =  main->players[i]->live_cur_per;
+			main->players[i]->live_cur_per = 0;
+		}
 		i++;
 	}
-	if (check)
+	main->mx_check += (!check && main->mx_check != 10) ? 1 : 0;
+	main->cl_to_die -= (main->mx_check == MAX_CHECKS) ? CYCLE_DELTA : 0; 
+	while (head)
 	{
-
+		head->live = 0;
+		head = head->next;
 	}
 }
 
@@ -55,8 +100,6 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	t_process	*head;
 
 	head = *proc;
-	/*if (main->cl_to_die == main->cur_cycle)
-		cycle_live_die(main, *proc);*/
     main->cur_cycle++;
 	while (head)
 	{
@@ -74,8 +117,13 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 		|| main->map[head->index] == 15 || main->map[head->index] == 16)
 			ft_implement_command(main, head);
 		else
-			return (0);
+			head->index++;
 		head = head->next;
+	}
+	if (main->cp_cl_to_die == main->cur_cycle)
+	{
+		remove_proc(main, &(*proc));
+		cycle_live_die(main, &(*proc));
 	}
 	return (1);
 }
