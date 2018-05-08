@@ -117,6 +117,7 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	t_process	*head;
 
 	head = *proc;
+    main->cur_cycle++;
 	while (head && !main->finish)
 	{
 		head->cmd_cycle = (!head->cmd_cycle) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
@@ -142,8 +143,10 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 		cycle_live_die(main, &(*proc));
 	}
 	if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die == 4294967282)
+	{
 		main->finish = 1;
-	main->cur_cycle++;
+		main-<cur_cycle++;
+	}
 	return (1);
 }
 
