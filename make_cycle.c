@@ -145,7 +145,7 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die == 4294967282)
 	{
 		main->finish = 1;
-		main-<cur_cycle++;
+		main->cur_cycle++;
 	}
 	return (1);
 }
