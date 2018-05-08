@@ -145,11 +145,7 @@ int		main(int argc, char **argv)
 	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
-	/*while (main.lst_proc)
-	{
-		printf("proc_cmd_cycle:%d\n", main.lst_proc->cmd_cycle);
-		main.lst_proc = main.lst_proc->next;
-	}
+	/*printf("%u\n", 36 - 50);
 	exit(1);*/
 	while (++i < argc)
 		(!ft_strcmp(argv[i], "-n")) ? visual(&main) : 0;

@@ -21,6 +21,7 @@
 # include <fcntl.h>
 
 # define TOTAL_SIZE PROG_NAME_LENGTH + COMMENT_LENGTH
+# define BIG_NUM 4294967282
 # define STEP main->steper
 # define ITR main->var_crap->itr
 # define FD main->ddddd
@@ -70,7 +71,7 @@ typedef	struct			s_crap
 typedef struct			s_main
 {
 	int 				steper;//в нем храниться 
-	int 				cp_cl_to_die;
+	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
 	int					code_codage[3];// ????? 
 	uint8_t 			arg[3];
