@@ -45,7 +45,7 @@ void    test_show_part_of_map(t_main *main, t_process *proc)
 
 void    test_show_me_label_arg(t_main *main, t_process *proc)
 {
-    //dprintf(FD, "_____________test_show_me_label_arg__________________________\n");
+    dprintf(FD, "_____________test_show_me_label_arg__________________________\n");
 
     int i;
     int k;

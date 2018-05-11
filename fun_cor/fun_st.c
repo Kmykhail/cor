@@ -20,7 +20,7 @@ static	void	fun_st_second_reg(t_main *main, t_process *proc)
 
 	res = main->ready_arg[0][0];
 	r = 4;
-	num_reg = main->ready_arg[1][1];
+	num_reg = main->ready_arg[1][1] - 1;
 	while (r--)
 	{
 		proc->rg[num_reg][r] = res;
@@ -49,7 +49,6 @@ static	void	fun_st_second_ind(t_main *main, t_process *proc)
     	if (res + r >= 0)
     	{
 	    	main->map[res + r] = proc->rg[main->ready_arg[0][1] - 1][r];
-	    	// main->ready_arg[0][0] = main->ready_arg[0][0] >> 8;
     	}
     	r++;
     }

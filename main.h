@@ -21,11 +21,12 @@
 # include <fcntl.h>
 
 # define TOTAL_SIZE PROG_NAME_LENGTH + COMMENT_LENGTH
-# define BIG_NUM 4294967282
+# define U_INT 4294967282
 # define STEP main->steper
 # define ITR main->var_crap->itr
 # define FD main->ddddd
-# define FD2 main.ddddd
+# define FD4 main->fffff
+
 
 typedef struct			s_process
 {
@@ -73,9 +74,8 @@ typedef struct			s_main
 	int 				steper;//в нем храниться 
 	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
-	int					code_codage[3];// ????? 
 	uint8_t 			arg[3];
-	unsigned int 		ready_arg[3][2];//
+	short int 			ready_arg[3][2];//
 	int 				coor_of_p[4];//стартовые индексы для каждого игрока
 	char				*filename[5];
 	unsigned char		map[MEM_SIZE];//
@@ -91,6 +91,7 @@ typedef struct			s_main
 	t_crap				*var_crap;
 	int 				finish;//конец игры, finish = 1
 	int 				ddddd;
+	int 				fffff;
 
 }						t_main;
 
@@ -141,6 +142,7 @@ void			fun_aff(t_main *main, t_process *proc);
  **				PART OF TEST FUNCTION (ALL DEL)
  */
 void			test_open(t_main *main);
+void	 		show_ld(t_main *main, t_process *proc);
 void		    test_show_me_label_arg(t_main *main, t_process *proc);
 void    		test_show_part_of_map(t_main *main, t_process *proc);
 #endif

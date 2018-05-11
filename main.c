@@ -142,7 +142,9 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	init_struct(&main, argc);
-	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	main.ddddd = open("/Users/kmykhail/Downloads/cor-master/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	main.fffff = open("/Users/kmykhail/Downloads/cor-master/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	dprintf(main.ddddd, "main.ddddd = %d\n", main.fffff);
 	main.var_crap->itr = 0;
 	valid_bots(&main, argc, argv);
 	/*printf("%u\n", 36 - 50);

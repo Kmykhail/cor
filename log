@@ -1,0 +1,12 @@
+ASAN:DEADLYSIGNAL
+=================================================================
+==28605==ERROR: AddressSanitizer: stack-overflow on address 0x7ffee35ca035 (pc 0x00010c63c459 bp 0x7ffee35c72d0 sp 0x7ffee35c6dc0 T0)
+Provided dSYM: [/Users/kmykhail/Downloads/cor-master/./a.out.dSYM/Contents/Resources/DWARF/a.out] does not match symbol owner 0x7fd2dfe00200
+    #0 0x10c63c458 in make_cycle_second (a.out:x86_64+0x100006458)
+    #1 0x10c63e001 in make_cycle (a.out:x86_64+0x100008001)
+    #2 0x10c63f85d in visual (a.out:x86_64+0x10000985d)
+    #3 0x10c63a04d in main (a.out:x86_64+0x10000404d)
+    #4 0x7fff6a6f5114 in start (libdyld.dylib:x86_64+0x1114)
+
+SUMMARY: AddressSanitizer: stack-overflow (a.out:x86_64+0x100006458) in make_cycle_second
+==28605==ABORTING

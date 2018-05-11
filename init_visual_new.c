@@ -35,7 +35,14 @@ void	lst_newchanges(t_main *main, t_process *proc, int start, int fin, int ch)
 	t_changes	*new_change;
 
 	new_change = (t_changes*)malloc(sizeof(t_changes));
+
+	//dprintf(FD, "@@@@main->map = %x\n", main->map[proc->index]);
+	//dprintf(FD, "@@@@.   CH:%d @@@@.  start:%d @@@@.    main->coor_of_p[start]:%d\n", ch, start, main->coor_of_p[start]);
+
 	new_change->start = (!ch) ? main->coor_of_p[start] : start;
+
+	//dprintf(FD, "@@@@    new_change->start: %d\n", new_change->start);
+
 	new_change->finish = fin;
 	new_change->cycle_init = main->cur_cycle;
 	new_change->nbr_pl = proc->nbr_pl;

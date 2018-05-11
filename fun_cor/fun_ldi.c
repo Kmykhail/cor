@@ -19,38 +19,27 @@
 ** или выполнить второй без первого
 */
 
-static void		fun_ldi_wright_to_reg(t_main *main, int res, t_process *proc)
-{
-	int     i;
-    int     num_reg;
-
-	i = 4;
-   	num_reg = main->ready_arg[2][1];
-    while (i--)
-    {
-        proc->rg[num_reg][i] = res;
-        res = res >> 8;
-    }
-}
-
 void	fun_ldi(t_main *main, t_process *proc)
 {
 	int		step;
 	int		r;
-	int		num;
+    int     num_reg;
 
 
 	step = 0;
 	ready_arg(main, proc);
-	step = (main->ready_arg[0][0] + main->ready_arg[1][0]) % IDX_MOD + proc->pc;
-	num = 0;
+	dprintf(FD, "ТЕСТ fun_ldi 0a\n");
+	dprintf(FD, "main->ready_arg[0][0] = %d\nmain->ready_arg[1][0] = %d\nproc->index = %d\n", main->ready_arg[0][0], main->ready_arg[1][0], proc->index);
+	step = (main->ready_arg[0][0] + main->ready_arg[1][0]) % IDX_MOD + proc->index;
+	
+	dprintf(FD, "step = %d\n", step);
+
+   	num_reg = main->ready_arg[2][1] - 1;
 	r = 0;
 	while (r < 4)
 	{
-		num = num << 8;
-		num = num | main->map[step + r];
+		proc->rg[num_reg][r] = main->map[step + r];
 		r++;
 	}
-	fun_ldi_wright_to_reg(main, num, proc);
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }

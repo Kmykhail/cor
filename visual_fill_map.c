@@ -15,20 +15,34 @@
 int		fill_changes(t_changes *chang, t_vis *win, unsigned int *cur_cycle)
 {
 	int	i;
+	int	tmp;
 
 	if (!chang)
 		return (0);
 	if (chang->next)
 		if (fill_changes(chang->next, win, cur_cycle))
 			chang->next = NULL;
+	tmp = (chang->start > chang->finish) ? MEM_SIZE - 1 : chang->finish;
 	i = chang->start - 1;
-	while (++i < chang->finish + 1)
+	while (++i < tmp + 1)
 		win->color[i] = (chang->nbr_pl * -1) + SHIFT_MARKER;
+	if (chang->start > chang->finish)
+	{
+		i = -1;
+		while (++i < chang->finish + 1)
+			win->color[i] = (chang->nbr_pl * -1) + SHIFT_MARKER;
+	}
 	if ((*cur_cycle - chang->cycle_init) >= 50)
 	{
 		i = chang->start - 1;
-		while (++i < chang->finish + 1)
+		while (++i < tmp + 1)
 			win->color[i] = win->color[i] - SHIFT_MARKER;
+		if (chang->start > chang->finish)
+		{
+			i = -1;
+			while (++i < chang->finish + 1)
+				win->color[i] = win->color[i] - SHIFT_MARKER;
+		}
 		free(chang);
 		return (1);
 	}

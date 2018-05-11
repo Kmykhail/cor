@@ -82,7 +82,7 @@ void		fill_tab(t_vis *win, t_main *main)
 	mvwprintw(win->bar, SP_LN, SHIFT + ft_strlen(SPEED), "%d   ", win->speed);
 	mvwprintw(win->bar, C_LN, SHIFT + ft_strlen(CYCLE), "%d", main->cur_cycle);
 	mvwprintw(win->bar, PR_LN, SHIFT + ft_strlen(PR), "%d", main->nbr_proc);
-	mvwprintw(win->bar, CTD_LN, SHIFT + ft_strlen(CTD), "%d", main->cl_to_die);
+	mvwprintw(win->bar, CTD_LN, SHIFT + ft_strlen(CTD), "%d   ", main->cl_to_die);
 	mvwprintw(win->bar, CDLT_LN, SHIFT + ft_strlen(CDLT), "%d", CYCLE_DELTA);
 	mvwprintw(win->bar, NBL_LN, SHIFT + ft_strlen(NBL), "%d", NBR_LIVE);
 	mvwprintw(win->bar, MAXCH_LN, SHIFT + ft_strlen(MAXCH), "%d", MAX_CHECKS);

@@ -21,7 +21,30 @@ SRCS =  main.c                  \
         visual_fill_map.c       \
         visual_window.c         \
         read_bots.c             \
-        make_cycle.c
+        make_cycle.c 			\
+        init_visual.c			\
+       	init_visual_new.c 		\
+       	read_bots.c 			\
+       	./fun_cor/fun_add.c 		\
+       	./fun_cor/fun_aff.c 		\
+       	./fun_cor/fun_and.c		\
+       	./fun_cor/fun_fork.c		\
+       	./fun_cor/fun_ld.c 		\
+       	./fun_cor/fun_ldi.c 	\
+       	./fun_cor/fun_lfork.c 	\
+       	./fun_cor/fun_live.c 	\
+       	./fun_cor/fun_lld.c 	\
+       	./fun_cor/fun_lldi.c 	\
+       	./fun_cor/fun_or.c 		\
+       	./fun_cor/fun_st.c 		\
+       	./fun_cor/fun_sti.c 	\
+       	./fun_cor/fun_sub.c 	\
+       	./fun_cor/fun_xor.c 	\
+       	./fun_cor/fun_zjmp.c 	\
+       	./fun_cor/implement_command.c 	\
+       	./fun_cor/process_current.c 	\
+       	./fun_cor/table_label.c 		\
+       	./fun_cor/test.c
 
 OBJ=$(SRCS:.c=.o)
 
