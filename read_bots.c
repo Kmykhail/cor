@@ -1,19 +1,37 @@
 #include "main.h"
 
-int		ft_print_error(int code)
+int		print_error(int code, char *text, int *res)
 {
-	if (code == 1)
+	if (code == _USAGE)
 	{
-		ft_putstr("Usage: ./corewar [-d N -s N -v N | -b --stealth | -n --stealth] [-a] <champion1.cor> <...>\n");
+		ft_putstr("Usage: ./corewar [-dump N -v N | -n <some_player.cor> <...>\n");
+		ft_putstr("#### TEXT OUTPUT MODE ##################################\n");
+		ft_putstr(" -dump N : Dumps memory after N (>= 0) cycles then exits\n");
+		ft_putstr(" -v N 	: Verbosity levels, can be added together to enable several\n");
+		ft_putstr("		- 0 : Show only essentials\n");
+		ft_putstr("		- 1 : Show lives\n");
+		ft_putstr("		- 2 : Show cycles\n");
+		ft_putstr("		- 4 : Show operations (Params are NOT litteral ...)\n");
+		ft_putstr("		- 8 : Show deaths\n");
+		ft_putstr("		- 16 : Show PC movements (Except for jumps)\n");
+		ft_putstr("#### NCURSES OUTPUT MODE ###############################\n");
+		ft_putstr(" -n      : Ncurses output mode\n");
+		ft_putstr("########################################################\n");
+		*res = -1;
 	}
-	else if (code == 2)
-		ft_putstr("Too many champions\n");
-	else if (code == 3)
-		ft_putstr("File not exist\n");
-	else if (code == 4)
-		ft_putstr("Can't read file\n");
-	(code > 0) ? exit(1) : 0;
-	return (0);
+	if (code == NO_READ_FILE)
+	{
+		ft_putstr("Can't read source file ");
+		ft_putstr(text);
+		ft_putstr("\n");
+	}
+	if (code == MAGIC)
+	{
+		ft_putstr("Error: File ");
+		ft_putstr(text);
+		ft_putstr(" has an invalid header\n");
+	}
+	return (1);
 }
 
 void 	find_idex_to_start(t_main *main)
@@ -27,7 +45,6 @@ void 	find_idex_to_start(t_main *main)
 	coor = 0;
 	players = 0;
 	size = 4096;
-	main->cnt_pl = main->cnt_pl + 1;
 	main->nbr_proc = main->cnt_pl;
 	while (k < 4)
 		main->coor_of_p[k++] = 0;
@@ -73,30 +90,29 @@ void	read_bots(t_main *main, t_player *pl, int i,  int fd)
 	c = 0;
 	val = 0;
 	if (read(fd, buff, TOTAL_SIZE) < 0)
-		ft_print_error(2);
-	while (cnt < TOTAL_SIZE)
+		print_error(NO_READ_FILE, NULL, 0);
+	while (cnt < TOTAL_SIZE && !main->error)
 	{
 		val += ft_atoi(ft_itoa_base(buff[cnt], 10));
 		(cnt < 3) ? (val = val << 8) : 0;
 		if (cnt == 3)
 		{
-			if (val != COREWAR_EXEC_MAGIC)
-				ft_print_error(3);
+			main->error += (val != COREWAR_EXEC_MAGIC) ? print_error(MAGIC, main->filename[i], 0) : 0;
 			val = 0;
 		}
-		if (cnt > 3 && cnt < PROG_NAME_LENGTH && val)
+		if (cnt > 3 && cnt < PROG_NAME_LENGTH && val && !main->error)
 		{
 			pl->player_name[c] = buff[cnt];
 			pl->bot_name = 1;
 			c++;
 		}
-		if (cnt == PROG_NAME_LENGTH - 1)
+		if (cnt == PROG_NAME_LENGTH - 1 && !main->error)
 		{
 			val = 0;
 			pl->player_name[c] = -1;
 			c = 0;
 		}
-		if (cnt >= PROG_NAME_LENGTH && val)
+		if (cnt >= PROG_NAME_LENGTH && val && !main->error)
 		{
 			pl->comment[c] = buff[cnt];
 			pl->comm = 1;
@@ -104,13 +120,18 @@ void	read_bots(t_main *main, t_player *pl, int i,  int fd)
 		}
 		cnt++;
 	}
+	if (main->error)
+		return ;
 	pl->comment[c] = -1;
 	if (!pl->bot_name || !pl->comm)
-		ft_print_error(4);
+	{
+		(!pl->bot_name) ? print_error(BOT_NAME, NULL, 0) : print_error(COMM, NULL, 0);
+		return ;
+	}
 	pl->cnt_bot = push_code_tomass(main, fd, i);
 }
 
-void	valid_bots(t_main *main, int ac, char **av)
+int		valid_bots(t_main *main, int ac, char **av)
 {
 	int	fd;
 	int i;
@@ -121,23 +142,23 @@ void	valid_bots(t_main *main, int ac, char **av)
 	fd = 0;
 	while(ac-- > 1)
 	{
-		if (av[c + 1][0] != '-')
-		{
-			main->filename[c] = ft_strdup(av[c + 1]);
-			c++;
-		}
+		av++;
+		if (ft_strcmp(*av, "-dump") && ft_strcmp(*av, "-n") && !is_numeric(*av))
+			main->filename[c++] = ft_strdup(*av);
 	}
-	main->cnt_pl = c - 1;
+	main->filename[c] = NULL;
+	main->cnt_pl = c;
 	find_idex_to_start(main);
-	while (main->filename[i])
+	while (main->filename[i] && !main->error)
 	{
 		init_players(main, i);
 		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
-			ft_print_error(1);
+	 		main->error = print_error(NO_READ_FILE, main->filename[i], 0);
 		/*СМОТРИ ДЛЫНЫ ДЛЯ ИМЕН, КОМЕНТОВ, ДОЛЖНО БЫТЬ ВЫРАВНИВАЮЩИЙ
 		БАЙТЫ МЕЖДУ ИМЕНЕМ И КОМЕНТОМ (КАКИХ ТО 4-РИ БАЙТА)*/
-		read_bots(main, main->players[i], i,  fd);
-		close(fd);
+		(!main->error) ? read_bots(main, main->players[i], i,  fd) : 0;
+		(!main->error) ? close(fd) : 0;
 		i++;
 	}
+	return ((main->error) ? 1 : 0);
 }

@@ -26,7 +26,12 @@
 # define ITR main->var_crap->itr
 # define FD main->ddddd
 # define FD4 main->fffff
-
+# define _USAGE 0
+# define NO_READ_FILE 1
+# define BOT_NAME 2
+# define COMM 3
+# define MAGIC 4
+# define INVALID_COMMAND 5
 
 typedef struct			s_process
 {
@@ -64,11 +69,6 @@ typedef struct			s_player
 	unsigned int		live_last_per;// переде переменной z обнулением закинули сюда
 }						t_player;
 
-typedef	struct			s_crap
-{
-	int					itr;
-}						t_crap;
-
 typedef struct			s_main
 {
 	int 				steper;//в нем храниться 
@@ -88,8 +88,8 @@ typedef struct			s_main
 	unsigned int		nbr_proc;//number process
 	t_changes			*lst_changes;//изменения внести в список
 	t_player			*last_live_player;
-	t_crap				*var_crap;
 	int 				finish;//конец игры, finish = 1
+	int 				error;
 	int 				ddddd;
 	int 				fffff;
 
@@ -97,12 +97,13 @@ typedef struct			s_main
 
 void					init_players(t_main *main, int indx);
 int						make_cycle(t_main *main);//kmykhail
-int						ft_print_error(int code);//kmykhail
+int						print_error(int code, char *value, int *res);//kmykhail
 void					ft_table_label(t_main *main);//kmykhail
-void					valid_bots(t_main *main, int ac, char **av);//kmykhail
+int						valid_bots(t_main *main, int ac, char **av);//kmykhail
 void					check_codage(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
 void					lst_newchanges(t_main *main, t_process *proc, int i, int fin, int ch);
+int 					is_numeric(char *s);
 t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 

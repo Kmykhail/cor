@@ -141,60 +141,33 @@ int 	make_cycle_second(t_main *main, t_process **proc)
     main->cur_cycle++;
 	while (head)
 	{
-		dprintf(FD, "main->cur_cycle = %d\n", main->cur_cycle);
-		dprintf(FD4, "before head->index = %d\n", head->index);
-		dprintf(FD, "MC____01\n");
-		dprintf(FD, "HEAD->INDEX:%d === head - %p\n", head->index, head);
-		dprintf(FD, "cmd_cycle:%d\n", head->cmd_cycle);
-		dprintf(FD, "_________main->label[%d][2]\n", main->map[head->index] - 1);
-		dprintf(FD, "____main->label[%d][2] = %d\n", main->map[head->index] - 1, main->label[main->map[head->index] - 1][2]);
 		head->cmd_cycle = (!head->cmd_cycle) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
 		head->cmd_cycle--;
-		dprintf(FD, "MC____1\n");
 		if (main->map[head->index] >= 16) 
-			ft_print_error(1);
+			print_error(INVALID_COMMAND, NULL, 0);
 		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
 		&& main->map[head->index] != 15 && main->map[head->index] != 16)
 		{
-			dprintf(FD, "MC____2\n");
 			check_codage(main, main->map[head->index + 1]);
 			ft_implement_command(main, head);
 		}
 		else if (main->map[head->index] == 1 || main->map[head->index] == 12 \
 		|| main->map[head->index] == 15 || main->map[head->index] == 16)
-		{
 			ft_implement_command(main, head);
-			dprintf(FD, "MC____3\n");
-		}
 		else
 			head->index++;
-
-
-		dprintf(FD, "MC____4\n");
-
-		dprintf(FD, "head->next = %p\n", head->next);
-		// dprintf(FD, "head->next->index = %d\n", head->next->index);
 		head = head->next;
-		dprintf(FD, "MC____44\n");
 	}
-	dprintf(FD, "MC_______4444\n");
 	if (main->cp_cl_to_die == main->cur_cycle && (main->cl_to_die >= CYCLE_DELTA || main->cl_to_die == 36))
 	{
-		dprintf(FD, "MC____5\n");
 		remove_proc(main, &(*proc));
-		dprintf(FD, "MC____6\n");
 		cycle_live_die(main, &(*proc));
-		dprintf(FD, "MC____7\n");
 	}
 	if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die == U_INT)
 	{
-		dprintf(FD, "MC____8\n");
 		main->finish = 1;
 		main->cur_cycle++;
 	}
-	dprintf(FD, "MC____9\n");
-	if (head)
-		dprintf(FD4, "after head->index = %d\n", head->index);
 	return (1);
 }
 
