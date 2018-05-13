@@ -85,6 +85,7 @@ void	init_struct(t_main *main)
 	main->nbr_proc = 0;
 	main->error = 0;
 	main->finish = 0;
+	main->exec_code = 0;
 	while (i < MAX_PLAYERS)
 	{
 		main->filename[i] = NULL;
@@ -94,7 +95,6 @@ void	init_struct(t_main *main)
 	main->lst_proc = NULL;
 	main->lst_changes = NULL;
 	main->last_live_player = NULL;
-	//main->var_crap = (t_crap*)malloc(sizeof(t_crap));
 	main->finish = 0;
 	ft_table_label(main);
 	ft_memset(main->map, 0, MEM_SIZE);
@@ -110,7 +110,6 @@ int		main(int argc, char **argv)
 	man_cycle = 0;
 	if ((mod = check_args(argv, argc, &man_cycle)) < 0)
 		exit (1);
-	printf("SFSFDSFD\n");
 	init_struct(&main);
 	main.ddddd = open("/Users/kmykhail/Downloads/cor-master/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.fffff = open("/Users/kmykhail/Downloads/cor-master/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);

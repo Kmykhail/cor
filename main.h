@@ -21,17 +21,22 @@
 # include <fcntl.h>
 
 # define TOTAL_SIZE PROG_NAME_LENGTH + COMMENT_LENGTH
-# define U_INT 4294967282
-# define STEP main->steper
-# define ITR main->var_crap->itr
-# define FD main->ddddd
-# define FD4 main->fffff
-# define _USAGE 0
+# define EXEC_CODE 	main->exec_code
+# define BUFFSIZE		1
+# define U_INT 		4294967282
+# define STEP 		main->steper
+# define ITR 		main->var_crap->itr
+# define FD 		main->ddddd
+# define FD4 		main->fffff
+# define _USAGE 	0
 # define NO_READ_FILE 1
 # define BOT_NAME 2
 # define COMM 3
 # define MAGIC 4
-# define INVALID_COMMAND 5
+# define NOT_NULL 5
+# define INVALID_COMMAND 6
+# define EXEC_CODE_NULL 7
+# define SIZE_DIFFER 8
 
 typedef struct			s_process
 {
@@ -71,7 +76,8 @@ typedef struct			s_player
 
 typedef struct			s_main
 {
-	int 				steper;//в нем храниться 
+	int					steper;//в нем храниться 
+	int					exec_code;
 	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
 	uint8_t 			arg[3];
