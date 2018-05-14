@@ -31,14 +31,11 @@ int		print_error(int code, char *text, int *res)
 		ft_putstr(text);
 		ft_putstr(" has an invalid header\n");
 	}
-	if (code == NOT_NULL)
-	{
-		ft_putstr("Error:	File hasn't delimiter between the name and comment and code\n");
-		ft_putstr("Info:	delimetr: 0000 0000\n");
-	}
 	if (code == EXEC_CODE_NULL)
 	{
-		ft_putstr("Error:	Executable code is 0\n");
+		ft_putstr("Error: File ");
+		ft_putstr(text);
+		ft_putstr(" is too small to be a champion\n");
 	}
 	if (code == SIZE_DIFFER)
 	{
@@ -154,35 +151,28 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 {
 	int				num;
 	int				cnt;
-	int				ret;
 	unsigned char	buff[BUFFSIZE];
 
 	num = 0;
 	cnt = 0;
-	printf("AAAAA\n");
-	while ((ret = read(fd, buff, BUFFSIZE) > 0) && !main->error)
+	while ((read(fd, buff, BUFFSIZE) > 0) && !ERROR)
 	{
 		if (cnt <= 3)
 			num += ft_atoi(ft_itoa_base(buff[0], 10));
 		(cnt < 3) ? (num = num << 8) : 0;
 		if (cnt == 3)
 		{
-			main->error = (num != COREWAR_EXEC_MAGIC) ? print_error(MAGIC, main->filename[i], 0) : 0;	
+			ERROR = (num != COREWAR_EXEC_MAGIC) ? print_error(MAGIC, main->filename[i], 0) : 0;
 			num = 0;
-			//exit(1);
 		}
-		if (cnt > 3 && cnt < PROG_NAME_LENGTH && !main->error)
-		{
+		if (cnt > 3 && cnt < PROG_NAME_LENGTH && !ERROR)
 			pl->player_name[num++] = buff[0];
-		}
-		if (cnt == PROG_NAME_LENGTH && !main->error)
+		if (cnt == PROG_NAME_LENGTH && !ERROR)
 		{
 			pl->player_name[num] = '\0';
 			num = 0;
 		}
-		if (cnt >= PROG_NAME_LENGTH + 4 && cnt < PROG_NAME_LENGTH + 8 && !main->error)
-			main->error = (buff[0]) ? print_error(NOT_NULL, NULL, 0) : 0;
-		if (cnt >= PROG_NAME_LENGTH + 8 && cnt < PROG_NAME_LENGTH + 12 && !main->error)
+		if (cnt >= PROG_NAME_LENGTH + 8 && cnt < PROG_NAME_LENGTH + 12 && !ERROR)
 		{
 			if (!EXEC_CODE && buff[0] != 0 && cnt < PROG_NAME_LENGTH + 11)
 			{
@@ -192,27 +182,19 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 			else
 				EXEC_CODE += ft_atoi(ft_itoa_base(buff[0], 10));
 		}
-		if (!EXEC_CODE && cnt == PROG_NAME_LENGTH + 12 && !main->error)
-			print_error(EXEC_CODE_NULL, NULL, 0);
-		if (cnt >= 2188 && cnt < 2192 && !main->error)
+		if (!EXEC_CODE && cnt == PROG_NAME_LENGTH + 12 && !ERROR)
+			ERROR = print_error(SIZE_DIFFER, main->filename[i], 0);
+		if (cnt >= 2192 && !ERROR)
 		{
-			if (cnt >= 2188 && cnt < 2192 && buff[0] != 0)
-				main->error = print_error(NOT_NULL, NULL, 0);
-		}
-		if (cnt >= 2192 && !main->error)
-		{
-			if (!num)
-				num = main->coor_of_p[i];
+			(!num) ? (num = main->coor_of_p[i]) : 0;
 			main->map[num++] = buff[0];
 			EXEC_CODE--;
 		}
 		cnt++;
 	}
-	printf("IImain->error: %d\n", main->error);
-	(!main->error && EXEC_CODE != 0) ? (main->error = print_error(SIZE_DIFFER, main->filename[i], 0)) : 0;
-	printf("RRmain->error: %d\n", main->error);
-	//exit(1);
-	(!main->error) ? init_vizual(main, i, num - 1) : 0;
+	ERROR += (cnt < TOTAL_SIZE && !ERROR) ? print_error(EXEC_CODE_NULL, main->filename[i], 0) : 0;
+	(!ERROR && EXEC_CODE != 0) ? (ERROR = print_error(SIZE_DIFFER, main->filename[i], 0)) : 0;
+	(!ERROR) ? init_vizual(main, i, num - 1) : 0;
 }
 
 int		valid_bots(t_main *main, int ac, char **av)

@@ -33,10 +33,10 @@
 # define BOT_NAME 2
 # define COMM 3
 # define MAGIC 4
-# define NOT_NULL 5
 # define INVALID_COMMAND 6
 # define EXEC_CODE_NULL 7
 # define SIZE_DIFFER 8
+# define ERROR main->error
 
 typedef struct			s_process
 {
