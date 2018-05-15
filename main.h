@@ -24,8 +24,9 @@
 # define EXEC_CODE 	main->exec_code
 # define BUFFSIZE		1
 # define U_INT 		4294967282
+# define ERROR 		main->error
+# define PC_INDEX	head->index
 # define STEP 		main->steper
-# define ITR 		main->var_crap->itr
 # define FD 		main->ddddd
 # define FD4 		main->fffff
 # define _USAGE 	0
@@ -36,7 +37,7 @@
 # define INVALID_COMMAND 6
 # define EXEC_CODE_NULL 7
 # define SIZE_DIFFER 8
-# define ERROR main->error
+# define TOO_MANY 9
 
 typedef struct			s_process
 {
@@ -47,6 +48,7 @@ typedef struct			s_process
 	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
 	unsigned int		live;//инкремент
 	int 				carry;
+	int 				itr;
 	struct s_process	*next;
 }						t_process;
 
@@ -110,6 +112,7 @@ void					check_codage(t_main *main, uint8_t num);//kmykhail
 void					init_vizual(t_main *main, int start, int end);//kmykhail
 void					lst_newchanges(t_main *main, t_process *proc, int i, int fin, int ch);
 int 					is_numeric(char *s);
+void					free_struct(t_main *main);
 t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 

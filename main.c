@@ -24,6 +24,23 @@ int 	is_numeric(char *s)
 	return (1);
 }
 
+void	print_dump(t_main *main)
+{
+	int i;
+
+	i = 0;
+	while (i < MEM_SIZE)
+	{
+		((i % 64 == 0) && i != 0) ? ft_printf("\n") : 0;
+		if (main->map[i] < 10 || (main->map[i] >= 0x0a && main->map[i] <= 0x0f))
+			(i == MEM_SIZE - 1) ? ft_printf("0%x", main->map[i]) : ft_printf("0%x ", main->map[i]);
+		else
+			(i == MEM_SIZE - 1) ? ft_printf("%x", main->map[i]) : ft_printf("%x ", main->map[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
+
 int		check_args(char **av, int ac, int *cycle)
 {
 	int i;
@@ -40,20 +57,13 @@ int		check_args(char **av, int ac, int *cycle)
 		else if (i == 1 && !ft_strcmp(av[i], "-n"))
 			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 2);
 		else if (i == 1 && (ft_strcmp(av[i], "-dump") && ft_strcmp(av[i], "-n")))
-		{
-			if (ft_strlen(av[i]) > 4)
-				(ft_strcmp(ft_strsub(av[i], (ft_strlen(av[i]) - 4), ft_strlen(av[i])), ".cor")) ? print_error(_USAGE, NULL, &res) : 0;
-			else
-				print_error(_USAGE, NULL, &res);
-		}
+			(!ft_strstr(av[i], ".cor")) ? print_error(_USAGE, NULL, &res) : 0;
 		else if (i > 1 && is_numeric(av[i]))
+		{
 			(ft_strcmp(av[i - 1], "-dump")) ? print_error(_USAGE, NULL, &res) : (*cycle = ft_atoi(av[i]));
-		else if (i > 1 && ft_strlen(av[i]) > 4)
-			(ft_strcmp(ft_strsub(av[i], (ft_strlen(av[i]) - 4), ft_strlen(av[i])), ".cor")) ? print_error(_USAGE, NULL, &res) : 0;
+			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
+		}
 		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n")))
-			print_error(_USAGE, NULL, &res);
-		else if (i > 1 && (ft_strcmp(av[i], "-dump") || ft_strcmp(av[i], "-n")) && \
-		ft_strlen(av[i]) <= 4 && !ft_strstr(av[i], ".cor"))
 			print_error(_USAGE, NULL, &res);
 	}
 	return (res);
@@ -104,11 +114,12 @@ void	init_struct(t_main *main)
 int		main(int argc, char **argv)
 {
 	int			man_cycle;
-	int 		i = 0;
 	int 		mod;
+	int 		i;
 	t_main		main;
 
 	man_cycle = 0;
+	i = 0;
 	if ((mod = check_args(argv, argc, &man_cycle)) < 0)
 		exit (1);
 	init_struct(&main);
@@ -117,26 +128,30 @@ int		main(int argc, char **argv)
 	dprintf(main.ddddd, "main.ddddd = %d\n", main.fffff);
 	if (valid_bots(&main, argc, argv))
 	{
-		//проверить лики
+		free_struct(&main);
+		while (1);
 		exit(1);
 	}
-	printf("NORm\n");
 	if (mod == 2)
 		visual(&main);
-	else
+	else if (mod == 1)
 	{
-		while (man_cycle-- >= 0)
+		while (man_cycle-- > 0)
 			make_cycle(&main);
 		while (i < MEM_SIZE)
 		{
-			(main.map[i] < 10 || main.map[i] == 0xb) ? printf("0%x ", main.map[i]) : printf("%x ", main.map[i]);
-			if ((i % 64 == 0) && i != 0)
-				printf("\n");
+			(!i) ? ft_printf("0x%.4x : ", i) : 0;
+			((i % 64 == 0) && i != 0) ? ft_printf("\n0x%.4x : ", i) : 0;
+			if (main.map[i] < 10 || (main.map[i] >= 0x0a && main.map[i] <= 0x0f))
+				(i == MEM_SIZE - 1) ? ft_printf("0%x", main.map[i]) : ft_printf("0%x ", main.map[i]);
+			else
+				(i == MEM_SIZE - 1) ? ft_printf("%x", main.map[i]) : ft_printf("%x ", main.map[i]);
 			i++;
 		}
-		printf("I: %d\n", i);
+		ft_printf("\n");
+		free_struct(&main);
 	}
-	/*while (++i < argc)
-		(!ft_strcmp(argv[i], "-n")) ? visual(&main) : 0;*/
+	while(1)
+		;
 	return (0);
 }

@@ -30,39 +30,6 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 {
 	t_process	*tmp;
 	t_process	*buff;
-	// int			i;
-	// int			ch;	
-
-	// i = 0;
-	// ch = 0;
-	// if (proc_list == NULL || *proc_list == NULL)
-	// 	return ;
-	// tmp = *proc_list;
-	// while (tmp != NULL)
-	// {
-	// 	if (!tmp->live)//==0
-	// 	{
-	// 		while (ch < i)
-	// 		{
-	// 			if (ch == i - 1)
-	// 				buff->next = buff->next->next;
-	// 			buff = buff->next;
-	// 			ch++;
-	// 			main->nbr_proc--;
-	// 		}
-	// 		if (!ch)
-	// 		{
-	// 			buff = tmp->next;
-	// 			free(tmp);
-	// 			tmp = buff;
-	// 			*proc_list = buff;
-	// 			main->nbr_proc--;
-	// 		}
-	// 		ch = 0;
-	// 	}
-	// 	tmp = tmp->next;
-	// 	i++;
-	// }
 
 	if (proc_list == NULL || *proc_list == NULL)
 		return ;
@@ -90,8 +57,8 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 
 void	cycle_live_die(t_main *main, t_process **proc)
 {
-	int i;
-	int check;
+	int 		i;
+	int 		check;
 	t_process	*head;
 
 	i = 0;
@@ -138,24 +105,25 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	t_process	*head;
 
 	head = *proc;
-    main->cur_cycle++;
+	main->cur_cycle++;
 	while (head)
 	{
 		head->cmd_cycle = (!head->cmd_cycle) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
 		head->cmd_cycle--;
-		if (main->map[head->index] >= 16) 
+		if (main->map[PC_INDEX] >= 16) 
 			print_error(INVALID_COMMAND, NULL, 0);
-		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
-		&& main->map[head->index] != 15 && main->map[head->index] != 16)
+		if (main->map[PC_INDEX] != 1 && main->map[PC_INDEX] != 12 \
+		&& main->map[PC_INDEX] != 15 && main->map[PC_INDEX] != 16)
 		{
-			check_codage(main, main->map[head->index + 1]);
+			check_codage(main, main->map[PC_INDEX + 1]);
 			ft_implement_command(main, head);
 		}
-		else if (main->map[head->index] == 1 || main->map[head->index] == 12 \
-		|| main->map[head->index] == 15 || main->map[head->index] == 16)
+		else if (main->map[PC_INDEX] == 1 || main->map[PC_INDEX] == 12 \
+		|| main->map[PC_INDEX] == 15 || main->map[PC_INDEX] == 16)
 			ft_implement_command(main, head);
 		else
-			head->index++;
+			PC_INDEX++;
+		head->itr++;
 		head = head->next;
 	}
 	if (main->cp_cl_to_die == main->cur_cycle && (main->cl_to_die >= CYCLE_DELTA || main->cl_to_die == 36))

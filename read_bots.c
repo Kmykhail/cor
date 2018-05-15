@@ -4,46 +4,34 @@ int		print_error(int code, char *text, int *res)
 {
 	if (code == _USAGE)
 	{
-		ft_putstr("Usage: ./corewar [-dump N -v N | -n <some_player.cor> <...>\n");
-		ft_putstr("#### TEXT OUTPUT MODE ##################################\n");
-		ft_putstr(" -dump N : Dumps memory after N (>= 0) cycles then exits\n");
-		ft_putstr(" -v N 	: Verbosity levels, can be added together to enable several\n");
-		ft_putstr("		- 0 : Show only essentials\n");
-		ft_putstr("		- 1 : Show lives\n");
-		ft_putstr("		- 2 : Show cycles\n");
-		ft_putstr("		- 4 : Show operations (Params are NOT litteral ...)\n");
-		ft_putstr("		- 8 : Show deaths\n");
-		ft_putstr("		- 16 : Show PC movements (Except for jumps)\n");
-		ft_putstr("#### NCURSES OUTPUT MODE ###############################\n");
-		ft_putstr(" -n      : Ncurses output mode\n");
-		ft_putstr("########################################################\n");
+		ft_printf("Usage: ./corewar [-dump N -v N | -n <some_player.cor> <...>\n");
+		ft_printf("#### TEXT OUTPUT MODE ##################################\n");
+		ft_printf(" -dump N : Dumps memory after N (>= 0) cycles then exits\n");
+		ft_printf(" -v N 	: Verbosity levels, can be added together to enable several\n");
+		ft_printf("		- 0 : Show only essentials\n");
+		ft_printf("		- 1 : Show lives\n");
+		ft_printf("		- 2 : Show cycles\n");
+		ft_printf("		- 4 : Show operations (Params are NOT litteral ...)\n");
+		ft_printf("		- 8 : Show deaths\n");
+		ft_printf("		- 16 : Show PC movements (Except for jumps)\n");
+		ft_printf("#### NCURSES OUTPUT MODE ###############################\n");
+		ft_printf(" -n      : Ncurses output mode\n");
+		ft_printf("########################################################\n");
 		*res = -1;
 	}
 	if (code == NO_READ_FILE)
-	{
-		ft_putstr("Can't read source file ");
-		ft_putstr(text);
-		ft_putstr("\n");
-	}
+		ft_printf("Can't read source file %s\n", text);
 	if (code == MAGIC)
-	{
-		ft_putstr("Error: File ");
-		ft_putstr(text);
-		ft_putstr(" has an invalid header\n");
-	}
+		ft_printf("Error: file %s has an invalid header\n", text);
 	if (code == EXEC_CODE_NULL)
-	{
-		ft_putstr("Error: File ");
-		ft_putstr(text);
-		ft_putstr(" is too small to be a champion\n");
-	}
+		ft_printf("Error: File %s is too small to be a champion\n", text);
 	if (code == SIZE_DIFFER)
 	{
-		//Error: File test.cor has a code size that differ from what its header says
-		ft_putstr("Error: File ");
-		ft_putstr(text);
-		ft_putstr(" has a code size that differ from what its header says\n");
+		ft_printf("Error: File ");
+		ft_printf("%s has a code size that differ from what its header says\n", text);
 	}
+	if (code == TOO_MANY)
+		ft_printf("Too many champions\n");
 	return (1);
 }
 
@@ -152,13 +140,18 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 	int				num;
 	int				cnt;
 	unsigned char	buff[BUFFSIZE];
+	char			*free;
 
 	num = 0;
 	cnt = 0;
 	while ((read(fd, buff, BUFFSIZE) > 0) && !ERROR)
 	{
 		if (cnt <= 3)
-			num += ft_atoi(ft_itoa_base(buff[0], 10));
+		{
+			free = ft_itoa_base(buff[0], 10);
+			num += ft_atoi(free);
+			ft_strdel(&free);
+		}
 		(cnt < 3) ? (num = num << 8) : 0;
 		if (cnt == 3)
 		{
@@ -176,13 +169,18 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 		{
 			if (!EXEC_CODE && buff[0] != 0 && cnt < PROG_NAME_LENGTH + 11)
 			{
-				EXEC_CODE += ft_atoi(ft_itoa_base(buff[0], 10));
-				EXEC_CODE = EXEC_CODE << 8;	
+				free = ft_itoa_base(buff[0], 10);
+				EXEC_CODE += ft_atoi(free);
+				EXEC_CODE = EXEC_CODE << 8;
 			}
 			else
-				EXEC_CODE += ft_atoi(ft_itoa_base(buff[0], 10));
+			{
+				free = ft_itoa_base(buff[0], 10);
+				EXEC_CODE += ft_atoi(free);
+			}
+			ft_strdel(&free);
 		}
-		if (!EXEC_CODE && cnt == PROG_NAME_LENGTH + 12 && !ERROR)
+		if ((!EXEC_CODE || EXEC_CODE == CHAMP_MAX_SIZE) && cnt == PROG_NAME_LENGTH + 12 && !ERROR)
 			ERROR = print_error(SIZE_DIFFER, main->filename[i], 0);
 		if (cnt >= 2192 && !ERROR)
 		{
@@ -213,15 +211,16 @@ int		valid_bots(t_main *main, int ac, char **av)
 			main->filename[c++] = ft_strdup(*av);
 	}
 	main->filename[c] = NULL;
+	ERROR += (c > MAX_PLAYERS) ? print_error(TOO_MANY, NULL, 0) : 0;
 	main->cnt_pl = c;
-	find_idex_to_start(main);
+	(!ERROR) ? find_idex_to_start(main) : 0;
 	while (main->filename[i] && !main->error)
 	{
 		init_players(main, i);
 		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
-	 		main->error = print_error(NO_READ_FILE, main->filename[i], 0);
-		(!main->error) ? read_bots(main, main->players[i], i,  fd) : 0;
-		(!main->error) ? close(fd) : 0;
+	 		ERROR = print_error(NO_READ_FILE, main->filename[i], 0);
+		(!ERROR) ? read_bots(main, main->players[i], i,  fd) : 0;
+		(!ERROR) ? close(fd) : 0;
 		i++;
 	}
 	return ((main->error) ? 1 : 0);
