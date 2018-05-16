@@ -72,13 +72,12 @@ int		check_args(char **av, int ac, int *cycle)
 void	init_players(t_main *main, int indx)
 {
 	main->players[indx] = (t_player*)malloc(sizeof(t_player));
-	main->players[indx]->bot_name = 0;
-	main->players[indx]->comm = 0;
 	main->players[indx]->nbr_pl = (!indx) ? -1 : (indx - ((indx * 2) + 1));
 	main->players[indx]->ll_cycle = 0;
 	main->players[indx]->live_cur_per = 0;
 	main->players[indx]->live_last_per = 0;
 	main->players[indx]->cnt_bot = 0;
+	main->players[indx]->exec_code = 0;
 }
 
 void	init_struct(t_main *main)
@@ -95,7 +94,6 @@ void	init_struct(t_main *main)
 	main->nbr_proc = 0;
 	main->error = 0;
 	main->finish = 0;
-	main->exec_code = 0;
 	while (i < MAX_PLAYERS)
 	{
 		main->filename[i] = NULL;
@@ -129,16 +127,15 @@ int		main(int argc, char **argv)
 	if (valid_bots(&main, argc, argv))
 	{
 		free_struct(&main);
-		while (1);
 		exit(1);
 	}
 	if (mod == 2)
 		visual(&main);
-	else if (mod == 1)
+	else if (mod == 1 || !mod)
 	{
-		while (man_cycle-- > 0)
+		while (mod == 1 && man_cycle-- > 0)
 			make_cycle(&main);
-		while (i < MEM_SIZE)
+		while (i < MEM_SIZE && mod == 1)
 		{
 			(!i) ? ft_printf("0x%.4x : ", i) : 0;
 			((i % 64 == 0) && i != 0) ? ft_printf("\n0x%.4x : ", i) : 0;
@@ -148,10 +145,22 @@ int		main(int argc, char **argv)
 				(i == MEM_SIZE - 1) ? ft_printf("%x", main.map[i]) : ft_printf("%x ", main.map[i]);
 			i++;
 		}
+		while (!main.finish && !mod)
+			make_cycle(&main);
+		if (!mod)
+		{
+			i = 0;
+			while (i < main.cnt_pl)
+			{
+				ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n", i + 1, \
+				main.players[i]->exec_code, main.players[i]->player_name, main.players[i]->comment);
+				i++;
+			}
+			ft_printf("Contestant %d, \"%s\", has won !", \
+			(UCH)(main.last_live_player->nbr_pl * -1), main.last_live_player->player_name);
+		}
 		ft_printf("\n");
 		free_struct(&main);
 	}
-	while(1)
-		;
 	return (0);
 }

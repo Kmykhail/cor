@@ -133,19 +133,7 @@ int			visual(t_main *main)
 		{
 			while (window.one_step > 0) // comment if you want back to normal mode
 			{							// comment if you want back to normal mode
-
-
-
-
-
-
 				// dprintf(3, "7777 A window.bar %p\n", window.bar);
-
-
-
-
-
-
 				if (!make_cycle(main))
 					break ;
 				(window.one_step) ? window.one_step -= 1 : 0;
@@ -154,6 +142,8 @@ int			visual(t_main *main)
 			}							// comment if you want back to normal mode
 			// dprintf(3, "7777 C window.bar %p\n", window.bar);
 		}
+		if (main->finish)
+			printf("^^^: %s\n", main->last_live_player->player_name);
 		// dprintf(3, "7777 D window.bar %p\n", window.bar);
 		(main->finish) ? print_winner(main, &window) : 0;
 		usleep((CLOCKS_PER_SEC - (clock() - start)) / window.speed);

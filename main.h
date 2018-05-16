@@ -21,7 +21,7 @@
 # include <fcntl.h>
 
 # define TOTAL_SIZE PROG_NAME_LENGTH + COMMENT_LENGTH
-# define EXEC_CODE 	main->exec_code
+// # define EXEC_CODE 	main->exec_code
 # define BUFFSIZE		1
 # define U_INT 		4294967282
 # define ERROR 		main->error
@@ -66,20 +66,18 @@ typedef struct			s_changes // все измениня кидаю в голову
 typedef struct			s_player
 {
 	int					cnt_bot;
-	int 				bot_name;
-	int 				comm;
 	unsigned char		nbr_pl;// номер игрока
 	char 				player_name[PROG_NAME_LENGTH + 1];
 	char 				comment[COMMENT_LENGTH + 1];
 	unsigned int		ll_cycle;//last live
 	unsigned int		live_cur_per;// обну/лили  переменную z
 	unsigned int		live_last_per;// переде переменной z обнулением закинули сюда
+	int					exec_code;
 }						t_player;
 
 typedef struct			s_main
 {
 	int					steper;//в нем храниться 
-	int					exec_code;
 	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
 	uint8_t 			arg[3];

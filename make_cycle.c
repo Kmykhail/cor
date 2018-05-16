@@ -106,6 +106,7 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 
 	head = *proc;
 	main->cur_cycle++;
+	//printf("CUR_CYCLE: %d\n", main->cur_cycle);
 	while (head)
 	{
 		head->cmd_cycle = (!head->cmd_cycle) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;

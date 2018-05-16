@@ -167,31 +167,32 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 		}
 		if (cnt >= PROG_NAME_LENGTH + 8 && cnt < PROG_NAME_LENGTH + 12 && !ERROR)
 		{
-			if (!EXEC_CODE && buff[0] != 0 && cnt < PROG_NAME_LENGTH + 11)
+			if (!pl->exec_code && buff[0] != 0 && cnt < PROG_NAME_LENGTH + 11)
 			{
 				free = ft_itoa_base(buff[0], 10);
-				EXEC_CODE += ft_atoi(free);
-				EXEC_CODE = EXEC_CODE << 8;
+				pl->exec_code += ft_atoi(free);
+				pl->exec_code = pl->exec_code << 8;
 			}
 			else
 			{
 				free = ft_itoa_base(buff[0], 10);
-				EXEC_CODE += ft_atoi(free);
+				pl->exec_code += ft_atoi(free);
 			}
 			ft_strdel(&free);
 		}
-		if ((!EXEC_CODE || EXEC_CODE == CHAMP_MAX_SIZE) && cnt == PROG_NAME_LENGTH + 12 && !ERROR)
+		if ((!pl->exec_code || pl->exec_code == CHAMP_MAX_SIZE) && cnt == PROG_NAME_LENGTH + 12 && !ERROR)
 			ERROR = print_error(SIZE_DIFFER, main->filename[i], 0);
+		(cnt >= PROG_NAME_LENGTH + 12 && cnt < 2188 && !ERROR) ? (pl->comment[num++] = buff[0]) : 0;
 		if (cnt >= 2192 && !ERROR)
 		{
-			(!num) ? (num = main->coor_of_p[i]) : 0;
+			(!num || cnt == 2192) ? (num = main->coor_of_p[i]) : 0;
 			main->map[num++] = buff[0];
-			EXEC_CODE--;
 		}
 		cnt++;
 	}
 	ERROR += (cnt < TOTAL_SIZE && !ERROR) ? print_error(EXEC_CODE_NULL, main->filename[i], 0) : 0;
-	(!ERROR && EXEC_CODE != 0) ? (ERROR = print_error(SIZE_DIFFER, main->filename[i], 0)) : 0;
+	if (!ERROR && ((num - pl->exec_code) % main->cnt_pl))
+		ERROR = print_error(SIZE_DIFFER, main->filename[i], 0);
 	(!ERROR) ? init_vizual(main, i, num - 1) : 0;
 }
 
