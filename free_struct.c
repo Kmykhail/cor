@@ -27,3 +27,20 @@ void	free_struct(t_main *main)
 	}
 	(main->lst_changes) ? free(main->lst_changes) : 0;
 }
+
+void	free_changes(t_main *main)
+{
+	t_changes	*tmp;
+
+	while (main->lst_changes)
+	{
+		tmp = main->lst_changes->next;
+		free(main->lst_changes);
+		main->lst_changes = NULL;
+		main->lst_changes = tmp;
+	}
+	free(main->lst_changes);
+}
+/*
+
+*/

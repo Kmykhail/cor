@@ -54,16 +54,18 @@ int		check_args(char **av, int ac, int *cycle)
 	{
 		if (i == 1 && !ft_strcmp(av[i], "-dump"))
 			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 1) : print_error(_USAGE, NULL, &res);
+		if (i == 1 && !ft_strcmp(av[i], "-nset"))
+			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
 		else if (i == 1 && !ft_strcmp(av[i], "-n"))
 			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 2);
 		else if (i == 1 && (ft_strcmp(av[i], "-dump") && ft_strcmp(av[i], "-n")))
 			(!ft_strstr(av[i], ".cor")) ? print_error(_USAGE, NULL, &res) : 0;
 		else if (i > 1 && is_numeric(av[i]))
 		{
-			(ft_strcmp(av[i - 1], "-dump")) ? print_error(_USAGE, NULL, &res) : (*cycle = ft_atoi(av[i]));
+			(ft_strcmp(av[i - 1], "-dump") && ft_strcmp(av[i - 1], "-nset")) ? print_error(_USAGE, NULL, &res) : (*cycle = ft_atoi(av[i]));
 			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
 		}
-		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n")))
+		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n") || !ft_strcmp(av[i], "-nset")))
 			print_error(_USAGE, NULL, &res);
 	}
 	return (res);
@@ -129,8 +131,13 @@ int		main(int argc, char **argv)
 		free_struct(&main);
 		exit(1);
 	}
-	if (mod == 2)
+	if (mod == 2 || mod == 3)
+	{
+		while (mod == 3 && man_cycle-- > 0)
+			make_cycle(&main);
+		(mod == 3) ? free_changes(&main) : 0;
 		visual(&main);
+	}
 	else if (mod == 1 || !mod)
 	{
 		while (mod == 1 && man_cycle-- > 0)

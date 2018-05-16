@@ -53,6 +53,7 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 		else
 			tmp = tmp->next;
 	}
+	system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
 }
 
 void	cycle_live_die(t_main *main, t_process **proc)
@@ -106,11 +107,9 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 
 	head = *proc;
 	main->cur_cycle++;
-	//printf("CUR_CYCLE: %d\n", main->cur_cycle);
 	while (head)
 	{
-		head->cmd_cycle = (!head->cmd_cycle) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
-		head->cmd_cycle--;
+		head->cmd_cycle = (head->cmd_cycle < 0) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
 		if (main->map[PC_INDEX] >= 16) 
 			print_error(INVALID_COMMAND, NULL, 0);
 		if (main->map[PC_INDEX] != 1 && main->map[PC_INDEX] != 12 \
@@ -118,10 +117,14 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 		{
 			check_codage(main, main->map[PC_INDEX + 1]);
 			ft_implement_command(main, head);
+			head->cmd_cycle--;
 		}
 		else if (main->map[PC_INDEX] == 1 || main->map[PC_INDEX] == 12 \
 		|| main->map[PC_INDEX] == 15 || main->map[PC_INDEX] == 16)
+		{
 			ft_implement_command(main, head);
+			head->cmd_cycle--;
+		}
 		else
 			PC_INDEX++;
 		head->itr++;

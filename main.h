@@ -111,6 +111,8 @@ void					init_vizual(t_main *main, int start, int end);//kmykhail
 void					lst_newchanges(t_main *main, t_process *proc, int i, int fin, int ch);
 int 					is_numeric(char *s);
 void					free_struct(t_main *main);
+void					free_changes(t_main *main);
+void					copy_changes(t_main *main);
 t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 

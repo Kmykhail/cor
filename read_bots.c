@@ -4,9 +4,10 @@ int		print_error(int code, char *text, int *res)
 {
 	if (code == _USAGE)
 	{
-		ft_printf("Usage: ./corewar [-dump N -v N | -n <some_player.cor> <...>\n");
+		ft_printf("Usage: ./corewar [-dump N -v N -nset N | -n <some_player.cor> <...>\n");
 		ft_printf("#### TEXT OUTPUT MODE ##################################\n");
 		ft_printf(" -dump N : Dumps memory after N (>= 0) cycles then exits\n");
+		ft_printf(" -nset N : Ncurses output mode, on N (>= 0) cycle\n");
 		ft_printf(" -v N 	: Verbosity levels, can be added together to enable several\n");
 		ft_printf("		- 0 : Show only essentials\n");
 		ft_printf("		- 1 : Show lives\n");
@@ -208,7 +209,8 @@ int		valid_bots(t_main *main, int ac, char **av)
 	while(ac-- > 1)
 	{
 		av++;
-		if (ft_strcmp(*av, "-dump") && ft_strcmp(*av, "-n") && !is_numeric(*av))
+		if (ft_strcmp(*av, "-dump") && ft_strcmp(*av, "-n") && \
+		ft_strcmp(*av, "-nset") && !is_numeric(*av))
 			main->filename[c++] = ft_strdup(*av);
 	}
 	main->filename[c] = NULL;
