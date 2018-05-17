@@ -41,6 +41,3 @@ void	free_changes(t_main *main)
 	}
 	free(main->lst_changes);
 }
-/*
-
-*/

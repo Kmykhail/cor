@@ -142,8 +142,8 @@ int			visual(t_main *main)
 			}							// comment if you want back to normal mode
 			// dprintf(3, "7777 C window.bar %p\n", window.bar);
 		}
-		if (main->finish)
-			printf("^^^: %s\n", main->last_live_player->player_name);
+		/*if (main->finish)
+			printf("^^^: %s\n", main->last_live_player->player_name);*/
 		// dprintf(3, "7777 D window.bar %p\n", window.bar);
 		(main->finish) ? print_winner(main, &window) : 0;
 		usleep((CLOCKS_PER_SEC - (clock() - start)) / window.speed);

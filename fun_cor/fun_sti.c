@@ -33,6 +33,12 @@ static  void    fun_sti_reg_reg(t_main *main, t_process *proc)
     num_reg_2 = main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] - 1;
     num_reg_3 = main->map[ ( proc->index + 1 + 1 + 1 + 1 ) % MEM_SIZE ] - 1;
 
+    if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_2 < 0 || num_reg_2 > 15) || (num_reg_3 < 0 || num_reg_3 > 15))
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
+
     second = proc->rg[num_reg_2];
 
     third  = proc->rg[num_reg_3];
@@ -42,7 +48,7 @@ static  void    fun_sti_reg_reg(t_main *main, t_process *proc)
     if (step < 0)
         step = MEM_SIZE + step;
 
-    start = step;
+    start = step % MEM_SIZE;
 
     tmp = proc->rg[num_reg_1];
 
@@ -58,6 +64,7 @@ static  void    fun_sti_reg_reg(t_main *main, t_process *proc)
     main->map[ ( step + 0 ) % MEM_SIZE ] = tmp;
 
     end = ( step + 3 ) % MEM_SIZE ;
+
 
     lst_newchanges(main, proc, start, end, 1);
 }
@@ -77,6 +84,12 @@ static  void    fun_sti_dir_reg(t_main *main, t_process *proc)
     num_reg_1 = main->map[ ( proc->index + 1 + 1         ) % MEM_SIZE ] - 1;
     num_reg_2 = main->map[ ( proc->index + 1 + 1 + 2 + 1 ) % MEM_SIZE ] - 1;
 
+    if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_2 < 0 || num_reg_2 > 15))
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
+
     second = 0;
     second = second | ( main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] ) ;
     second = second << 8;
@@ -90,7 +103,7 @@ static  void    fun_sti_dir_reg(t_main *main, t_process *proc)
         step = MEM_SIZE + step;
 
     
-    start = step;
+    start = step % MEM_SIZE;
 
     tmp = proc->rg[num_reg_1];
 
@@ -128,6 +141,12 @@ static  void    fun_sti_ind_reg(t_main *main, t_process *proc)
     num_reg_1 = main->map[ ( proc->index + 1 + 1         ) % MEM_SIZE ] - 1;
     num_reg_2 = main->map[ ( proc->index + 1 + 1 + 2 + 1 ) % MEM_SIZE ] - 1;
 
+    if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_2 < 0 || num_reg_2 > 15))
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
+
     coor_second = 0;
     coor_second = coor_second | ( main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] );
     coor_second = coor_second << 8;
@@ -154,7 +173,7 @@ static  void    fun_sti_ind_reg(t_main *main, t_process *proc)
     if (step < 0)
         step = MEM_SIZE + step;
 
-    start = step;
+    start = step % MEM_SIZE;
 
     tmp = proc->rg[num_reg_1];
 
@@ -189,6 +208,12 @@ static  void    fun_sti_reg_dir(t_main *main, t_process *proc)
     num_reg_1 = main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ] - 1;
     num_reg_2 = main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE ] - 1;
 
+    if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_2 < 0 || num_reg_2 > 15))
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
+
     second = proc->rg[num_reg_2];
 
     third  = 0;
@@ -201,7 +226,7 @@ static  void    fun_sti_reg_dir(t_main *main, t_process *proc)
     if (step < 0)
         step = MEM_SIZE + step;
 
-    start = step;
+    start = step % MEM_SIZE;
 
     tmp = proc->rg[num_reg_1];
 
@@ -234,6 +259,12 @@ static  void    fun_sti_dir_dir(t_main *main, t_process *proc)
 
     num_reg_1 = main->map[ ( proc->index + 1 + 1 ) % MEM_SIZE ] - 1;
 
+    if (num_reg_1 < 0 || num_reg_1 > 15)
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
+
     second = 0;
     second = second | ( main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] ) ;
     second = second << 8;
@@ -249,7 +280,7 @@ static  void    fun_sti_dir_dir(t_main *main, t_process *proc)
     if (step < 0)
         step = MEM_SIZE + step;
 
-    start = step;
+    start = step % MEM_SIZE;
 
     tmp = proc->rg[num_reg_1];
 
@@ -284,6 +315,12 @@ static  void    fun_sti_ind_dir(t_main *main, t_process *proc)
 
     num_reg_1 = main->map[ ( proc->index + 1 + 1 ) % MEM_SIZE ] - 1;
 
+    if (num_reg_1 < 0 || num_reg_1 > 15)
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
+
     coor_second = 0;
     coor_second = coor_second | ( main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] ) ;
     coor_second = coor_second << 8;
@@ -313,7 +350,7 @@ static  void    fun_sti_ind_dir(t_main *main, t_process *proc)
     if (step < 0)
         step = MEM_SIZE + step;
     
-    start = step;
+    start = step % MEM_SIZE;
 
     tmp = proc->rg[num_reg_1];
 
@@ -337,23 +374,22 @@ static  void    fun_sti_ind_dir(t_main *main, t_process *proc)
 
 void    fun_sti(t_main *main, t_process *proc)
 {
-    if (main->arg[1] == 1 && main->arg[2] == 1)
+    if (main->arg[0] == 1 && main->arg[1] == 1 && main->arg[2] == 1)
         fun_sti_reg_reg(main, proc);
-
-    if (main->arg[1] == 1 && main->arg[2] == 2)
+    else if (main->arg[0] == 1 && main->arg[1] == 1 && main->arg[2] == 2)
         fun_sti_reg_dir(main, proc);
-
-    if (main->arg[1] == 2 && main->arg[2] == 1)
+    else if (main->arg[0] == 1 && main->arg[1] == 2 && main->arg[2] == 1)
         fun_sti_dir_reg(main, proc);
-
-    if (main->arg[1] == 2 && main->arg[2] == 2)
+    else if (main->arg[0] == 1 && main->arg[1] == 2 && main->arg[2] == 2)
         fun_sti_dir_dir(main, proc);
-
-    if (main->arg[1] == 3 && main->arg[2] == 1)
+    else if (main->arg[0] == 1 && main->arg[1] == 3 && main->arg[2] == 1)
         fun_sti_ind_reg(main, proc);
-
-    if (main->arg[1] == 3 && main->arg[2] == 2)
+    else if (main->arg[0] == 1 && main->arg[1] == 3 && main->arg[2] == 2)
         fun_sti_ind_dir(main, proc);
-
+    else
+    {
+        unvalid_only_step(main, proc);
+        return ;
+    }
     proc->index += ft_step_pc(main, main->map[proc->index], proc);
 }

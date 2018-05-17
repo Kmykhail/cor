@@ -1,0 +1,20 @@
+ASAN:DEADLYSIGNAL
+=================================================================
+==76173==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000005 (pc 0x000107bc1740 bp 0x7ffee8117840 sp 0x7ffee8117840 T0)
+==76173==The signal is caused by a READ memory access.
+==76173==Hint: address points to the zero page.
+    #0 0x107bc173f in __sanitizer::internal_strlen(char const*) (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x6d73f)
+    #1 0x107b79b5c in printf_common(void*, char const*, __va_list_tag*) (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x25b5c)
+    #2 0x107b7af3c in wrap_printf (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x26f3c)
+    #3 0x107af1127 in visual visual.c:146
+    #4 0x107aea8ca in main main.c:140
+    #5 0x7fff760f1114 in start (libdyld.dylib:x86_64+0x1114)
+
+==76173==Register values:
+rax = 0xffffffffffffffff  rbx = 0x0000000107b3f665  rcx = 0x0000000000000010  rdx = 0x0000000000000000  
+rdi = 0x0000000000000005  rsi = 0x0000000000000000  rbp = 0x00007ffee8117840  rsp = 0x00007ffee8117840  
+ r8 = 0x0000000000000027   r9 = 0x0000200000000000  r10 = 0x000000010ccf13e0  r11 = 0x0000000107b7ae60  
+r12 = 0x0000000107b3f667  r13 = 0x00007ffee81181b0  r14 = 0x0000000000000005  r15 = 0x0000000000000073  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x6d73f) in __sanitizer::internal_strlen(char const*)
+==76173==ABORTING

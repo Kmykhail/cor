@@ -54,10 +54,8 @@ int		check_args(char **av, int ac, int *cycle)
 	{
 		if (i == 1 && !ft_strcmp(av[i], "-dump"))
 			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 1) : print_error(_USAGE, NULL, &res);
-		// if (i == 1 && !ft_strcmp(av[i], "-nset"))
-		// 	(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
-		if (!ft_strcmp(av[i], "-nset"))//потом удалить
-			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);//потом удалить
+		if (i == 1 && !ft_strcmp(av[i], "-nset"))
+			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
 		else if (i == 1 && !ft_strcmp(av[i], "-n"))
 			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 2);
 		else if (i == 1 && (ft_strcmp(av[i], "-dump") && ft_strcmp(av[i], "-n")))
@@ -65,9 +63,9 @@ int		check_args(char **av, int ac, int *cycle)
 		else if (i > 1 && is_numeric(av[i]))
 		{
 			(ft_strcmp(av[i - 1], "-dump") && ft_strcmp(av[i - 1], "-nset")) ? print_error(_USAGE, NULL, &res) : (*cycle = ft_atoi(av[i]));
-			//(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
+			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
 		}
-		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n") /*|| !ft_strcmp(av[i], "-nset")*/))
+		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n") || !ft_strcmp(av[i], "-nset")))
 			print_error(_USAGE, NULL, &res);
 	}
 	return (res);
@@ -125,7 +123,8 @@ int		main(int argc, char **argv)
 	if ((mod = check_args(argv, argc, &man_cycle)) < 0)
 		exit (1);
 	init_struct(&main);
-	main.ddddd = open("/Users/kmykhail/Downloads/cor-master/test.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	//system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
+	main.ddddd = open("/Users/kmykhail/Downloads/cor-master/ntext.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.fffff = open("/Users/kmykhail/Downloads/cor-master/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	dprintf(main.ddddd, "main.ddddd = %d\n", main.fffff);
 	if (valid_bots(&main, argc, argv))
@@ -155,7 +154,9 @@ int		main(int argc, char **argv)
 			i++;
 		}
 		while (!main.finish && !mod)
+		{
 			make_cycle(&main);
+		}
 		if (!mod)
 		{
 			i = 0;
@@ -165,11 +166,12 @@ int		main(int argc, char **argv)
 				main.players[i]->exec_code, main.players[i]->player_name, main.players[i]->comment);
 				i++;
 			}
-			ft_printf("Contestant %d, \"%s\", has won !", \
-			(UCH)(main.last_live_player->nbr_pl * -1), main.last_live_player->player_name);
+			if (!main.last_live_player && main.cnt_pl == 1)
+				main.last_live_player = main.players[main.cnt_pl - 1];
+			ft_printf("Contestant \"%s\", has won !", main.last_live_player->player_name);
 		}
 		ft_printf("\n");
-		free_struct(&main);
+		//free_struct(&main);
 	}
 	return (0);
 }

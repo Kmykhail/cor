@@ -24,6 +24,12 @@ static	void	fun_ldi_reg_reg(t_main *main, t_process *proc)
 	num_reg_2 = main->map[ (proc->index + 1 + 1 + 1    ) % MEM_SIZE ] - 1;
 	num_reg_3 = main->map[ (proc->index + 1 + 1 + 1 + 1) % MEM_SIZE ] - 1;
 
+	if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_2 < 0 || num_reg_2 > 15) || (num_reg_3 < 0 || num_reg_3 > 15))
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
+
 	dist_1 = proc->rg[num_reg_1];
 
 	dist_2 = proc->rg[num_reg_2];
@@ -46,6 +52,12 @@ static	void	fun_ldi_reg_dir(t_main *main, t_process *proc)
 
 	num_reg_1 = main->map[ ( proc->index + 1 + 1         ) % MEM_SIZE ] - 1;
 	num_reg_3 = main->map[ ( proc->index + 1 + 1 + 2 + 1 ) % MEM_SIZE ] - 1;
+
+	if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_3 < 0 || num_reg_3 > 15))
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
 
 	dist_1 = proc->rg[num_reg_1];
 
@@ -74,6 +86,12 @@ static	void	fun_ldi_dir_reg(t_main *main, t_process *proc)
 	num_reg_2 = main->map[ ( proc->index + 1 + 2 + 1     ) % MEM_SIZE ] - 1;
 	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 1 + 1 ) % MEM_SIZE ] - 1;
 
+	if ((num_reg_2 < 0 || num_reg_2 > 15) || (num_reg_3 < 0 || num_reg_3 > 15))
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
+
 	dist_1 = 0;
 	dist_1 = dist_1 | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE];
 
@@ -97,6 +115,12 @@ static	void	fun_ldi_dir_dir(t_main *main, t_process *proc)
 	short int	dist_2;
 
 	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 2 + 1 ) % MEM_SIZE ] - 1;
+
+	if (num_reg_3 < 0 || num_reg_3 > 15)
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
 
 	dist_1 = 0;
 	dist_1 = dist_1 | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE];
@@ -126,6 +150,12 @@ static	void	fun_ldi_ind_reg(t_main *main, t_process *proc)
 
 	num_reg_2 = main->map[ ( proc->index + 1 + 2 + 1     ) % MEM_SIZE ] - 1;
 	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 1 + 1 ) % MEM_SIZE ] - 1;
+
+	if ((num_reg_2 < 0 || num_reg_2 > 15) || (num_reg_3 < 0 || num_reg_3 > 15))
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
 
 	short_ind = 0;
 	short_ind = short_ind | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ];
@@ -165,6 +195,12 @@ static	void	fun_ldi_ind_dir(t_main *main, t_process *proc)
 
 	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 2 + 1 ) % MEM_SIZE ] - 1;
 
+	if (num_reg_3 < 0 || num_reg_3 > 15)
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
+
 	short_ind = 0;
 	short_ind = short_ind | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ];
 	short_ind = short_ind << 8;
@@ -201,18 +237,23 @@ static	void	fun_ldi_ind_dir(t_main *main, t_process *proc)
 
 void	fun_ldi(t_main *main, t_process *proc)
 {
-	if (main->arg[0] == 1 && main->arg[1] == 1 )
+	if (main->arg[0] == 1 && main->arg[1] == 1 && main->arg[2] == 1)
 		fun_ldi_reg_reg(main, proc);
-	if (main->arg[0] == 1 && main->arg[1] == 2 )
+	else if (main->arg[0] == 1 && main->arg[1] == 2 && main->arg[2] == 1)
 		fun_ldi_reg_dir(main, proc);
-	if (main->arg[0] == 2 && main->arg[1] == 1 )
+	else if (main->arg[0] == 2 && main->arg[1] == 1 && main->arg[2] == 1)
 		fun_ldi_dir_reg(main, proc);
-	if (main->arg[0] == 2 && main->arg[1] == 2 )
+	else if (main->arg[0] == 2 && main->arg[1] == 2 && main->arg[2] == 1)
 		fun_ldi_dir_dir(main, proc);
-	if (main->arg[0] == 3 && main->arg[1] == 1 )
+	else if (main->arg[0] == 3 && main->arg[1] == 1 && main->arg[2] == 1)
 		fun_ldi_ind_reg(main, proc);
-	if (main->arg[0] == 3 && main->arg[1] == 2 )
+	else if (main->arg[0] == 3 && main->arg[1] == 2 && main->arg[2] == 1)
 		fun_ldi_ind_dir(main, proc);
+	else
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }
 

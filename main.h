@@ -41,7 +41,7 @@
 /*
 typedef struct			s_process
 {
-	uint8_t 			rg[16][4];
+	uint8_t 			rg[16][4]gdhdhgdfhdfdfghdfhgdfhgdfagfsfsdg[];
 	int 				cmd_cycle;
 	int 				pc;//счеткик
 	int					index;//индех элемнта на (в) карте игрока
@@ -153,7 +153,7 @@ void			fun_lld(t_main *main, t_process *proc);
 void			fun_lldi(t_main *main, t_process *proc);
 void			fun_lfork(t_main *main, t_process *proc);
 void			fun_aff(t_main *main, t_process *proc);
-
+void			unvalid_only_step(t_main *main, t_process *proc);
 
 
 

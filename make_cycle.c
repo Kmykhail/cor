@@ -25,44 +25,11 @@ void	test_list(t_main *main, t_process *proc)
 	}
 	dprintf(FD, "___END__TEST__LIST\n\n");
 }
-
+/*
 void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫЧКУ УНИЧТОЖЕНИЕ ПРОЦЕССА
 {
 	t_process	*tmp;
 	t_process	*buff;
-	// int			i;
-	// int			ch;	
-
-	// i = 0;
-	// ch = 0;
-	// if (proc_list == NULL || *proc_list == NULL)
-	// 	return ;
-	// tmp = *proc_list;
-	// while (tmp != NULL)
-	// {
-	// 	if (!tmp->live)//==0
-	// 	{
-	// 		while (ch < i)
-	// 		{
-	// 			if (ch == i - 1)
-	// 				buff->next = buff->next->next;
-	// 			buff = buff->next;
-	// 			ch++;
-	// 			main->nbr_proc--;
-	// 		}
-	// 		if (!ch)
-	// 		{
-	// 			buff = tmp->next;
-	// 			free(tmp);
-	// 			tmp = buff;
-	// 			*proc_list = buff;
-	// 			main->nbr_proc--;
-	// 		}
-	// 		ch = 0;
-	// 	}
-	// 	tmp = tmp->next;
-	// 	i++;
-	// }
 
 	if (proc_list == NULL || *proc_list == NULL)
 		return ;
@@ -72,7 +39,8 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 		*proc_list = (*proc_list)->next;
 		free(tmp);
 		main->nbr_proc--;
-		return;
+		system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
+		return ;
 	}
 	while (tmp->next != NULL)
 	{
@@ -81,10 +49,41 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 			buff = tmp->next;
 			tmp->next = tmp->next->next;
 			free(buff);
-			main->nbr_proc--;			
+			system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
+			main->nbr_proc--;
 		}
 		else
 			tmp = tmp->next;
+	}
+}
+*/
+
+void	remove_proc(t_main *main, t_process **proc_list)
+{
+	t_process	*tmp;
+	t_process	*buff;
+
+	if (proc_list == NULL || *proc_list == NULL)
+		return ;
+	while (*proc_list && (*proc_list)->live == 0)
+	{
+		tmp = *proc_list;
+		*proc_list = (*proc_list)->next;
+		main->nbr_proc--;
+		free(tmp);
+	}
+	buff = *proc_list;
+	while (buff && buff->next)
+	{
+		if (buff->next->live == 0)
+		{
+			tmp = buff->next;
+			buff->next = tmp->next;
+			main->nbr_proc--;
+			free(tmp);
+		}
+		if (buff->next)
+			buff = buff->next;
 	}
 }
 
@@ -96,6 +95,8 @@ void	cycle_live_die(t_main *main, t_process **proc)
 
 	i = 0;
 	check = 0;
+	if (!main->nbr_proc || proc == NULL || *proc == NULL)
+		return ;
 	head = *proc;
 	while (main->players[i])
 	{
@@ -141,26 +142,18 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	main->cur_cycle++;
 	while (head)
 	{
-		if (main->cur_cycle == 3555)
-		{
-			dprintf(FD, "{head->cmd_cycle: %d head->index: %d}\n", head->cmd_cycle, head->index);
-		}
 		head->cmd_cycle = (head->cmd_cycle < 0) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
 		//head->cmd_cycle--;
 		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
 		&& main->map[head->index] != 15 && main->map[head->index] != 16)
 		{
-			dprintf(FD, "head->c^md_cycle: %d\n", head->cmd_cycle);
 			check_codage(main, main->map[head->index + 1]);
 			ft_implement_command(main, head);
 			head->cmd_cycle--;
-			//exit(1);
 		}
 		else if (main->map[head->index] == 1 || main->map[head->index] == 12 \
 		|| main->map[head->index] == 15 || main->map[head->index] == 16)
 		{
-			/*printf("asdadad\n");
-			exit(1);*/
 			ft_implement_command(main, head);
 			head->cmd_cycle--;
 		}
@@ -169,7 +162,6 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 			ft_implement_command(main, head);
 			head->index++;
 		}
-		
 		head = head->next;
 	}
 	if (main->cp_cl_to_die == main->cur_cycle && (main->cl_to_die >= CYCLE_DELTA || main->cl_to_die == 36))
@@ -177,15 +169,13 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 		remove_proc(main, &(*proc));
 		cycle_live_die(main, &(*proc));
 	}
-	if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die == U_INT)
+	if ((main->cp_cl_to_die == main->cur_cycle && main->cl_to_die == U_INT) || !main->nbr_proc)
 	{
 		main->finish = 1;
 		main->cur_cycle++;
 	}
-	dprintf(FD4, "main->cur_cycle = %d\n", main->cur_cycle - 1);
-    // test_show_me_label_arg(main, *proc);
 	return (1);
-}
+}	
 
 int     make_cycle(t_main *main)
 {

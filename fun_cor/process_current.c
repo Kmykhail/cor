@@ -52,12 +52,14 @@ int     ft_step_pc(t_main *main, int num, t_process *proc)
 void    check_codage(t_main *main, uint8_t num)
 {
 	int     i;
+	int		k;
 
 	i = 1;
+	k = 0;
     main->arg[0] = 0;
     main->arg[1] = 0;
     main->arg[2] = 0;
-	while (1)
+	while (k < 6)
 	{
 		if ((i == 1 || i == 2))
 		{
@@ -78,6 +80,7 @@ void    check_codage(t_main *main, uint8_t num)
 			break ;
 		num = num << 1;
 		i++;
+		k++;
 	}
 }
 

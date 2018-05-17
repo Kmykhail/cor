@@ -12,11 +12,6 @@
 
 #include "../main.h"
 
-/*
-** CARRY 
-*/
-
-
 void	fun_zjmp(t_main *main, t_process *proc)
 {
 	short int		jump;
@@ -24,9 +19,9 @@ void	fun_zjmp(t_main *main, t_process *proc)
 	if (proc->carry == 1)
 	{
 		jump = 0;
-		jump = jump | main->map[proc->index + 1     ];
+		jump = jump | main->map[ ( proc->index + 1     ) % MEM_SIZE];
 		jump = jump << 8;
-		jump = jump | main->map[proc->index + 1 + 1];
+		jump = jump | main->map[ ( proc->index + 1 + 1 ) % MEM_SIZE];
 
 		
 		jump = jump % IDX_MOD;
@@ -54,7 +49,7 @@ void	fun_zjmp(t_main *main, t_process *proc)
 // 	    while (num--)
 // 	    {
 // 	        jump = jump << 8;
-// 	        jump = jump | main->map[proc->index + 1 + k];
+// 	        jump = jump | main->map[ ( proc->index + 1 + k ) % MEM_SIZE];
 // 	        k++;
 // 	    }
 // 		num = 0;

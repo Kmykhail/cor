@@ -58,83 +58,6 @@ void 	find_idex_to_start(t_main *main)
 		main->coor_of_p[players++] = coor;
 	}
 }
-/*
-int		push_code_tomass(t_main *main, int fd, int i)
-{
-	int c;
-	int	l;
-	unsigned char ch;
-
-	c = 0;
-	l = main->coor_of_p[i];
-	while (read(fd, &ch, 1))
-	{
-		if (ch != 0)
-			c = 1;
-		if (c)
-		{
-			main->map[l] = ch;
-			l++;
-		}
-	}
-	init_vizual(main, i, l - 1);
-	return (l);
-}*/
-/*
-void	read_bots(t_main *main, t_player *pl, int i,  int fd)
-{
-	int c;
-	int cnt;
-	int val;
-	unsigned char buff[TOTAL_SIZE];
-
-	cnt = 0;
-	c = 0;
-	val = 0;
-	if (read(fd, buff, TOTAL_SIZE) < 0)
-		print_error(NO_READ_FILE, NULL, 0);
-	while (cnt < TOTAL_SIZE && !main->error)
-	{
-		val += ft_atoi(ft_itoa_base(buff[cnt], 10));
-		(cnt < 3) ? (val = val << 8) : 0;
-		if (cnt == 3)
-		{
-			main->error += (val != COREWAR_EXEC_MAGIC) ? print_error(MAGIC, main->filename[i], 0) : 0;
-			val = 0;
-		}
-		if (cnt > 3 && cnt < PROG_NAME_LENGTH && val && !main->error)
-		{
-			pl->player_name[c] = buff[cnt];
-			pl->bot_name = 1;
-			c++;
-		}
-		if (cnt == PROG_NAME_LENGTH - 1 && !main->error)
-		{
-			val = 0;
-			printf("^^^pl->player_name[c]: %d\n", pl->player_name[c]);
-			pl->player_name[c] = -1;
-			printf("!!!pl->player_name[c]: %d\n", pl->player_name[c]);
-			c = 0;
-		}
-		if (cnt >= PROG_NAME_LENGTH && val && !main->error)
-		{
-			pl->comment[c] = buff[cnt];
-			pl->comm = 1;
-			c++;
-		}
-		cnt++;
-	}
-	if (main->error)
-		return ;
-	pl->comment[c] = -1;
-	if (!pl->bot_name || !pl->comm)
-	{
-		(!pl->bot_name) ? print_error(BOT_NAME, NULL, 0) : print_error(COMM, NULL, 0);
-		return ;
-	}
-	pl->cnt_bot = push_code_tomass(main, fd, i);
-}
-*/
 
 void	read_bots(t_main *main, t_player *pl, int i, int fd)
 {
@@ -197,6 +120,26 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 	(!ERROR) ? init_vizual(main, i, num - 1) : 0;
 }
 
+void	change_last_elem_proc(t_main *main, int c)
+{
+	t_process	*tmp;
+	int			cp_index;
+
+	tmp = main->lst_proc;
+	while (main->lst_proc->next)
+	{
+		if (!main->lst_proc->next->next)
+			cp_index = main->lst_proc->index;
+		main->lst_proc = main->lst_proc->next;
+	}
+	main->lst_proc->next = tmp;
+	tmp = main->lst_proc;
+	while (c-- > 0)
+		main->lst_proc = main->lst_proc->next;
+	main->lst_proc->next = NULL;
+	main->lst_proc = tmp;
+}
+
 int		valid_bots(t_main *main, int ac, char **av)
 {
 	int	fd;
@@ -223,8 +166,9 @@ int		valid_bots(t_main *main, int ac, char **av)
 		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
 	 		ERROR = print_error(NO_READ_FILE, main->filename[i], 0);
 		(!ERROR) ? read_bots(main, main->players[i], i,  fd) : 0;
-		(!ERROR) ? close(fd) : 0;
+		(!ERROR) ? 	close(fd) : 0;
 		i++;
 	}
+	//change_last_elem_proc(main, c - 1);
 	return ((main->error) ? 1 : 0);
 }

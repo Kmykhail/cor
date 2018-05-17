@@ -20,6 +20,12 @@ static	void	fun_st_second_reg(t_main *main, t_process *proc)
 	num_reg_1 = main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ] - 1;
 	num_reg_2 = main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE ] - 1;
 
+	if ((num_reg_1 < 0 || num_reg_1 > 15) || (num_reg_2 < 0 || num_reg_2 > 15))
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
+
 	proc->rg[num_reg_2] = proc->rg[num_reg_1];
 }
 
@@ -34,6 +40,12 @@ static	void	fun_st_second_ind(t_main *main, t_process *proc)
 
 	num_reg = main->map[ ( proc->index + 1 + 1 ) % MEM_SIZE ] - 1;
 
+	if (num_reg < 0 || num_reg > 15)
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
+
 	res = 0;
 	res = res | ( main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] );
 	res = res << 8;
@@ -45,7 +57,7 @@ static	void	fun_st_second_ind(t_main *main, t_process *proc)
     if (step < 0)
         step = MEM_SIZE + step;
 
-    start = step;
+    start = step % MEM_SIZE;
 
 	tmp = proc->rg[num_reg];
 
@@ -67,11 +79,14 @@ static	void	fun_st_second_ind(t_main *main, t_process *proc)
 
 void	fun_st(t_main *main, t_process *proc)
 {
-	if (main->arg[1] == 1)
+	if (main->arg[0] == 1 && main->arg[1] == 1 && main->arg[2] == 0)
 		fun_st_second_reg(main, proc);
-
-	if (main->arg[1] == 3)
+	else if (main->arg[0] == 1 && main->arg[1] == 3 && main->arg[2] == 0)
 		fun_st_second_ind(main, proc);
-
+	else
+	{
+		unvalid_only_step(main, proc);
+		return ;
+	}
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);
 }
