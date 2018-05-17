@@ -54,8 +54,10 @@ int		check_args(char **av, int ac, int *cycle)
 	{
 		if (i == 1 && !ft_strcmp(av[i], "-dump"))
 			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 1) : print_error(_USAGE, NULL, &res);
-		if (i == 1 && !ft_strcmp(av[i], "-nset"))
-			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
+		// if (i == 1 && !ft_strcmp(av[i], "-nset"))
+		// 	(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
+		if (!ft_strcmp(av[i], "-nset"))//потом удалить
+			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);//потом удалить
 		else if (i == 1 && !ft_strcmp(av[i], "-n"))
 			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 2);
 		else if (i == 1 && (ft_strcmp(av[i], "-dump") && ft_strcmp(av[i], "-n")))
@@ -63,9 +65,9 @@ int		check_args(char **av, int ac, int *cycle)
 		else if (i > 1 && is_numeric(av[i]))
 		{
 			(ft_strcmp(av[i - 1], "-dump") && ft_strcmp(av[i - 1], "-nset")) ? print_error(_USAGE, NULL, &res) : (*cycle = ft_atoi(av[i]));
-			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
+			//(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
 		}
-		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n") || !ft_strcmp(av[i], "-nset")))
+		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n") /*|| !ft_strcmp(av[i], "-nset")*/))
 			print_error(_USAGE, NULL, &res);
 	}
 	return (res);
