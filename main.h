@@ -38,7 +38,7 @@
 # define EXEC_CODE_NULL 7
 # define SIZE_DIFFER 8
 # define TOO_MANY 9
-
+/*
 typedef struct			s_process
 {
 	uint8_t 			rg[16][4];
@@ -49,6 +49,19 @@ typedef struct			s_process
 	unsigned int		live;//инкремент
 	int 				carry;
 	int 				itr;
+	struct s_process	*next;
+}						t_process;
+*/
+typedef struct			s_process
+{
+	int					rg[16];
+	int 				cmd_cycle;
+	int 				pc;//счеткик
+	int					index;//индех элемнта на (в) карте игрока
+	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
+	unsigned int		live;//инкремент
+	int 				carry;
+	int 				id;
 	struct s_process	*next;
 }						t_process;
 
@@ -77,6 +90,7 @@ typedef struct			s_player
 
 typedef struct			s_main
 {
+	int 				id;
 	int					steper;//в нем храниться 
 	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
@@ -98,7 +112,6 @@ typedef struct			s_main
 	int 				error;
 	int 				ddddd;
 	int 				fffff;
-
 }						t_main;
 
 void					init_players(t_main *main, int indx);
@@ -117,8 +130,6 @@ t_process				*lst_newproc(t_main *main, int pl_indx);
 /*
 ** FUNCTION 
 */
-
-
 
 
 int				is_has_arg(unsigned char arg);

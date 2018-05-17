@@ -12,74 +12,58 @@
 
 #include "../main.h"
 
-/*
-** для T_IND не определен способ записи
-*/
-
-static	void	fun_lld_second_dir(t_main *main, t_process *proc)
+void	 fun_lld(t_main *main, t_process *proc)
 {
-	int		i;
-	int		res;
-	int		num_reg;
-	int		carry;
+	int			num_reg;
+	short int	long_way;
 
-	res = main->ready_arg[0][0];
-	if (res)
-		carry = 0;
-	else
-		carry = 1;
-	i = 4;
-	num_reg = main->ready_arg[1][1];
-	while (i--)
+
+	if (main->arg[0] == 2)
 	{
-		proc->rg[num_reg][i] = res;
-		res = res >> 8;
+		num_reg = main->map[ ( proc->index + 1 + 4 + 1 ) % MEM_SIZE ] - 1;
+
+		proc->rg[num_reg] = main->map[ ( proc->index + 1 + 1             ) % MEM_SIZE];
+		proc->rg[num_reg] = proc->rg[num_reg] << 8;
+
+		proc->rg[num_reg] = proc->rg[num_reg] | main->map[ ( proc->index + 1 + 1 + 1         ) % MEM_SIZE];
+		proc->rg[num_reg] = proc->rg[num_reg] << 8;
+
+		proc->rg[num_reg] = proc->rg[num_reg] | main->map[ ( proc->index + 1 + 1 + 1 + 1     ) % MEM_SIZE];
+		proc->rg[num_reg] = proc->rg[num_reg] << 8;
+
+		proc->rg[num_reg] = proc->rg[num_reg] | main->map[ ( proc->index + 1 + 1 + 1 + 1 + 1 ) % MEM_SIZE];
+
 	}
-}
-
-/*
-** не понятно в какую ячейку надо делать запись ? T_IND !!!!!!!!!!!!!!!!!!!!!!
-*/
-
-static	void	fun_lld_second_ind(t_main *main, t_process *proc)
-{
-	int		carry;
-	int		step;
-	int		res;
-	int		r;
-	int		num_reg;
-
-	step = main->ready_arg[0][0];
-	num_reg = main->ready_arg[1][1];
-	carry = 0;
-	res = 0;
-	r = 0;
-	while (r < 2)
+	if (main->arg[0] == 3)
 	{
-		res = res << 8;
-		res = res | main->map[proc->pc + step++];
-		r++;
+		num_reg = main->map[ ( proc->index + 1 + 2 + 1 ) % MEM_SIZE ] - 1;
+
+		long_way = main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ];
+		long_way = long_way << 8;
+		long_way = main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE ];
+
+		long_way = proc->index + long_way;
+
+		if (long_way < 0)
+        	long_way = MEM_SIZE + long_way;
+
+		proc->rg[num_reg] = main->map[ ( long_way + 0 ) % MEM_SIZE ];
+		proc->rg[num_reg] = proc->rg[num_reg] << 8;
+
+		proc->rg[num_reg] = proc->rg[num_reg] | main->map[ ( long_way + 1 ) % MEM_SIZE ];
+		proc->rg[num_reg] = proc->rg[num_reg] << 8;
+
+		proc->rg[num_reg] = proc->rg[num_reg] | main->map[ ( long_way + 2 ) % MEM_SIZE ];
+		proc->rg[num_reg] = proc->rg[num_reg] << 8;
+
+		proc->rg[num_reg] = proc->rg[num_reg] | main->map[ ( long_way + 3 ) % MEM_SIZE ];
 	}
-	if (res)
+
+	if (proc->rg[num_reg])
 		proc->carry = 0;
 	else
 		proc->carry = 1;
-	r = 0;
-	while (r < 4)
-	{
-		proc->rg[num_reg][r] = proc->rg[num_reg][r] << 8;
-		proc->rg[num_reg][r] = proc->rg[num_reg][r] | res;
-		r++;
-	}
-}
 
-void	fun_lld(t_main *main, t_process *proc)
-{
-	ready_arg(main, proc);
-	if (main->arg[0] == 2)
-		fun_lld_second_dir(main, proc);
-	if (main->arg[0] == 3)
-		fun_lld_second_ind(main, proc);
-	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
+	proc->index += ft_step_pc(main, main->map[proc->index], proc);
 }
 

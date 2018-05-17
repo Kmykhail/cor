@@ -16,30 +16,51 @@
 ** CARRY 
 */
 
+
 void	fun_zjmp(t_main *main, t_process *proc)
 {
-	int			num;
-	int			k;
-	short int	jump;
+	short int		jump;
 
-	num = 2;
-	k = 0;
-	jump = 0;
 	if (proc->carry == 1)
 	{
-	    num = 2;
-	    while (num--)
-	    {
-	        jump = jump << 8;
-	        //dprintf(FD, "main->map[proc->index + 1 + k] = %x\n", main->map[proc->index + 1 + k]);
-	        jump = jump | main->map[proc->index + 1 + k];
-	        //dprintf(FD, "jump = %d && num = %d\n", jump, num);
-	        k++;
-	    }
-		num = 0;
-		num = jump % IDX_MOD;
-		proc->index = proc->index + num;
+		jump = 0;
+		jump = jump | main->map[proc->index + 1     ];
+		jump = jump << 8;
+		jump = jump | main->map[proc->index + 1 + 1];
+
+		
+		jump = jump % IDX_MOD;
+
+
+		proc->index = (proc->index + jump) % MEM_SIZE;
+		if (proc->index < 0)
+			proc->index = MEM_SIZE + proc->index;
 	}
 	else
-		proc->index += 3;
+		proc->index = (proc->index + 3) % MEM_SIZE;
 }
+
+// void	fun_zjmp(t_main *main, t_process *proc)
+// {
+// 	int			num;
+// 	int			k;
+// 	short int	jump;
+
+// 	if (proc->carry == 1)
+// 	{
+// 		num = 2;
+// 		k = 0;
+// 		jump = 0;
+// 	    while (num--)
+// 	    {
+// 	        jump = jump << 8;
+// 	        jump = jump | main->map[proc->index + 1 + k];
+// 	        k++;
+// 	    }
+// 		num = 0;
+// 		num = jump % IDX_MOD;
+// 		proc->index = (proc->index + num ) % MEM_SIZE;
+// 	}
+// 	else
+// 		proc->index = (proc->index + 3) % MEM_SIZE;
+// }

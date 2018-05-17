@@ -14,23 +14,21 @@
 
 void	fun_sub(t_main *main, t_process *proc)
 {
-	int     i;
-    int     num_reg;
-    int		res;
-    int     carry;
+    int     num_reg_1;
+    int     num_reg_2;
+    int     num_reg_3;
 
-	ready_arg(main, proc);
-	res = main->ready_arg[0][0] - main->ready_arg[1][0];
-    if (res)
+    num_reg_1 = main->map[ ( proc->index + 1 + 1         ) % MEM_SIZE ] - 1;
+    num_reg_2 = main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] - 1;
+    num_reg_3 = main->map[ ( proc->index + 1 + 1 + 1 + 1 ) % MEM_SIZE ] - 1;
+
+
+    proc->rg[num_reg_3] = proc->rg[num_reg_1] - proc->rg[num_reg_2];
+
+    if (proc->rg[num_reg_3])
         proc->carry = 0;
     else
         proc->carry = 1;
-	i = 4;
-   	num_reg = main->ready_arg[2][1];
-    while (i--)
-    {
-        proc->rg[num_reg][i] = res;
-        res = res >> 8;
-    }
-    proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
+
+    proc->index += ft_step_pc(main, main->map[proc->index], proc);
 }

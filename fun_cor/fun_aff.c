@@ -14,10 +14,5 @@
 
 void	fun_aff(t_main *main, t_process *proc)
 {
-	unsigned char	res;
-
-	res = 0;
-	ready_arg(main, proc);
-	res = main->ready_arg[0][0] % 256;
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }

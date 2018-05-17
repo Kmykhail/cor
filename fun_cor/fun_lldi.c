@@ -1,63 +1,249 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fun_lldi.c                                         :+:      :+:    :+:   */
+/*   fun_ldi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozharko <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/26 11:02:01 by ozharko           #+#    #+#             */
-/*   Updated: 2018/04/26 11:02:04 by ozharko          ###   ########.fr       */
+/*   Created: 2018/04/24 19:50:04 by ozharko           #+#    #+#             */
+/*   Updated: 2018/04/24 19:50:06 by ozharko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../main.h"
 
-/*
-** в таблице сказано что T_IND  Перейдёт на число указаное в T_IND от PC и считает 4 байта
-** но в описании функции сказано другое - 4 байта считаные с позиции ((T_IND % IDX_MOD) плюс текущая позиция PC)."
-** выполнит первый пунк, а затем второй?
-** или выполнить второй без первого
-*/
-
-static void		fun_lldi_wright_to_reg(t_main *main, int res, t_process *proc)
+static	void	fun_lldi_reg_reg(t_main *main, t_process *proc)
 {
-	int     i;
-    int     num_reg;
-    int		carry;
+	int				num_reg_1;
+	int				num_reg_2;
+	int				num_reg_3;
+	int				dist_1;
+	int				dist_2;
 
-    carry = 0;
-	i = 4;
-	if (res)
+	num_reg_1 = main->map[ (proc->index + 1 + 1        ) % MEM_SIZE ] - 1;
+	num_reg_2 = main->map[ (proc->index + 1 + 1 + 1    ) % MEM_SIZE ] - 1;
+	num_reg_3 = main->map[ (proc->index + 1 + 1 + 1 + 1) % MEM_SIZE ] - 1;
+
+	dist_1 = proc->rg[num_reg_1];
+
+	dist_2 = proc->rg[num_reg_2];
+
+	proc->rg[num_reg_3] = main->map[ ( dist_1 + dist_2 + proc->index + 0) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 1) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 2) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 3) % MEM_SIZE ];
+
+	if (proc->rg[num_reg_3])
 		proc->carry = 0;
 	else
 		proc->carry = 1;
-   	num_reg = main->ready_arg[2][1];
-    while (i--)
-    {
-        proc->rg[num_reg][i] = res;
-        res = res >> 8;
-    }
 
 }
+static	void	fun_lldi_reg_dir(t_main *main, t_process *proc)
+{
+	int				num_reg_1;
+	int				num_reg_3;
+	int				dist_1;
+	short int		dist_2;
+
+	num_reg_1 = main->map[ ( proc->index + 1 + 1         ) % MEM_SIZE ] - 1;
+	num_reg_3 = main->map[ ( proc->index + 1 + 1 + 2 + 1 ) % MEM_SIZE ] - 1;
+
+	dist_1 = proc->rg[num_reg_1];
+
+	dist_2 = 0;
+	dist_2 = dist_2 | main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE];
+	dist_2 = dist_2 << 8;
+	dist_2 = dist_2 | main->map[ ( proc->index + 1 + 1 + 1 + 1 ) % MEM_SIZE];
+
+	proc->rg[num_reg_3] = main->map[ ( dist_1 + dist_2 + proc->index + 0) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 1) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 2) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 3) % MEM_SIZE ];
+
+	if (proc->rg[num_reg_3])
+		proc->carry = 0;
+	else
+		proc->carry = 1;
+}
+static	void	fun_lldi_dir_reg(t_main *main, t_process *proc)
+{
+	int				num_reg_2;
+	int				num_reg_3;
+	short int		dist_1;
+	int				dist_2;
+
+	num_reg_2 = main->map[ ( proc->index + 1 + 2 + 1     ) % MEM_SIZE ] - 1;
+	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 1 + 1 ) % MEM_SIZE ] - 1;
+
+	dist_1 = 0;
+	dist_1 = dist_1 | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE];
+
+	dist_2 = proc->rg[num_reg_2];
+
+	proc->rg[num_reg_3] = main->map[ ( dist_1 + dist_2 + proc->index + 0) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 1) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 2) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 3) % MEM_SIZE ];
+
+	if (proc->rg[num_reg_3])
+		proc->carry = 0;
+	else
+		proc->carry = 1;
+
+}
+static	void	fun_lldi_dir_dir(t_main *main, t_process *proc)
+{
+	int			num_reg_3;
+	short int	dist_1;
+	short int	dist_2;
+
+	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 2 + 1 ) % MEM_SIZE ] - 1;
+
+	dist_1 = 0;
+	dist_1 = dist_1 | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE];
+
+	dist_2 = 0;
+	dist_2 = dist_2 | main->map[ ( proc->index + 1 + 2 + 1     ) % MEM_SIZE];
+	dist_2 = dist_2 << 8;
+	dist_2 = dist_2 | main->map[ ( proc->index + 1 + 2 + 1 + 1 ) % MEM_SIZE];
+
+	proc->rg[num_reg_3] = main->map[ ( dist_1 + dist_2 + proc->index + 0) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 1) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 2) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 3) % MEM_SIZE ];
+
+	if (proc->rg[num_reg_3])
+		proc->carry = 0;
+	else
+		proc->carry = 1;
+
+}
+static	void	fun_lldi_ind_reg(t_main *main, t_process *proc)
+{
+	int				num_reg_2;
+	int				num_reg_3;
+	short int		short_ind;
+	int				dist_1;
+	int				dist_2;
+
+	num_reg_2 = main->map[ ( proc->index + 1 + 2 + 1     ) % MEM_SIZE ] - 1;
+	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 1 + 1 ) % MEM_SIZE ] - 1;
+
+	short_ind = 0;
+	short_ind = short_ind | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ];
+	short_ind = short_ind << 8;
+	short_ind = short_ind | main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE ];
+
+	short_ind = proc->index + short_ind % IDX_MOD;
+
+	if (short_ind < 0)
+		short_ind = MEM_SIZE + short_ind;
+
+	dist_1 = 0;
+	dist_1 = dist_1 | main->map[ ( short_ind + 0 ) % MEM_SIZE ];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( short_ind + 1 ) % MEM_SIZE ];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( short_ind + 2 ) % MEM_SIZE ];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( short_ind + 3 ) % MEM_SIZE ];
+
+	dist_2 = proc->rg[num_reg_2];
+
+	proc->rg[num_reg_3] = main->map[ ( dist_1 + dist_2 + proc->index + 0) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 1) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 2) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 3) % MEM_SIZE ];
+
+	if (proc->rg[num_reg_3])
+		proc->carry = 0;
+	else
+		proc->carry = 1;
+
+}
+static	void	fun_lldi_ind_dir(t_main *main, t_process *proc)
+{
+	int			num_reg_3;
+	short int	short_ind;
+	int			dist_1;
+	short int	dist_2;
+
+	num_reg_3 = main->map[ ( proc->index + 1 + 2 + 2 + 1 ) % MEM_SIZE ] - 1;
+
+	short_ind = 0;
+	short_ind = short_ind | main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ];
+	short_ind = short_ind << 8;
+	short_ind = short_ind | main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE ];
+
+	short_ind = proc->index + short_ind % IDX_MOD;
+
+	if (short_ind < 0)
+		short_ind = MEM_SIZE + short_ind;
+
+	dist_1 = 0;
+	dist_1 = dist_1 | main->map[ ( short_ind + 0 ) % MEM_SIZE ];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( short_ind + 1 ) % MEM_SIZE ];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( short_ind + 2 ) % MEM_SIZE ];
+	dist_1 = dist_1 << 8;
+	dist_1 = dist_1 | main->map[ ( short_ind + 3 ) % MEM_SIZE ];
+
+	dist_2 = 0;
+	dist_2 = dist_2 | main->map[ ( proc->index + 1 + 2 + 1    ) % MEM_SIZE];
+	dist_2 = dist_2 << 8;
+	dist_2 = dist_2 | main->map[ ( proc->index + 1 + 2 + 1 + 1) % MEM_SIZE];
+
+	proc->rg[num_reg_3] = main->map[ ( dist_1 + dist_2 + proc->index + 0) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 1) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 2) % MEM_SIZE ];
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] << 8;
+	proc->rg[num_reg_3] = proc->rg[num_reg_3] | main->map[ ( dist_1 + dist_2 + proc->index + 3) % MEM_SIZE ];
+
+	if (proc->rg[num_reg_3])
+		proc->carry = 0;
+	else
+		proc->carry = 1;
+
+}
+
 
 void	fun_lldi(t_main *main, t_process *proc)
 {
-	int		step;
-	int		r;
-	int		num;
-
-
-	step = 0;
-	ready_arg(main, proc);
-	step = (main->ready_arg[0][0] + main->ready_arg[1][0]) + proc->pc;
-	num = 0;
-	r = 0;
-	while (r < 4)
-	{
-		num = num << 8;
-		num = num | main->map[step + r];
-		r++;
-	}
-	fun_lldi_wright_to_reg(main, num, proc);
+	if (main->arg[0] == 1 && main->arg[1] == 1 )
+		fun_lldi_reg_reg(main, proc);
+	if (main->arg[0] == 1 && main->arg[1] == 2 )
+		fun_lldi_reg_dir(main, proc);
+	if (main->arg[0] == 2 && main->arg[1] == 1 )
+		fun_lldi_dir_reg(main, proc);
+	if (main->arg[0] == 2 && main->arg[1] == 2 )
+		fun_lldi_dir_dir(main, proc);
+	if (main->arg[0] == 3 && main->arg[1] == 1 )
+		fun_lldi_ind_reg(main, proc);
+	if (main->arg[0] == 3 && main->arg[1] == 2 )
+		fun_lldi_ind_dir(main, proc);
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
 }
+

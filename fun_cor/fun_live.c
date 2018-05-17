@@ -33,7 +33,7 @@ void	fun_live(t_main *main, t_process *proc)
 	proc->live++;
 	while (main->players[i] != NULL)
 	{
-		if (main->map[proc->index + 4] == main->players[i]->nbr_pl)
+		if (main->map[ ( proc->index + 4 ) % MEM_SIZE ] == main->players[i]->nbr_pl)
 		{
 			main->players[i]->ll_cycle = main->cur_cycle;
 

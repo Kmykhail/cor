@@ -14,32 +14,32 @@
 
 void	fun_add(t_main *main, t_process *proc)
 {
-    dprintf(FD, "___________fun_add______________\n");
-	int     i;
-    int     num_reg;
-    int		res;
-    int     carry;
+    int     num_reg_1;
+    int     num_reg_2;
+    int     num_reg_3;
 
-	ready_arg(main, proc);
-	res = main->ready_arg[0][0] + main->ready_arg[1][0];
-    // dprintf(FD, "______res = %d\n", res);
-    if (res)
+    num_reg_1 = main->map[ ( proc->index + 1 + 1         ) % MEM_SIZE ] - 1;
+    num_reg_2 = main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] - 1;
+    num_reg_3 = main->map[ ( proc->index + 1 + 1 + 1 + 1 ) % MEM_SIZE ] - 1;
+
+
+    proc->rg[num_reg_3] = proc->rg[num_reg_1] + proc->rg[num_reg_2];
+
+    // if (proc->id == 3)
+    // {
+    //     dprintf(FD, "proc->rg[num_reg_1] = %d\n", proc->rg[num_reg_1]);
+    //     dprintf(FD, "proc->rg[num_reg_2] = %d\n", proc->rg[num_reg_2]);
+    //     dprintf(FD, "proc->rg[num_reg_3] = %d\n", proc->rg[num_reg_3]);
+    // }
+
+    if (proc->rg[num_reg_3])
         proc->carry = 0;
     else
         proc->carry = 1;
-	i = 4;
-    // dprintf(FD, "main->ready_arg[2][1] = %d\n", main->ready_arg[2][1]);
-    // dprintf(FD, "main->ready_arg[2][1] - 1 = %d\n", main->ready_arg[2][1] - 1);
-   	num_reg = main->ready_arg[2][1] - 1;
-    // dprintf(FD, "num_reg = %d", num_reg);
-    // dprintf(FD, "num_reg = %d", num_reg - 1);
 
-    while (i--)
-    {
-        proc->rg[num_reg][i] = res;
-        res = res >> 8;
-    }
-    proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
-    test_show_me_label_arg(main, proc);
-    dprintf(FD, "__________________________________\n");
+    // if (proc->id == 3)
+    // {
+    //     dprintf(FD, "proc->carry = %d\n", proc->carry);
+    // }
+    proc->index += ft_step_pc(main, main->map[proc->index], proc);
 }

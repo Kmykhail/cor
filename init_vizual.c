@@ -21,18 +21,15 @@ void	init_vizual(t_main *main, int i, int fin)
 	main->lst_changes = (t_changes*)malloc(sizeof(t_changes));
 	while (c < 16)
 	{
-		main->lst_proc->rg[c][0] = (!c) ? -1 : 0;
-		main->lst_proc->rg[c][1] = (!c) ? -1 : 0;
-		main->lst_proc->rg[c][2] = (!c) ? -1 : 0;
-		main->lst_proc->rg[c][3] = (!c) ? -1 : 0;
+		main->lst_proc->rg[c] = (!c) ? -1 : 0;
 		c++;
 	}
+	main->lst_proc->rg[0] = -1;
 	main->lst_proc->pc = 0;
 	main->lst_proc->index = main->coor_of_p[i];
 	main->lst_proc->cmd_cycle = main->label[main->map[main->lst_proc->index] - 1][2];
 	main->lst_proc->nbr_pl = main->players[i]->nbr_pl;
 	main->lst_proc->carry = 0;
-	main->lst_proc->itr = 0;
 	main->lst_proc->live = 0;
 	main->lst_proc->next = NULL;
 

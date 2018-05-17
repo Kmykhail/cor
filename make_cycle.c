@@ -30,6 +30,39 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 {
 	t_process	*tmp;
 	t_process	*buff;
+	// int			i;
+	// int			ch;	
+
+	// i = 0;
+	// ch = 0;
+	// if (proc_list == NULL || *proc_list == NULL)
+	// 	return ;
+	// tmp = *proc_list;
+	// while (tmp != NULL)
+	// {
+	// 	if (!tmp->live)//==0
+	// 	{
+	// 		while (ch < i)
+	// 		{
+	// 			if (ch == i - 1)
+	// 				buff->next = buff->next->next;
+	// 			buff = buff->next;
+	// 			ch++;
+	// 			main->nbr_proc--;
+	// 		}
+	// 		if (!ch)
+	// 		{
+	// 			buff = tmp->next;
+	// 			free(tmp);
+	// 			tmp = buff;
+	// 			*proc_list = buff;
+	// 			main->nbr_proc--;
+	// 		}
+	// 		ch = 0;
+	// 	}
+	// 	tmp = tmp->next;
+	// 	i++;
+	// }
 
 	if (proc_list == NULL || *proc_list == NULL)
 		return ;
@@ -53,13 +86,12 @@ void	remove_proc(t_main *main, t_process **proc_list)//ВСТАВИТЬ МУЗЫ
 		else
 			tmp = tmp->next;
 	}
-	system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
 }
 
 void	cycle_live_die(t_main *main, t_process **proc)
 {
-	int 		i;
-	int 		check;
+	int i;
+	int check;
 	t_process	*head;
 
 	i = 0;
@@ -109,25 +141,35 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 	main->cur_cycle++;
 	while (head)
 	{
-		head->cmd_cycle = (head->cmd_cycle < 0) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
-		if (main->map[PC_INDEX] >= 16) 
-			print_error(INVALID_COMMAND, NULL, 0);
-		if (main->map[PC_INDEX] != 1 && main->map[PC_INDEX] != 12 \
-		&& main->map[PC_INDEX] != 15 && main->map[PC_INDEX] != 16)
+		if (main->cur_cycle == 3555)
 		{
-			check_codage(main, main->map[PC_INDEX + 1]);
+			dprintf(FD, "{head->cmd_cycle: %d head->index: %d}\n", head->cmd_cycle, head->index);
+		}
+		head->cmd_cycle = (head->cmd_cycle < 0) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
+		//head->cmd_cycle--;
+		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
+		&& main->map[head->index] != 15 && main->map[head->index] != 16)
+		{
+			dprintf(FD, "head->c^md_cycle: %d\n", head->cmd_cycle);
+			check_codage(main, main->map[head->index + 1]);
 			ft_implement_command(main, head);
 			head->cmd_cycle--;
+			//exit(1);
 		}
-		else if (main->map[PC_INDEX] == 1 || main->map[PC_INDEX] == 12 \
-		|| main->map[PC_INDEX] == 15 || main->map[PC_INDEX] == 16)
+		else if (main->map[head->index] == 1 || main->map[head->index] == 12 \
+		|| main->map[head->index] == 15 || main->map[head->index] == 16)
 		{
+			/*printf("asdadad\n");
+			exit(1);*/
 			ft_implement_command(main, head);
 			head->cmd_cycle--;
 		}
 		else
-			PC_INDEX++;
-		head->itr++;
+		{
+			ft_implement_command(main, head);
+			head->index++;
+		}
+		
 		head = head->next;
 	}
 	if (main->cp_cl_to_die == main->cur_cycle && (main->cl_to_die >= CYCLE_DELTA || main->cl_to_die == 36))
@@ -140,6 +182,8 @@ int 	make_cycle_second(t_main *main, t_process **proc)
 		main->finish = 1;
 		main->cur_cycle++;
 	}
+	dprintf(FD4, "main->cur_cycle = %d\n", main->cur_cycle - 1);
+    // test_show_me_label_arg(main, *proc);
 	return (1);
 }
 

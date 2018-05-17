@@ -14,60 +14,64 @@
 
 static	void	fun_st_second_reg(t_main *main, t_process *proc)
 {
-	int		r;
-	int		res;
-	int		num_reg;
+	int		num_reg_1;
+	int		num_reg_2;
 
-	res = main->ready_arg[0][0];
-	r = 4;
-	num_reg = main->ready_arg[1][1] - 1;
-	while (r--)
-	{
-		proc->rg[num_reg][r] = res;
-		res = res >> 8;
-	}
+	num_reg_1 = main->map[ ( proc->index + 1 + 1     ) % MEM_SIZE ] - 1;
+	num_reg_2 = main->map[ ( proc->index + 1 + 1 + 1 ) % MEM_SIZE ] - 1;
+
+	proc->rg[num_reg_2] = proc->rg[num_reg_1];
 }
 
 static	void	fun_st_second_ind(t_main *main, t_process *proc)
 {
-	int			r;
-	int			k;
-	int 		num;
 	short int	res;
+	int			num_reg;
+	int			step;
+	int			start;
+	int			end;
+	int			tmp; // ?? 0 0 0 0
 
-	num = 2;
-    k = 2;
-    res = 0;
+	num_reg = main->map[ ( proc->index + 1 + 1 ) % MEM_SIZE ] - 1;
 
-    res = main->ready_arg[1][0];
-    res = (proc->index + res) % MEM_SIZE;
-    if (res < 0)
-    	res = MEM_SIZE + res;
-    r = 0;
-    while (r < 4)
-    {
-    	if (res + r >= 0)
-    	{
-	    	main->map[res + r] = proc->rg[main->ready_arg[0][1] - 1][r];
-    	}
-    	r++;
-    }
-    if (res + r >= 0)
-    	lst_newchanges(main, proc, res, res + 3, 1);
+	res = 0;
+	res = res | ( main->map[ ( proc->index + 1 + 1 + 1     ) % MEM_SIZE ] );
+	res = res << 8;
+	res = res | ( main->map[ ( proc->index + 1 + 1 + 1 + 1 ) % MEM_SIZE ] );
+	
+	step = proc->index + ( res % IDX_MOD );
+
+
+    if (step < 0)
+        step = MEM_SIZE + step;
+
+    start = step;
+
+	tmp = proc->rg[num_reg];
+
+    main->map[ ( step + 3 ) % MEM_SIZE ] = tmp;
+    tmp = tmp >> 8;
+
+    main->map[ ( step + 2 ) % MEM_SIZE ] = tmp;
+    tmp = tmp >> 8;
+
+    main->map[ ( step + 1 ) % MEM_SIZE ] = tmp;
+    tmp = tmp >> 8;
+
+    main->map[ ( step + 0 ) % MEM_SIZE ] = tmp;
+
+    end =  ( step + 3 ) % MEM_SIZE ;
+    
+    lst_newchanges(main, proc, start, end, 1);
 }
 
 void	fun_st(t_main *main, t_process *proc)
 {
-	test_show_part_of_map(main, proc);
-	ready_arg(main, proc);
 	if (main->arg[1] == 1)
-	{
 		fun_st_second_reg(main, proc);
-	}
+
 	if (main->arg[1] == 3)
-	{
 		fun_st_second_ind(main, proc);
-	}
+
 	proc->index += ft_step_pc(main, main->map[proc->index], proc);
-	test_show_me_label_arg(main, proc);
 }
