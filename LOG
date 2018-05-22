@@ -1,20 +1,63 @@
-ASAN:DEADLYSIGNAL
 =================================================================
-==76173==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000005 (pc 0x000107bc1740 bp 0x7ffee8117840 sp 0x7ffee8117840 T0)
-==76173==The signal is caused by a READ memory access.
-==76173==Hint: address points to the zero page.
-    #0 0x107bc173f in __sanitizer::internal_strlen(char const*) (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x6d73f)
-    #1 0x107b79b5c in printf_common(void*, char const*, __va_list_tag*) (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x25b5c)
-    #2 0x107b7af3c in wrap_printf (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x26f3c)
-    #3 0x107af1127 in visual visual.c:146
-    #4 0x107aea8ca in main main.c:140
-    #5 0x7fff760f1114 in start (libdyld.dylib:x86_64+0x1114)
+==9545==ERROR: AddressSanitizer: heap-use-after-free on address 0x60b000000138 at pc 0x00010529d22a bp 0x7ffeea967d50 sp 0x7ffeea967d48
+READ of size 4 at 0x60b000000138 thread T0
+    #0 0x10529d229 in make_cycle_second make_cycle.c:171
+    #1 0x10529ed51 in make_cycle make_cycle.c:227
+    #2 0x1052a1b6d in visual visual.c:137
+    #3 0x10529a4f8 in main main.c:140
+    #4 0x7fff52957114 in start (libdyld.dylib:x86_64+0x1114)
 
-==76173==Register values:
-rax = 0xffffffffffffffff  rbx = 0x0000000107b3f665  rcx = 0x0000000000000010  rdx = 0x0000000000000000  
-rdi = 0x0000000000000005  rsi = 0x0000000000000000  rbp = 0x00007ffee8117840  rsp = 0x00007ffee8117840  
- r8 = 0x0000000000000027   r9 = 0x0000200000000000  r10 = 0x000000010ccf13e0  r11 = 0x0000000107b7ae60  
-r12 = 0x0000000107b3f667  r13 = 0x00007ffee81181b0  r14 = 0x0000000000000005  r15 = 0x0000000000000073  
-AddressSanitizer can not provide additional info.
-SUMMARY: AddressSanitizer: SEGV (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x6d73f) in __sanitizer::internal_strlen(char const*)
-==76173==ABORTING
+0x60b000000138 is located 72 bytes inside of 104-byte region [0x60b0000000f0,0x60b000000158)
+freed by thread T0 here:
+    #0 0x105366066 in wrap_free (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x59066)
+    #1 0x10529c29f in delet_all_proc make_cycle.c:110
+    #2 0x10529eca4 in make_cycle_second make_cycle.c:219
+    #3 0x10529ed51 in make_cycle make_cycle.c:227
+    #4 0x1052a1b6d in visual visual.c:137
+    #5 0x10529a4f8 in main main.c:140
+    #6 0x7fff52957114 in start (libdyld.dylib:x86_64+0x1114)
+
+previously allocated by thread T0 here:
+    #0 0x105365e9c in wrap_malloc (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x58e9c)
+    #1 0x1052b4461 in fun_fork fun_fork.c:28
+    #2 0x1052ead96 in choose_function_2 implement_command.c:124
+    #3 0x1052eb728 in ft_implement_command implement_command.c:180
+    #4 0x10529e392 in make_cycle_second make_cycle.c:185
+    #5 0x10529ed51 in make_cycle make_cycle.c:227
+    #6 0x1052a1b6d in visual visual.c:137
+    #7 0x10529a4f8 in main main.c:140
+    #8 0x7fff52957114 in start (libdyld.dylib:x86_64+0x1114)
+
+SUMMARY: AddressSanitizer: heap-use-after-free make_cycle.c:171 in make_cycle_second
+Shadow bytes around the buggy address:
+  0x1c15ffffffd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c15ffffffe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c15fffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1600000000: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+  0x1c1600000010: fd fd fd fd fd fa fa fa fa fa fa fa fa fa fd fd
+=>0x1c1600000020: fd fd fd fd fd fd fd[fd]fd fd fd fa fa fa fa fa
+  0x1c1600000030: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fd
+  0x1c1600000040: fd fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1600000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1600000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1600000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==9545==ABORTING

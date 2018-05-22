@@ -37,11 +37,20 @@ void	fun_lfork(t_main *main, t_process *proc)
 	new_proc->live = proc->live;
 	new_proc->carry = proc->carry;
 	new_proc->next = NULL;
+
 	new_proc->index = ( proc->index + res ) % MEM_SIZE ;
+
 	if (new_proc->index < 0)
 		new_proc->index = MEM_SIZE + new_proc->index;
 
-	new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2];
+	if (main->map[new_proc->index] >= 1 && main->map[new_proc->index] <= 16)
+		new_proc->cmd_cycle = main->label[main->map[new_proc->index] - 1][2];
+	else
+		new_proc->cmd_cycle = 0;
+
+	main->id++;
+	new_proc->id = main->id;
+
 	proc->index = (proc->index + 3) % MEM_SIZE;
 	
 	new_proc->next = main->lst_proc;

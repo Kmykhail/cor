@@ -50,7 +50,7 @@ void	fun_ld(t_main *main, t_process *proc)
 		else
 			proc->carry = 1;
 
-		proc->index += ft_step_pc(main, main->map[proc->index], proc);
+		proc->index = (proc->index + ft_step_pc(main, main->map[proc->index % MEM_SIZE], proc)) % MEM_SIZE;
 	}
 	else if (main->arg[0] == 3 && main->arg[1] == 1 && main->arg[2] == 0) // T_IND
 	{
@@ -88,7 +88,7 @@ void	fun_ld(t_main *main, t_process *proc)
 		else
 			proc->carry = 1;
 
-		proc->index += ft_step_pc(main, main->map[proc->index], proc);
+		proc->index = (proc->index + ft_step_pc(main, main->map[proc->index % MEM_SIZE], proc)) % MEM_SIZE;
 	}
 	else
 		unvalid_only_step(main, proc);

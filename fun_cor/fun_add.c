@@ -35,7 +35,7 @@ static void	fun_add_go(t_main *main, t_process *proc)
     else
         proc->carry = 1;
 
-    proc->index += ft_step_pc(main, main->map[proc->index], proc);
+    proc->index = (proc->index + ft_step_pc(main, main->map[proc->index % MEM_SIZE], proc)) % MEM_SIZE;
 }
 
 void    fun_add(t_main *main, t_process *proc)
@@ -70,5 +70,5 @@ void    fun_add(t_main *main, t_process *proc)
 //     else
 //         proc->carry = 1;
 
-//     proc->index += ft_step_pc(main, main->map[proc->index], proc);
+//     proc->index = (proc->index + ft_step_pc(main, main->map[proc->index % MEM_SIZE], proc)) % MEM_SIZE;
 // }

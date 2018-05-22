@@ -14,5 +14,6 @@
 
 void	fun_aff(t_main *main, t_process *proc)
 {
-	proc->index += ft_step_pc(main, main->map[proc->index], proc);//изменить step на indx
+	proc->index = (proc->index + ft_step_pc(main, main->map[proc->index % MEM_SIZE], proc)) % MEM_SIZE;
 }
+

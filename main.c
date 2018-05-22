@@ -87,6 +87,7 @@ void	init_struct(t_main *main)
 	int i;
 
 	i = 0;
+	main->id = 1;
 	STEP = 0;
 	main->cnt_pl = 0;
 	main->cur_cycle = 0;
@@ -124,9 +125,8 @@ int		main(int argc, char **argv)
 		exit (1);
 	init_struct(&main);
 	//system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
-	main.ddddd = open("/Users/kmykhail/Downloads/cor-master/ntext.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
-	main.fffff = open("/Users/kmykhail/Downloads/cor-master/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
-	dprintf(main.ddddd, "main.ddddd = %d\n", main.fffff);
+	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/ntext.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
+	main.fffff = open("/Users/kmykhail/corewar_kmykhail/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	if (valid_bots(&main, argc, argv))
 	{
 		free_struct(&main);
@@ -171,7 +171,7 @@ int		main(int argc, char **argv)
 			ft_printf("Contestant \"%s\", has won !", main.last_live_player->player_name);
 		}
 		ft_printf("\n");
-		//free_struct(&main);
+		free_struct(&main);
 	}
 	return (0);
 }

@@ -60,6 +60,7 @@ typedef struct			s_process
 	int					index;//индех элемнта на (в) карте игрока
 	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
 	unsigned int		live;//инкремент
+	unsigned int 		s_live;
 	int 				carry;
 	int 				id;
 	struct s_process	*next;

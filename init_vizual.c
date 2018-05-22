@@ -31,6 +31,8 @@ void	init_vizual(t_main *main, int i, int fin)
 	main->lst_proc->nbr_pl = main->players[i]->nbr_pl;
 	main->lst_proc->carry = 0;
 	main->lst_proc->live = 0;
+	main->lst_proc->s_live = 0;
+	main->lst_proc->id = 1;
 	main->lst_proc->next = NULL;
 
 	main->lst_changes->start = main->coor_of_p[i];

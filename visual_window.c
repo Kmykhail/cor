@@ -75,7 +75,6 @@ void		print_usage(t_vis *win)
 void		refresh_windows(t_vis *win)
 {
 	wrefresh(win->map);
-	dprintf(3, "\n__________________________\nwin->bar %p\n\n", win->bar);
 	wrefresh(win->bar);
 	
 	refresh();
