@@ -18,8 +18,6 @@ static	void	fun_lfork_go(t_main *main, t_process *proc, t_process *np)
 	np->live = 0;
 	np->carry = proc->carry;
 	np->next = NULL;
-	main->id++;
-	np->id = main->id;
 	proc->index = (proc->index + 3) % MEM_SIZE;
 	np->next = main->lst_proc;
 	main->lst_proc = np;

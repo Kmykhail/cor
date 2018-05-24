@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common_header.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmykhail <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "main.h"
 #include "visual.h"
 
-int 	is_numeric(char *s)
+int		is_numeric(char *s)
 {
 	while (*s)
 	{
@@ -24,23 +24,6 @@ int 	is_numeric(char *s)
 	return (1);
 }
 
-void	print_dump(t_main *main)
-{
-	int i;
-
-	i = 0;
-	while (i < MEM_SIZE)
-	{
-		((i % 64 == 0) && i != 0) ? ft_printf("\n") : 0;
-		if (main->map[i] < 10 || (main->map[i] >= 0x0a && main->map[i] <= 0x0f))
-			(i == MEM_SIZE - 1) ? ft_printf("0%x", main->map[i]) : ft_printf("0%x ", main->map[i]);
-		else
-			(i == MEM_SIZE - 1) ? ft_printf("%x", main->map[i]) : ft_printf("%x ", main->map[i]);
-		i++;
-	}
-	ft_printf("\n");
-}
-
 int		check_args(char **av, int ac, int *cycle)
 {
 	int i;
@@ -48,27 +31,22 @@ int		check_args(char **av, int ac, int *cycle)
 
 	i = 0;
 	res = 0;
-	if (ac == 1)
-		print_error(_USAGE, NULL, &res);
+	(ac == 1) ? PRINT_ERROR : 0;
 	while (++i < ac && ac > 1 && res >= 0)
 	{
-		if (i == 1 && !ft_strcmp(av[i], "-dump"))
-			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 1) : print_error(_USAGE, NULL, &res);
-		else if (i == 1 && !ft_strcmp(av[i], "-nset"))
-			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
-		else if (i == 1 && !ft_strcmp(av[i], "-n"))
-			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 2);
-		else if (i == 1 && !ft_strcmp(av[i], "-v"))
-			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 4);
-		else if (i == 1 && (ft_strcmp(av[i], "-dump") && ft_strcmp(av[i], "-n")))
-			(!ft_strstr(av[i], ".cor")) ? print_error(_USAGE, NULL, &res) : 0;
+		if (i == 1 && !CMP(av[i], "-dump"))
+			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 1) : PRINT_ERROR;
+		else if (i == 1 && !CMP(av[i], "-n"))
+			(i + 1 >= ac) ? PRINT_ERROR : (res = 2);
+		else if (i == 1 && (CMP(av[i], "-dump") && CMP(av[i], "-n")))
+			(!ft_strstr(av[i], ".cor")) ? PRINT_ERROR : 0;
 		else if (i > 1 && is_numeric(av[i]))
 		{
-			(ft_strcmp(av[i - 1], "-dump") && ft_strcmp(av[i - 1], "-nset")) ? print_error(_USAGE, NULL, &res) : (*cycle = ft_atoi(av[i]));
-			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : 0;
+			(CMP(av[i - 1], "-dump")) ? PRINT_ERROR : (*cycle = ft_atoi(av[i]));
+			(i + 1 >= ac) ? PRINT_ERROR : 0;
 		}
-		else if (i > 1 && (!ft_strcmp(av[i], "-dump") || !ft_strcmp(av[i], "-n") || !ft_strcmp(av[i], "-nset")))
-			print_error(_USAGE, NULL, &res);
+		else if (i > 1 && (!CMP(av[i], "-dump") || !CMP(av[i], "-n")))
+			PRINT_ERROR;
 	}
 	return (res);
 }
@@ -89,10 +67,7 @@ void	init_struct(t_main *main)
 	int i;
 
 	i = 0;
-	main->id = 1;
-	STEP = 0;
 	main->cnt_pl = 0;
-	main->modif = 0;
 	main->cur_cycle = 0;
 	main->cp_cur_cycle = 0;
 	main->cl_to_die = CYCLE_TO_DIE;
@@ -107,11 +82,10 @@ void	init_struct(t_main *main)
 		main->players[i++] = NULL;
 	}
 	main->players[i] = NULL;
-    main->filename[i] = NULL;
+	main->filename[i] = NULL;
 	main->lst_proc = NULL;
 	main->lst_changes = NULL;
 	main->last_live_player = NULL;
-	main->finish = 0;
 	ft_table_label(main);
 	ft_memset(main->map, 0, MEM_SIZE);
 	ft_memset(main->arg, 0, 3);
@@ -120,66 +94,27 @@ void	init_struct(t_main *main)
 int		main(int argc, char **argv)
 {
 	int			man_cycle;
-	int 		mod;
-	int 		i;
+	int			mod;
+	int			i;
 	t_main		main;
 
 	man_cycle = 0;
 	i = 0;
 	if ((mod = check_args(argv, argc, &man_cycle)) < 0)
-		exit (1);
+		exit(1);
 	init_struct(&main);
-	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/ntext.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
-	main.fffff = open("/Users/kmykhail/corewar_kmykhail/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	if (valid_bots(&main, argc, argv))
 	{
 		free_struct(&main);
 		exit(1);
 	}
-	if (mod == 2 || mod == 3)
+	(mod == 2) ? visual(&main) : 0;
+	if (mod == 1 || !mod)
 	{
-		while (mod == 3 && man_cycle-- > 0)
-			make_cycle(&main);
-		(mod == 3) ? free_changes(&main) : 0;
-		visual(&main);
-	}
-	else if (mod == 4)
-	{
-		main.modif = 4;
-		while (!main.finish)
-			make_cycle(&main);
-	}
-	else if (mod == 1 || !mod)
-	{
-		while (mod == 1 && man_cycle-- > 0)
-			make_cycle(&main);
-		while (i < MEM_SIZE && mod == 1)
-		{
-			(!i) ? ft_printf("0x%.4x : ", i) : 0;
-			((i % 64 == 0) && i != 0) ? ft_printf("\n0x%.4x : ", i) : 0;
-			if (main.map[i] < 10 || (main.map[i] >= 0x0a && main.map[i] <= 0x0f))
-				(i == MEM_SIZE - 1) ? ft_printf("0%x", main.map[i]) : ft_printf("0%x ", main.map[i]);
-			else
-				(i == MEM_SIZE - 1) ? ft_printf("%x", main.map[i]) : ft_printf("%x ", main.map[i]);
-			i++;
-		}
+		(mod == 1) ? print_dump(&main, man_cycle) : 0;
 		while (!main.finish && !mod)
-		{
 			make_cycle(&main);
-		}
-		if (!mod)
-		{
-			i = 0;
-			while (i < main.cnt_pl)
-			{
-				ft_printf("* Player %d, weighing %d bytes, \"%s\" (\"%s\") !\n", i + 1, \
-				main.players[i]->exec_code, main.players[i]->player_name, main.players[i]->comment);
-				i++;
-			}
-			if (!main.last_live_player && main.cnt_pl == 1)
-				main.last_live_player = main.players[main.cnt_pl - 1];
-			ft_printf("Contestant \"%s\", has won !", main.last_live_player->player_name);
-		}
+		(!mod) ? print_champion(&main) : 0;
 		ft_printf("\n");
 		free_struct(&main);
 	}

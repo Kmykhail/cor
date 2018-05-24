@@ -109,15 +109,15 @@ int			visual(t_main *main)
 		// dprintf(3, "7777 G window.bar %p\n", window.bar);
 		if ((window.paused == RUN || window.one_step > 0) && !main->finish)
 		{
-			while (window.one_step > 0) // comment if you want back to normal mode
-			{							// comment if you want back to normal mode
+			//while (window.one_step > 0) // comment if you want back to normal mode
+			//{							// comment if you want back to normal mode
 				// dprintf(3, "7777 A window.bar %p\n", window.bar);
 				if (!make_cycle(main))
 					break ;
 				(window.one_step) ? window.one_step -= 1 : 0;
-				///(window.one_step) ? window.one_step = 0 : 0; //uncomment end dell line before when finish
+				(window.one_step) ? window.one_step = 0 : 0; //uncomment end dell line before when finish
 				// dprintf(3, "7777 B window.bar %p\n", window.bar);
-			}							// comment if you want back to normal mode
+			//}							// comment if you want back to normal mode
 			// dprintf(3, "7777 C window.bar %p\n", window.bar);
 		}
 		/*if (main->finish)

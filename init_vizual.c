@@ -1,29 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_vizual.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmykhail <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/18 12:05:14 by kshyshki          #+#    #+#             */
+/*   Updated: 2018/04/18 12:05:16 by kshyshki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "main.h"
 
 void	init_vizual(t_main *main, int i, int fin)
 {
 	t_process	*tmp;
-	int	c;
+	int			c;
 
-	c = 0;
+	c = -1;
 	tmp = NULL;
 	if (i)
 	{
-		tmp = main->lst_proc;
-		while (main->lst_proc->next)
+		//tmp = main->lst_proc;
+		/*while (main->lst_proc->next)
 			main->lst_proc = main->lst_proc->next;
-		main->lst_proc->next = lst_newproc(main, i);
-		lst_newchanges(main, main->lst_proc->next, i, fin, 0);
+		main->lst_proc->next = lst_newproc(main, i);*/
+		tmp = lst_newproc(main, i);
+		lst_newchanges(main, tmp, i, fin, 0);
 		main->lst_proc = tmp;
 		return ;
 	}
 	main->lst_proc = (t_process*)malloc(sizeof(t_process));
 	main->lst_changes = (t_changes*)malloc(sizeof(t_changes));
-	while (c < 16)
-	{
+	while (c++ < 16)
 		main->lst_proc->rg[c] = (!c) ? -1 : 0;
-		c++;
-	}
 	main->lst_proc->rg[0] = -1;
 	main->lst_proc->pc = 0;
 	main->lst_proc->index = main->coor_of_p[i];
@@ -31,10 +41,7 @@ void	init_vizual(t_main *main, int i, int fin)
 	main->lst_proc->nbr_pl = main->players[i]->nbr_pl;
 	main->lst_proc->carry = 0;
 	main->lst_proc->live = 0;
-	main->lst_proc->s_live = 0;
-	main->lst_proc->id = 1;
 	main->lst_proc->next = NULL;
-
 	main->lst_changes->start = main->coor_of_p[i];
 	main->lst_changes->finish = fin;
 	main->lst_changes->cycle_init = 1;

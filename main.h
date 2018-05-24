@@ -22,13 +22,9 @@
 
 # define TOTAL_SIZE PROG_NAME_LENGTH + COMMENT_LENGTH
 // # define EXEC_CODE 	main->exec_code
-# define BUFFSIZE		1
 # define U_INT 		4294967282
 # define ERROR 		main->error
 # define PC_INDEX	head->index
-# define STEP 		main->steper
-# define FD 		main->ddddd
-# define FD4 		main->fffff
 # define _USAGE 	0
 # define NO_READ_FILE 1
 # define BOT_NAME 2
@@ -41,22 +37,11 @@
 
 # define STPC ft_step_pc(m, m->map[p->index % MEM_SIZE], p)
 # define LC live_cur_per(main, main->lst_proc, main->players[i]->nbr_pl)
+# define PRINT_ERROR print_error(_USAGE, NULL, &res)
+# define CMP ft_strcmp
 # define MS (4*1024)
 # define XM (2*256)
-/*
-typedef struct			s_process
-{
-	uint8_t 			rg[16][4]gdhdhgdfhdfdfghdfhgdfhgdfagfsfsdg[];
-	int 				cmd_cycle;
-	int 				pc;//счеткик
-	int					index;//индех элемнта на (в) карте игрока
-	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
-	unsigned int		live;//инкремент
-	int 				carry;
-	int 				itr;
-	struct s_process	*next;
-}						t_process;
-*/
+
 typedef struct			s_process
 {
 	int					rg[16];
@@ -65,9 +50,7 @@ typedef struct			s_process
 	int					index;//индех элемнта на (в) карте игрока
 	unsigned char		nbr_pl;//кто порадил (player#) ff fe fd 
 	unsigned int		live;//инкремент
-	unsigned int 		s_live;
 	int 				carry;
-	int 				id;
 	struct s_process	*next;
 }						t_process;
 
@@ -96,14 +79,11 @@ typedef struct			s_player
 
 typedef struct			s_main
 {
-	int 				id;
-	int 				modif;
+	int					itr;
 	int 				cp_cur_cycle;
-	int					steper;//в нем храниться 
 	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
 	uint8_t 			arg[3];
-	short int 			ready_arg[3][2];//
 	int 				coor_of_p[4];//стартовые индексы для каждого игрока
 	char				*filename[5];
 	unsigned char		map[MEM_SIZE];//
@@ -118,13 +98,13 @@ typedef struct			s_main
 	t_player			*last_live_player;
 	int 				finish;//конец игры, finish = 1
 	int 				error;
-	int 				ddddd;
-	int 				fffff;
 }						t_main;
 
 void					init_players(t_main *main, int indx);
 int						make_cycle(t_main *main);//kmykhail
 int						print_error(int code, char *value, int *res);//kmykhail
+void					print_dump(t_main *main, int man_cycle);
+void					print_champion(t_main *main);
 void					ft_table_label(t_main *main);//kmykhail
 int						valid_bots(t_main *main, int ac, char **av);//kmykhail
 void					check_codage(t_main *main, uint8_t num);//kmykhail

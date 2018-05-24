@@ -12,7 +12,6 @@ void	all_live_null(t_main *main, t_process **proc_list)
  	tmp = *proc_list;
  	while (tmp)
  	{
- 		tmp->s_live = 0;
  		tmp->live = 0;
  		tmp = tmp->next;
  	}
@@ -81,7 +80,7 @@ void	cycle_live_die(t_main *main, t_process **proc)
 		}*/
 		i++;
 	}
-	dprintf(FD, "CP_DIE: %d CL_DIE: %d\n", main->cp_cl_to_die, main->cl_to_die);
+	//dprintf(FD, "CP_DIE: %d CL_DIE: %d\n", main->cp_cl_to_die, main->cl_to_die);
 	if (!check && main->mx_check < MAX_CHECKS)
 	{
 		main->mx_check += 1;

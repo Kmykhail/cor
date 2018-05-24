@@ -24,9 +24,7 @@ t_process	*lst_newproc(t_main *main, int pl_indx)
 	new_proc->nbr_pl = main->players[pl_indx]->nbr_pl;
 	new_proc->carry = 0;
 	new_proc->live = 0;
-	new_proc->s_live = 0;
-	new_proc->next = NULL;
-	new_proc->id = main->id;
+	new_proc->next = main->lst_proc;
 	return (new_proc);
 }
 
