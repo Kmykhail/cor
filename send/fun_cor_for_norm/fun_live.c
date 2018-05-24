@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
-uint8_t		live_cur_per(t_main *main, t_process *proc, uint8_t nbr_pl)
+unsigned	int	live_cur_per(t_main *main, t_process *proc, uint8_t nbr_pl)
 {
-	uint8_t	res;
+	unsigned int res;
 
 	res = 0;
 	while (proc)
@@ -25,16 +25,25 @@ uint8_t		live_cur_per(t_main *main, t_process *proc, uint8_t nbr_pl)
 	return (res);
 }
 
-void		fun_live(t_main *main, t_process *proc)
+void	fun_live(t_main *main, t_process *proc)
 {
-	int		i;
+	unsigned char	name;
+	int				i;
 
+	name = 0;
 	i = 0;
-	proc->live++;
+	name |= main->map[(proc->index + 1) % MS];
+	name = name << 8;
+	name |= main->map[(proc->index + 2) % MS];
+	name = name << 8;
+	name |= main->map[(proc->index + 3) % MS];
+	name = name << 8;
+	name |= main->map[(proc->index + 4) % MS];
 	while (main->players[i] != NULL)
 	{
-		if (main->map[(proc->index + 4) % MEM_SIZE] == main->players[i]->nbr_pl)
+		if (name == main->players[i]->nbr_pl)
 		{
+			proc->live++;
 			main->players[i]->ll_cycle = main->cur_cycle;
 			main->players[i]->live_cur_per = LC;
 			main->last_live_player = main->players[i];

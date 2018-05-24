@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 int		choose_function_1(t_main *main, t_process *proc)
 {
@@ -56,6 +56,9 @@ int		choose_function_2(t_main *main, t_process *proc)
 
 void	ft_implement_command(t_main *main, t_process *proc)
 {
+	int x;
+
+	x = 0;
 	if (main->map[proc->index] >= 1 && main->map[proc->index] < 9)
 	{
 		if (choose_function_1(main, proc))

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 int			ft_step_pc(t_main *main, int num, t_process *proc)
 {

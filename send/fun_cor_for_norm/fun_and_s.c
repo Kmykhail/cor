@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 void			fun_and_dir_ind(t_main *m, t_process *p)
 {

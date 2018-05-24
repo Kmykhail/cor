@@ -54,10 +54,12 @@ int		check_args(char **av, int ac, int *cycle)
 	{
 		if (i == 1 && !ft_strcmp(av[i], "-dump"))
 			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 1) : print_error(_USAGE, NULL, &res);
-		if (i == 1 && !ft_strcmp(av[i], "-nset"))
+		else if (i == 1 && !ft_strcmp(av[i], "-nset"))
 			(i + 1 < ac && is_numeric(av[i + 1])) ? (res = 3) : print_error(_USAGE, NULL, &res);
 		else if (i == 1 && !ft_strcmp(av[i], "-n"))
 			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 2);
+		else if (i == 1 && !ft_strcmp(av[i], "-v"))
+			(i + 1 >= ac) ? print_error(_USAGE, NULL, &res) : (res = 4);
 		else if (i == 1 && (ft_strcmp(av[i], "-dump") && ft_strcmp(av[i], "-n")))
 			(!ft_strstr(av[i], ".cor")) ? print_error(_USAGE, NULL, &res) : 0;
 		else if (i > 1 && is_numeric(av[i]))
@@ -90,7 +92,9 @@ void	init_struct(t_main *main)
 	main->id = 1;
 	STEP = 0;
 	main->cnt_pl = 0;
+	main->modif = 0;
 	main->cur_cycle = 0;
+	main->cp_cur_cycle = 0;
 	main->cl_to_die = CYCLE_TO_DIE;
 	main->cp_cl_to_die = CYCLE_TO_DIE;
 	main->mx_check = 0;
@@ -102,6 +106,7 @@ void	init_struct(t_main *main)
 		main->filename[i] = NULL;
 		main->players[i++] = NULL;
 	}
+	main->players[i] = NULL;
     main->filename[i] = NULL;
 	main->lst_proc = NULL;
 	main->lst_changes = NULL;
@@ -124,7 +129,6 @@ int		main(int argc, char **argv)
 	if ((mod = check_args(argv, argc, &man_cycle)) < 0)
 		exit (1);
 	init_struct(&main);
-	//system("afplay ~/Downloads/piu-piu-chpon-k.mp3 &");
 	main.ddddd = open("/Users/kmykhail/corewar_kmykhail/ntext.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	main.fffff = open("/Users/kmykhail/corewar_kmykhail/ntest.txt", O_RDONLY | O_WRONLY | O_TRUNC, 0644);
 	if (valid_bots(&main, argc, argv))
@@ -138,6 +142,12 @@ int		main(int argc, char **argv)
 			make_cycle(&main);
 		(mod == 3) ? free_changes(&main) : 0;
 		visual(&main);
+	}
+	else if (mod == 4)
+	{
+		main.modif = 4;
+		while (!main.finish)
+			make_cycle(&main);
 	}
 	else if (mod == 1 || !mod)
 	{

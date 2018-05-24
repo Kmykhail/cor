@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 void	fun_and_reg_reg(t_main *m, t_process *p)
 {

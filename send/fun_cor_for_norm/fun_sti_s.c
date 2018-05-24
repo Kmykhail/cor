@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 static void		fun_sti_dir_dir_go(t_main *m, t_process *p, int r_1)
 {

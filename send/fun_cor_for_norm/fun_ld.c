@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 static	void	fun_ld_dir(t_main *m, t_process *p)
 {

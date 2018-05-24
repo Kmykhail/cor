@@ -97,28 +97,6 @@ int			visual(t_main *main)
 	t_vis	window;
 	clock_t	start;
 
-    //printf("BBBBBBBBBB\n");
-//__________________________________________________________________
-	// main->lst_proc = (t_process*)malloc(sizeof(t_process));
-	// main->lst_changes = (t_changes*)malloc(sizeof(t_changes));
-
-
-	// main->lst_proc->index =  main->coor_of_p[main->test_i];
-	// main->lst_proc->nbr_pl = main->players[main->test_i]->nbr_pl;
-	// main->lst_proc->live = 0;
-	// main->lst_proc->next = NULL;
-
-	// main->lst_changes->start =  main->coor_of_p[main->test_i];
-	// main->lst_changes->finish = main->coor_of_p[main->test_i] + main->test_l;
-	// main->lst_changes->cycle_init = 0;
-	// main->lst_changes->process = main->lst_proc;
-	// main->lst_changes->next = NULL;
-//__________________________________________________________________
-   	/*printf("proc->index[0]%x\n", main->lst_proc->nbr_pl);
-   	printf("proc->index[1]%x\n", main->lst_proc->next->nbr_pl);
-   	printf("change->start[0]%d\n", main->lst_changes->start);
-   	printf("change->start[1]%d\n", main->lst_changes->next->start);
-	exit(1);*/
 	init_window(&window);
 	ft_memset(window.color, EMPTY_CELL, MEM_SIZE);
 	//printf("ONE\n");
@@ -137,7 +115,7 @@ int			visual(t_main *main)
 				if (!make_cycle(main))
 					break ;
 				(window.one_step) ? window.one_step -= 1 : 0;
-				//(window.one_step) ? window.one_step = 0 : 0; //uncomment end dell line before when finish
+				///(window.one_step) ? window.one_step = 0 : 0; //uncomment end dell line before when finish
 				// dprintf(3, "7777 B window.bar %p\n", window.bar);
 			}							// comment if you want back to normal mode
 			// dprintf(3, "7777 C window.bar %p\n", window.bar);

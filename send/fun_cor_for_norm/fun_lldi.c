@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 static	void	fun_lldi_ind_reg_go(t_main *m, t_process *p, int r_2, int r_3)
 {

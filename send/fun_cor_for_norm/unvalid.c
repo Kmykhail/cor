@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 static	void	unvalid_only_step_go(t_main *m, t_process *p, int d, int s)
 {

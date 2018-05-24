@@ -38,6 +38,11 @@
 # define EXEC_CODE_NULL 7
 # define SIZE_DIFFER 8
 # define TOO_MANY 9
+
+# define STPC ft_step_pc(m, m->map[p->index % MEM_SIZE], p)
+# define LC live_cur_per(main, main->lst_proc, main->players[i]->nbr_pl)
+# define MS (4*1024)
+# define XM (2*256)
 /*
 typedef struct			s_process
 {
@@ -92,6 +97,8 @@ typedef struct			s_player
 typedef struct			s_main
 {
 	int 				id;
+	int 				modif;
+	int 				cp_cur_cycle;
 	int					steper;//в нем храниться 
 	unsigned int		cp_cl_to_die;
 	int 				label[16][4];// таблица
@@ -100,7 +107,7 @@ typedef struct			s_main
 	int 				coor_of_p[4];//стартовые индексы для каждого игрока
 	char				*filename[5];
 	unsigned char		map[MEM_SIZE];//
-	t_player			*players[MAX_PLAYERS];
+	t_player			*players[MAX_PLAYERS + 1];
 	unsigned char		cnt_pl;//количество игроков
 	unsigned int		cur_cycle;//вызвал меня ++
 	unsigned int		cl_to_die;//вместо константы cycle_to die
@@ -156,9 +163,52 @@ void			fun_lfork(t_main *main, t_process *proc);
 void			fun_aff(t_main *main, t_process *proc);
 void			unvalid_only_step(t_main *main, t_process *proc);
 
+void			fun_and_reg_reg(t_main *m, t_process *p);
+void			fun_and_reg_dir(t_main *m, t_process *p);
+void			fun_and_reg_ind(t_main *m, t_process *p);
+void			fun_and_dir_reg(t_main *m, t_process *p);
+void			fun_and_dir_dir(t_main *m, t_process *p);
+void			fun_and_dir_ind(t_main *m, t_process *p);
+void			fun_and_ind_reg(t_main *m, t_process *p);
+void			fun_and_ind_dir(t_main *m, t_process *p);
+void			fun_and_ind_ind(t_main *m, t_process *p);
+
+void			fun_or_reg_reg(t_main *m, t_process *p);
+void			fun_or_reg_dir(t_main *m, t_process *p);
+void			fun_or_reg_ind(t_main *m, t_process *p);
+void			fun_or_dir_reg(t_main *m, t_process *p);
+void			fun_or_dir_dir(t_main *m, t_process *p);
+void			fun_or_dir_ind(t_main *m, t_process *p);
+void			fun_or_ind_reg(t_main *m, t_process *p);
+void			fun_or_ind_dir(t_main *m, t_process *p);
+void			fun_or_ind_ind(t_main *m, t_process *p);
+	
+void			fun_xor_reg_reg(t_main *m, t_process *p);
+void			fun_xor_reg_dir(t_main *m, t_process *p);
+void			fun_xor_reg_ind(t_main *m, t_process *p);
+void			fun_xor_dir_reg(t_main *m, t_process *p);
+void			fun_xor_dir_dir(t_main *m, t_process *p);
+void			fun_xor_dir_ind(t_main *m, t_process *p);
+void			fun_xor_ind_reg(t_main *m, t_process *p);
+void			fun_xor_ind_dir(t_main *m, t_process *p);
+void			fun_xor_ind_ind(t_main *m, t_process *p);
+
+void			fun_ldi_reg_reg(t_main *m, t_process *p);
+void			fun_ldi_reg_dir(t_main *m, t_process *p);
+void			fun_ldi_dir_reg(t_main *m, t_process *p);
+void			fun_ldi_dir_dir(t_main *m, t_process *p);
+
+void			fun_lldi_reg_reg(t_main *m, t_process *p);
+void			fun_lldi_reg_dir(t_main *m, t_process *p);
+void			fun_lldi_dir_reg(t_main *m, t_process *p);
+void			fun_lldi_dir_dir(t_main *m, t_process *p);
 
 
+void			fun_sti_dir_reg(t_main *m, t_process *p);
+void			fun_sti_ind_reg(t_main *m, t_process *p);
 
+void			fun_sti_dir_dir(t_main *m, t_process *p);
+void			fun_sti_ind_dir(t_main *m, t_process *p);
 
 /*
  **				PART OF TEST FUNCTION (ALL DEL)

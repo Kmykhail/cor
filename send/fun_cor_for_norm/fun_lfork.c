@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../main.h"
+#include "../../main.h"
 
 static	void	fun_lfork_go(t_main *main, t_process *proc, t_process *np)
 {

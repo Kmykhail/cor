@@ -153,7 +153,7 @@ int		valid_bots(t_main *main, int ac, char **av)
 	{
 		av++;
 		if (ft_strcmp(*av, "-dump") && ft_strcmp(*av, "-n") && \
-		ft_strcmp(*av, "-nset") && !is_numeric(*av))
+		ft_strcmp(*av, "-nset") && !is_numeric(*av) && ft_strcmp(*av, "-v"))
 			main->filename[c++] = ft_strdup(*av);
 	}
 	main->filename[c] = NULL;
@@ -169,6 +169,5 @@ int		valid_bots(t_main *main, int ac, char **av)
 		(!ERROR) ? 	close(fd) : 0;
 		i++;
 	}
-	//change_last_elem_proc(main, c - 1);
 	return ((main->error) ? 1 : 0);
 }
