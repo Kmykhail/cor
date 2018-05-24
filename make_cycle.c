@@ -1,97 +1,83 @@
-//
-// Created by Kostiantyn MYKHAILENKO on 4/26/18.
-//
-# include "main.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmykhail <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/18 12:05:14 by kshyshki          #+#    #+#             */
+/*   Updated: 2018/04/18 12:05:16 by kshyshki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	all_live_null(t_main *main, t_process **proc_list)
+#include "main.h"
+
+static void		remove_proc(t_main *main, t_process **proc_list)
 {
 	t_process	*tmp;
+	t_process	*buff;
 
 	if (proc_list == NULL || *proc_list == NULL)
- 		return ;
- 	tmp = *proc_list;
- 	while (tmp)
- 	{
- 		tmp->live = 0;
- 		tmp = tmp->next;
- 	}
+		return ;
+	while (*proc_list && (*proc_list)->live == 0)
+	{
+		tmp = *proc_list;
+		*proc_list = (*proc_list)->next;
+		main->nbr_proc--;
+		free(tmp);
+	}
+	buff = *proc_list;
+	while (buff && buff->next)
+	{
+		if (buff->next->live == 0)
+		{
+			tmp = buff->next;
+			buff->next = tmp->next;
+			main->nbr_proc--;
+			free(tmp);
+		}
+		if (buff->next)
+			buff = buff->next;
+	}
 }
 
-void	remove_proc(t_main *main, t_process **proc_list)
- {
- 	t_process	*tmp;
- 	t_process	*buff;
- 
-  	if (proc_list == NULL || *proc_list == NULL)
- 		return ;
- 	while (*proc_list && (*proc_list)->live == 0)
- 	{
- 		tmp = *proc_list;
- 		*proc_list = (*proc_list)->next;
- 		main->nbr_proc--;
- 		free(tmp);
- 	}
- 	buff = *proc_list;
- 	while (buff && buff->next)
- 	{
- 		if (buff->next->live == 0)
- 		{
- 			tmp = buff->next;
- 			buff->next = tmp->next;
- 			main->nbr_proc--;
- 			free(tmp);
- 		}
- 		if (buff->next)
- 			buff = buff->next;
- 	}
- }
-
-void	cycle_live_die(t_main *main, t_process **proc)
+static void		check_max_checks(t_main *m, int check)
 {
-	int i;
-	int check;
+	if (!check && m->mx_check < MAX_CHECKS)
+	{
+		m->mx_check += 1;
+		m->cp_cl_to_die += (m->mx_check != MAX_CHECKS) ? m->cl_to_die : 0;
+	}
+	if (m->mx_check == MAX_CHECKS)
+	{
+		m->cl_to_die -= CYCLE_DELTA;
+		m->cp_cl_to_die += (m->cl_to_die != U_INT) ? m->cl_to_die : 0;
+		m->mx_check = 0;
+	}
+}
+
+static void		cycle_live_die(t_main *m, t_process **proc)
+{
+	int			i;
+	int			check;
 	t_process	*head;
 
 	i = 0;
 	check = 0;
 	head = *proc;
-	while (main->players[i])
+	while (m->players[i])
 	{
-		if (main->players[i]->live_cur_per >= NBR_LIVE && !check)
+		if (m->players[i]->live_cur_per >= NBR_LIVE && !check)
 		{
-			main->cl_to_die -= CYCLE_DELTA;
-			main->cp_cl_to_die += (main->cl_to_die != U_INT) ? main->cl_to_die : 0;
+			m->cl_to_die -= CYCLE_DELTA;
+			m->cp_cl_to_die += (m->cl_to_die != U_INT) ? m->cl_to_die : 0;
 			check = 1;
-			main->mx_check = 0;
+			m->mx_check = 0;
 		}
-		main->players[i]->live_last_per = main->players[i]->live_cur_per;
-		main->players[i]->live_cur_per = 0;
-		/*if (main->players[i]->live_cur_per >= NBR_LIVE)
-		{
-			main->players[i]->live_last_per = main->players[i]->live_cur_per;
-			main->players[i]->live_cur_per = 0;
-			check = 1;
-			main->mx_check = 0;
-		}
-		else
-		{
-			main->players[i]->live_last_per = main->players[i]->live_cur_per;
-			main->players[i]->live_cur_per = 0;
-		}*/
-		i++;
+		m->players[i]->live_last_per = m->players[i]->live_cur_per;
+		m->players[i++]->live_cur_per = 0;
 	}
-	//dprintf(FD, "CP_DIE: %d CL_DIE: %d\n", main->cp_cl_to_die, main->cl_to_die);
-	if (!check && main->mx_check < MAX_CHECKS)
-	{
-		main->mx_check += 1;
-		main->cp_cl_to_die += (main->mx_check != MAX_CHECKS) ? main->cl_to_die : 0;
-	}
-	if (main->mx_check == MAX_CHECKS)
-	{
-		main->cl_to_die -= CYCLE_DELTA;
-		main->cp_cl_to_die += (main->cl_to_die != U_INT) ? main->cl_to_die : 0;
-		main->mx_check = 0;
-	}
+	check_max_checks(m, check);
 	while (head)
 	{
 		head->live = 0;
@@ -99,56 +85,50 @@ void	cycle_live_die(t_main *main, t_process **proc)
 	}
 }
 
-int 	make_cycle_second(t_main *main, t_process **proc)
+static void		execute_byte_code(t_main *m, t_process *h)
+{
+	if (m->map[h->index] != 1 && m->map[h->index] != 12 \
+	&& m->map[h->index] != 15 && m->map[h->index] != 16 \
+	&& m->map[h->index] != 0)
+	{
+		check_codage(m, m->map[h->index + 1]);
+		ft_implement_command(m, h);
+		h->cmd_cycle--;
+	}
+	else if ((m->map[h->index] == 1 || m->map[h->index] == 12 \
+	|| m->map[h->index] == 15 || m->map[h->index] == 16) \
+	&& m->map[h->index] != 0)
+	{
+		ft_implement_command(m, h);
+		h->cmd_cycle--;
+	}
+	else if (m->map[h->index] == 0 && h->cmd_cycle + 1 < 0)
+		ft_implement_command(m, h);
+}
+
+int				make_cycle_second(t_main *m, t_process **proc)
 {
 	t_process	*head;
 
 	head = *proc;
-	main->cur_cycle++;
+	m->cur_cycle++;
 	while (head)
 	{
-		main->cp_cur_cycle =  (main->cp_cur_cycle != main->cur_cycle) ? main->cur_cycle : main->cp_cur_cycle;
-		if (main->map[head->index] > 0  && main->map[head->index] < 16)
-			head->cmd_cycle = (head->cmd_cycle < 0) ? main->label[main->map[head->index] - 1][2] : head->cmd_cycle;
-		else if (main->map[head->index] == 0)
-			(main->map[head->index] == 0) ? head->cmd_cycle -= 1 : 0;
-		if (main->map[head->index] != 1 && main->map[head->index] != 12 \
-		&& main->map[head->index] != 15 && main->map[head->index] != 16 && main->map[head->index] != 0)
-		{
-			check_codage(main, main->map[head->index + 1]);
-			ft_implement_command(main, head);
-			head->cmd_cycle--;
-		}
-		else if ((main->map[head->index] == 1 || main->map[head->index] == 12 \
-		|| main->map[head->index] == 15 || main->map[head->index] == 16) && main->map[head->index] != 0)
-		{
-			ft_implement_command(main, head);
-			head->cmd_cycle--;
-		}
-		else if (main->map[head->index] == 0 && head->cmd_cycle + 1 < 0)
-			ft_implement_command(main, head);
+		m->cp_cur_cycle = (m->cp_cur_cycle != m->cur_cycle) \
+		? m->cur_cycle : m->cp_cur_cycle;
+		if (m->map[head->index] > 0 && m->map[head->index] < 16)
+			head->cmd_cycle = (head->cmd_cycle < 0) ? \
+			m->label[m->map[head->index] - 1][2] : head->cmd_cycle;
+		else if (m->map[head->index] == 0)
+			(m->map[head->index] == 0) ? head->cmd_cycle -= 1 : 0;
+		execute_byte_code(m, head);
 		head = head->next;
 	}
-	if (main->cp_cl_to_die == main->cur_cycle && (main->cl_to_die >= CYCLE_DELTA || main->cl_to_die == 36))
+	if (m->cp_cl_to_die == m->cur_cycle && (m->cl_to_die >= CYCLE_DELTA \
+	|| m->cl_to_die == 36))
 	{
-		remove_proc(main, &(*proc));
-		all_live_null(main, &(*proc));
-		cycle_live_die(main, &(*proc));
-	}
-	if (main->cp_cl_to_die == main->cur_cycle && main->cl_to_die == U_INT)
-	{
-		main->finish = 1;
-		main->nbr_proc = 0;
-		main->cur_cycle++;
+		remove_proc(m, &(*proc));
+		cycle_live_die(m, &(*proc));
 	}
 	return (1);
 }
-
-int     make_cycle(t_main *main)
-{
-	if (make_cycle_second(main, &main->lst_proc))
-		return (1);
-	else
-		return (0);
-}
-

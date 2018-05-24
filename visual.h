@@ -19,68 +19,49 @@
 # include <math.h>
 # include <signal.h>
 # include "main.h"
-
 # define SHIFT 3
-
 # define PAUSE "** PAUSED ** "
 # define RUN "** RUNNING **"
 # define P_LN 2
-
 # define SPEED "Cycles/second limit : "
 # define SP_LN 4
-
 # define CYCLE "Cycle : "
 # define C_LN 6
-
 # define PR "Processes : "
 # define PR_LN 8
-
 # define PLAYER "Player "
 # define PL_LN 10
-
 # define LSTL "Last live : "
-
 # define LCP "Lives in current period : "
-
 # define LB_CP "Live breakdown for current period :"
 # define LN_CP_LN 26
 # define CHRT_BAR "--------------------------------------------------"
-
 # define LB_LP "Live breakdown for last period :"
 # define LN_LP_LN 29
-
 # define CTD "CYCLE_TO_DIE : "
 # define CTD_LN 32
-
 # define CDLT "CYCLE_DELTA : "
 # define CDLT_LN 34
-
 # define NBL "NBR_LIVE : "
 # define NBL_LN 36
-
 # define MAXCH "MAX_CHECKS : "
 # define MAXCH_LN 38
-
 # define WINNER "The winner is : "
 # define WINNER_LN 40
 # define QIUTKEY "** Press \'q\' key to exit ** "
-
 # define USAGE "USAGE : "
 # define USAGE_LN 46
-
 # define BASE_SPEED 50
-
 # define MAP_HEIGHT 68
 # define MAP_WIDTH 197
-
 # define SHIFT_PR 5
 # define SHIFT_LIVE 10
 # define SHIFT_MARKER 14
 # define SHFT_MRKR_PR 9
 # define SHFT_LV_PR 4
-
 # define SHFT_NAME 15
 # define SHFT_LV_CNT 26
+# define MCD main->cl_to_die
 
 enum
 {
@@ -129,7 +110,7 @@ void					fill_map(t_vis *win,
 int						fill_lives(t_vis *win,
 									t_live *live, unsigned int *cur_cycle);
 int						fill_changes(t_changes *chang,
-										t_vis *win, unsigned int *cur_cycle);
+									t_vis *win, unsigned int *cur_cycle);
 void					fill_start_changes(t_changes *chang, t_vis *win);
 void					fill_process(t_main *main, t_vis *win);
 void					fill_tab(t_vis *win, t_main *main);

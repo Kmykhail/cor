@@ -13,15 +13,33 @@
 #include "main.h"
 #include "visual.h"
 
-int		is_numeric(char *s)
+int		valid_bots(t_main *main, int ac, char **av)
 {
-	while (*s)
+	int	fd;
+	int i;
+
+	i = 0;
+	fd = 0;
+	while (ac-- > 1)
 	{
-		if (!ft_isdigit(*s))
-			return (0);
-		s++;
+		av++;
+		if (ft_strcmp(*av, "-dump") && ft_strcmp(*av, "-n") && !is_numeric(*av))
+			main->filename[main->cnt_pl++] = ft_strdup(*av);
 	}
-	return (1);
+	main->filename[main->cnt_pl] = NULL;
+	ERROR += (main->cnt_pl > MAX_PLAYERS) ? print_error(TOO_MANY, NULL, 0) : 0;
+	(!ERROR) ? find_idex_to_start(main) : 0;
+	while (main->filename[i] && !main->error)
+	{
+		main->itr = i;
+		init_players(main, i);
+		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
+			ERROR = print_error(NO_READ_FILE, main->filename[i], 0);
+		(!ERROR) ? read_bots(main, main->players[i], i, fd) : 0;
+		(!ERROR) ? close(fd) : 0;
+		i++;
+	}
+	return ((main->error) ? 1 : 0);
 }
 
 int		check_args(char **av, int ac, int *cycle)
@@ -100,8 +118,7 @@ int		main(int argc, char **argv)
 
 	man_cycle = 0;
 	i = 0;
-	if ((mod = check_args(argv, argc, &man_cycle)) < 0)
-		exit(1);
+	((mod = check_args(argv, argc, &man_cycle)) < 0) ? exit(1) : 0;
 	init_struct(&main);
 	if (valid_bots(&main, argc, argv))
 	{

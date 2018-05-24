@@ -34,6 +34,7 @@ static	void	fun_st_second_ind_go(t_main *m, t_process *p, int num_reg)
 	int			step;
 	int			tmp;
 
+	m->ch = 1;
 	res = m->map[(p->index + 1 + 1 + 1) % MEM_SIZE];
 	res = res << 8;
 	res = res | (m->map[(p->index + 1 + 1 + 1 + 1) % MEM_SIZE]);
@@ -47,7 +48,7 @@ static	void	fun_st_second_ind_go(t_main *m, t_process *p, int num_reg)
 	m->map[(step + 1) % MEM_SIZE] = tmp;
 	tmp = tmp >> 8;
 	m->map[(step + 0) % MEM_SIZE] = tmp;
-	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE, 1);
+	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE);
 	p->index = (p->index + STPC) % MEM_SIZE;
 }
 

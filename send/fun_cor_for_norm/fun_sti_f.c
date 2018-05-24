@@ -18,6 +18,7 @@ static void		fun_sti_dir_reg_go(t_main *m, t_process *p, int r_1, int r_2)
 	int			step;
 	int			tmp;
 
+	m->ch = 1;
 	s = m->map[(p->index + 1 + 1 + 1) % MEM_SIZE];
 	s = s << 8;
 	s = s | (m->map[(p->index + 1 + 1 + 1 + 1) % MEM_SIZE]);
@@ -31,7 +32,7 @@ static void		fun_sti_dir_reg_go(t_main *m, t_process *p, int r_1, int r_2)
 	m->map[(step + 1) % MEM_SIZE] = tmp;
 	tmp = tmp >> 8;
 	m->map[(step + 0) % MEM_SIZE] = tmp;
-	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE, 1);
+	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE);
 }
 
 void			fun_sti_dir_reg(t_main *m, t_process *p)
@@ -80,6 +81,7 @@ void			fun_sti_ind_reg(t_main *m, t_process *p)
 	int			step;
 	int			tmp;
 
+	m->ch = 1;
 	r_1 = m->map[(p->index + 1 + 1) % MEM_SIZE] - 1;
 	r_2 = m->map[(p->index + 1 + 1 + 2 + 1) % MEM_SIZE] - 1;
 	if (r_1 < 0 || r_1 > 15 || r_2 < 0 || r_2 > 15)
@@ -96,5 +98,5 @@ void			fun_sti_ind_reg(t_main *m, t_process *p)
 	m->map[(step + 1) % MEM_SIZE] = tmp;
 	tmp = tmp >> 8;
 	m->map[(step + 0) % MEM_SIZE] = tmp;
-	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE, 1);
+	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE);
 }

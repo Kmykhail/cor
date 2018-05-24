@@ -19,6 +19,7 @@ static void		fun_sti_dir_dir_go(t_main *m, t_process *p, int r_1)
 	int			step;
 	int			tmp;
 
+	m->ch = 1;
 	s = (m->map[(p->index + 1 + 1 + 1) % MEM_SIZE]);
 	s = s << 8;
 	s = s | (m->map[(p->index + 1 + 1 + 1 + 1) % MEM_SIZE]);
@@ -35,7 +36,7 @@ static void		fun_sti_dir_dir_go(t_main *m, t_process *p, int r_1)
 	m->map[(step + 1) % MEM_SIZE] = tmp;
 	tmp = tmp >> 8;
 	m->map[(step + 0) % MEM_SIZE] = tmp;
-	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE, 1);
+	lst_newchanges(m, p, step % MEM_SIZE, (step + 3) % MEM_SIZE);
 }
 
 void			fun_sti_dir_dir(t_main *m, t_process *p)
@@ -86,6 +87,7 @@ void			fun_sti_ind_dir(t_main *m, t_process *p)
 	int			ind;
 	int			tmp;
 
+	m->ch = 1;
 	r_1 = m->map[(p->index + 1 + 1) % MEM_SIZE] - 1;
 	if (r_1 < 0 || r_1 > 15)
 	{
@@ -101,5 +103,5 @@ void			fun_sti_ind_dir(t_main *m, t_process *p)
 	m->map[(s + 1) % MEM_SIZE] = tmp;
 	tmp = tmp >> 8;
 	m->map[(s + 0) % MEM_SIZE] = tmp;
-	lst_newchanges(m, p, s % MEM_SIZE, (s + 3) % MEM_SIZE, 1);
+	lst_newchanges(m, p, s % MEM_SIZE, (s + 3) % MEM_SIZE);
 }

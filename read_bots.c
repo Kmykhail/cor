@@ -77,6 +77,15 @@ void	take_exec_code(t_main *main, t_player *pl, int cnt, unsigned char *buff)
 		ERROR = print_error(SIZE_DIFFER, main->filename[main->itr], 0);
 }
 
+void	read_bots_helper(t_main *main, int cnt, t_player *pl, int num)
+{
+	ERROR += (cnt < TOTAL_SIZE && !ERROR) ? \
+	print_error(EXEC_CODE_NULL, main->filename[main->itr], 0) : 0;
+	if (!ERROR && ((num - pl->exec_code) % main->cnt_pl))
+		ERROR = print_error(SIZE_DIFFER, main->filename[main->itr], 0);
+	(!ERROR) ? init_vizual(main, main->itr, num - 1) : 0;
+}
+
 void	read_bots(t_main *main, t_player *pl, int i, int fd)
 {
 	int				num;
@@ -95,8 +104,7 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 			num = (cnt == PROG_NAME_LENGTH) ? 0 : num;
 		}
 		take_exec_code(main, pl, cnt, buff);
-		(cnt >= PROG_NAME_LENGTH + 12 && cnt < 2188 && !ERROR) ? \
-		(pl->comment[num++] = buff[0]) : 0;
+		(LOOK_NAME) ? (pl->comment[num++] = buff[0]) : 0;
 		if (cnt >= 2192 && !ERROR)
 		{
 			(!num || cnt == 2192) ? (num = main->coor_of_p[i]) : 0;
@@ -104,38 +112,5 @@ void	read_bots(t_main *main, t_player *pl, int i, int fd)
 		}
 		cnt++;
 	}
-	ERROR += (cnt < TOTAL_SIZE && !ERROR) ? \
-	print_error(EXEC_CODE_NULL, main->filename[i], 0) : 0;
-	if (!ERROR && ((num - pl->exec_code) % main->cnt_pl))
-		ERROR = print_error(SIZE_DIFFER, main->filename[i], 0);
-	(!ERROR) ? init_vizual(main, i, num - 1) : 0;
-}
-
-int		valid_bots(t_main *main, int ac, char **av)
-{
-	int	fd;
-	int i;
-
-	i = 0;
-	fd = 0;
-	while (ac-- > 1)
-	{
-		av++;
-		if (ft_strcmp(*av, "-dump") && ft_strcmp(*av, "-n") && !is_numeric(*av))
-			main->filename[main->cnt_pl++] = ft_strdup(*av);
-	}
-	main->filename[main->cnt_pl] = NULL;
-	ERROR += (main->cnt_pl > MAX_PLAYERS) ? print_error(TOO_MANY, NULL, 0) : 0;
-	(!ERROR) ? find_idex_to_start(main) : 0;
-	while (main->filename[i] && !main->error)
-	{
-		main->itr = i;
-		init_players(main, i);
-		if ((fd = open(main->filename[i], O_RDONLY)) < 0)
-			ERROR = print_error(NO_READ_FILE, main->filename[i], 0);
-		(!ERROR) ? read_bots(main, main->players[i], i, fd) : 0;
-		(!ERROR) ? close(fd) : 0;
-		i++;
-	}
-	return ((main->error) ? 1 : 0);
+	read_bots_helper(main, cnt, pl, num);
 }

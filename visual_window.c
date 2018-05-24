@@ -46,11 +46,13 @@ void		print_winner(t_main *main, t_vis *win)
 		mvwprintw(win->bar, WINNER_LN + 2, SHIFT, "%s", QIUTKEY);
 		wattroff(win->bar, COLOR_PAIR(WHITE_CW) | A_BOLD);
 		wattron(win->bar,
-				COLOR_PAIR((UCH) (main->last_live_player->nbr_pl * -1)) | A_BOLD);
+				COLOR_PAIR((UCH)(main->last_live_player->nbr_pl * -1)) \
+				| A_BOLD);
 		mvwprintw(win->bar, WINNER_LN, SHIFT + ft_strlen(WINNER),
-				  "%s", main->last_live_player->player_name);
+				"%s", main->last_live_player->player_name);
 		wattroff(win->bar,
-				 COLOR_PAIR((UCH) (main->last_live_player->nbr_pl * -1)) | A_BOLD);
+				COLOR_PAIR((UCH)(main->last_live_player->nbr_pl * -1)) \
+				| A_BOLD);
 		refresh_windows(win);
 	}
 }
@@ -76,7 +78,6 @@ void		refresh_windows(t_vis *win)
 {
 	wrefresh(win->map);
 	wrefresh(win->bar);
-	
 	refresh();
 }
 

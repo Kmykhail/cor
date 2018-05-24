@@ -33,7 +33,8 @@ int		print_error(int code, char *text, int *res)
 	if (code == SIZE_DIFFER)
 	{
 		ft_printf("Error: File ");
-		ft_printf("%s has a code size that differ from what its header says\n", text);
+		ft_printf("%s has a code size that differ from what its header says\n",
+		text);
 	}
 	if (code == TOO_MANY)
 		ft_printf("Too many champions\n");
