@@ -31,6 +31,8 @@ t_process		*lst_newproc(t_main *main, int pl_indx)
 	new_proc->nbr_pl = main->players[pl_indx]->nbr_pl;
 	new_proc->carry = 0;
 	new_proc->live = 0;
+	new_proc->s_live = 0;
+	new_proc->id = main->count_id;
 	new_proc->next = main->lst_proc;
 	return (new_proc);
 }
@@ -52,31 +54,11 @@ void			lst_newchanges(t_main *main, t_process *proc,
 	main->lst_changes = new_change;
 }
 
-void			init_vizual_helper(t_main *main, int fin, int i)
+void			init_vizual_helper(t_main *main, int i)
 {
-	main->lst_changes = (t_changes*)malloc(sizeof(t_changes));
-	main->lst_changes->start = main->coor_of_p[i];
-	main->lst_changes->finish = fin;
-	main->lst_changes->cycle_init = 1;
-	main->lst_changes->nbr_pl = main->lst_proc->nbr_pl;
-	main->lst_changes->next = NULL;
-}
-
-void			init_vizual(t_main *main, int i, int fin)
-{
-	t_process	*tmp;
-	int			c;
+	int c;
 
 	c = -1;
-	tmp = NULL;
-	if (i)
-	{
-		main->ch = 0;
-		tmp = lst_newproc(main, i);
-		lst_newchanges(main, tmp, i, fin);
-		main->lst_proc = tmp;
-		return ;
-	}
 	main->lst_proc = (t_process*)malloc(sizeof(t_process));
 	while (c++ < 16)
 		main->lst_proc->rg[c] = (!c) ? -1 : 0;
@@ -87,6 +69,28 @@ void			init_vizual(t_main *main, int i, int fin)
 	main->lst_proc->nbr_pl = main->players[i]->nbr_pl;
 	main->lst_proc->carry = 0;
 	main->lst_proc->live = 0;
+	main->lst_proc->s_live = 0;
 	main->lst_proc->next = NULL;
-	init_vizual_helper(main, fin, i);
+}
+
+void			init_vizual(t_main *main, int i, int fin)
+{
+	t_process	*tmp;
+
+	tmp = NULL;
+	if (i)
+	{
+		main->ch = 0;
+		tmp = lst_newproc(main, i);
+		lst_newchanges(main, tmp, i, fin);
+		main->lst_proc = tmp;
+		return ;
+	}
+	init_vizual_helper(main, i);
+	main->lst_changes = (t_changes*)malloc(sizeof(t_changes));
+	main->lst_changes->start = main->coor_of_p[i];
+	main->lst_changes->finish = fin;
+	main->lst_changes->cycle_init = 1;
+	main->lst_changes->nbr_pl = main->lst_proc->nbr_pl;
+	main->lst_changes->next = NULL;
 }

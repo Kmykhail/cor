@@ -49,9 +49,11 @@
 # define IS_BIG(x) (x >= 'A' && x <= 'Z') ? (1) : (0)
 
 # define ER (-1)
+
 # ifndef OK
-# 	define OK (1)
+#  define OK (1)
 # endif
+
 # define ER_PR (2)
 # define NEXT_STEP (3)
 

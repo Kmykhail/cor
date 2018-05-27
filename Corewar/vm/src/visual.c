@@ -88,6 +88,8 @@ int				visual(t_main *main)
 	clock_t		start;
 
 	init_window(&window);
+	window.tmp = 0;
+	window.i = 0;
 	ft_memset(window.color, EMPTY_CELL, MEM_SIZE);
 	while (key_handler(&window))
 	{

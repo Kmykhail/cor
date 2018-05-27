@@ -19,7 +19,7 @@ static void		remove_proc(t_main *main, t_process **proc_list)
 
 	if (proc_list == NULL || *proc_list == NULL)
 		return ;
-	while (*proc_list && (*proc_list)->live == 0)
+	while (*proc_list && (*proc_list)->s_live == 0)
 	{
 		tmp = *proc_list;
 		*proc_list = (*proc_list)->next;
@@ -29,7 +29,7 @@ static void		remove_proc(t_main *main, t_process **proc_list)
 	buff = *proc_list;
 	while (buff && buff->next)
 	{
-		if (buff->next->live == 0)
+		if (buff->next->s_live == 0)
 		{
 			tmp = buff->next;
 			buff->next = tmp->next;
@@ -56,14 +56,12 @@ static void		check_max_checks(t_main *m, int check)
 	}
 }
 
-static void		cycle_live_die(t_main *m, t_process **proc)
+static void		cycle_live_die(t_main *m, t_process **proc, int check)
 {
 	int			i;
-	int			check;
 	t_process	*head;
 
 	i = 0;
-	check = 0;
 	head = *proc;
 	while (m->players[i])
 	{
@@ -81,6 +79,7 @@ static void		cycle_live_die(t_main *m, t_process **proc)
 	while (head)
 	{
 		head->live = 0;
+		head->s_live = 0;
 		head = head->next;
 	}
 }
@@ -126,7 +125,7 @@ int				make_cycle_second(t_main *m, t_process **proc)
 	|| m->cl_to_die == 36))
 	{
 		remove_proc(m, &(*proc));
-		cycle_live_die(m, &(*proc));
+		cycle_live_die(m, &(*proc), 0);
 	}
 	return (1);
 }

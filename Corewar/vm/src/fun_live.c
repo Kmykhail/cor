@@ -32,6 +32,7 @@ void				fun_live(t_main *main, t_process *proc)
 
 	name = 0;
 	i = 0;
+	proc->s_live++;
 	name |= main->map[(proc->index + 1) % MS];
 	name = name << 8;
 	name |= main->map[(proc->index + 2) % MS];

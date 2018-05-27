@@ -15,8 +15,10 @@
 static	void	fun_fork_go(t_main *main, t_process *proc, t_process *np)
 {
 	np->nbr_pl = proc->nbr_pl;
-	np->live = 0;
+	np->live = proc->live;
+	np->s_live = proc->s_live;
 	np->carry = proc->carry;
+	np->id = main->count_id;
 	np->next = NULL;
 	proc->index = (proc->index + 3) % MEM_SIZE;
 	np->next = main->lst_proc;
@@ -30,6 +32,7 @@ void			fun_fork(t_main *main, t_process *proc)
 	int			i;
 	short int	res;
 
+	main->count_id++;
 	res = 0;
 	res = res | main->map[(proc->index + 1) % MEM_SIZE];
 	res = res << 8;

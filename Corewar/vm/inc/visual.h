@@ -62,6 +62,7 @@
 # define SHFT_NAME 15
 # define SHFT_LV_CNT 26
 # define MCD main->cl_to_die
+# define WCTMI win->color[tmp->index] < FST_PL_LIVE
 
 enum
 {
@@ -102,6 +103,8 @@ typedef struct			s_vis
 	unsigned int		speed;
 	char				*paused;
 	int					one_step;
+	int					tmp;
+	int					i;
 	t_live				*lives;
 }						t_vis;
 

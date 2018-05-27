@@ -42,12 +42,14 @@
 
 typedef struct			s_process
 {
+	int					id;
 	int					rg[16];
 	int					cmd_cycle;
 	int					pc;
 	int					index;
 	unsigned char		nbr_pl;
 	unsigned int		live;
+	unsigned int		s_live;
 	int					carry;
 	struct s_process	*next;
 }						t_process;
@@ -75,6 +77,7 @@ typedef struct			s_player
 
 typedef struct			s_main
 {
+	int					count_id;
 	int					itr;
 	int					ch;
 	unsigned int		cp_cur_cycle;

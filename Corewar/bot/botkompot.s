@@ -1,5 +1,6 @@
 .name "OKKZH"
 .comment "FUCK YOU"
+
 l2:     sti r1, %:live, %1
         and r1, %0, r1
 l4:     ldi %:live, %1, r1

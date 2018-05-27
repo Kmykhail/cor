@@ -41,7 +41,7 @@ typedef struct	s_ls
 	struct s_ls	*next;
 }				t_ls;
 
-header_t		g_head;
+t_header		g_head;
 t_ls			*g_list;
 char			*g_bin;
 char			**g_com;
