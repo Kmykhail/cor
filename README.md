@@ -8,3 +8,7 @@ First you'll need to write a .s file with a set of assembly instructions or take
 Then you'll have to compile it using the asm binary
 Then just execute the corewar binary with your warrior(s) as arguments
 ```
+# Compiling 
+`$> make`
+# Run
+`$> ./corewar [-dump N |-n]  <champion1.cor> <...>
