@@ -11,4 +11,4 @@ Then just execute the corewar binary with your warrior(s) as arguments
 # Compiling 
 `$> make`
 # Run
-`$> ./corewar [-dump N |-n]  <champion1.cor> <...>
+`$> ./corewar [-dump N |-n]  <champion1.cor> <...>`
