@@ -13,3 +13,11 @@ Then just execute the corewar binary with your warrior(s) as arguments
 `$> make`
 # Run
 `$> ./corewar [-dump N |-n]  <champion1.cor> <...>`
+
+# Author
+```
+kmykhail
+ozharko
+kshyshki
+giabanji
+```
