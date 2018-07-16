@@ -16,8 +16,8 @@ Then just execute the corewar binary with your warrior(s) as arguments
 
 # Author
 ```
-kmykhail
 ozharko
+kmykhail
 kshyshki
 giabanji
 ```
